@@ -1,0 +1,71 @@
+<h2>Create New Post Campaign</h2>
+
+<%= form_with url: create_post_campaign_google_chrome_ext_popup_index_path, local: true, html: { id: 'new-post-campaign-form' } do |f| %>
+  <div class="form-group">
+    <%= f.label :campaign_id, "Select Campaign" %>
+    <%= f.select :campaign_id, @campaigns.map { |c| [c.name, c.id] }, { prompt: "Choose a campaign" }, class: "form-control", required: true %>
+  </div>
+
+  <%= f.hidden_field :tiktok_username, value: @tiktok_username %>
+  <%= f.hidden_field :tiktok_video_id, value: @tiktok_video_id %>
+
+  <div class="form-group mt-3" id="submit-button-container">
+    <%= f.submit "Import TikTok Campaign! 🚀", class: "btn btn-primary", id: "submit-button" %>
+  </div>
+<% end %>
+
+<div id="loading" style="display: none;">
+  <div id="emoji-spinner">🚀</div>
+  <p id="loading-text">Creating campaign... Hang tight!</p>
+  <p id="fun-text">Preparing for TikTok stardom...</p>
+</div>
+
+<style>
+  #emoji-spinner {
+    font-size: 40px;
+    animation: spin 2s infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #fun-text {
+    font-style: italic;
+    color: #6c757d;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('new-post-campaign-form');
+    const submitButtonContainer = document.getElementById('submit-button-container');
+    const loading = document.getElementById('loading');
+
+    form.addEventListener('submit', function(event) {
+      submitButtonContainer.style.display = 'none';
+      loading.style.display = 'block';
+      
+      const emojis = ['🚀', '🎥', '🌟', '📈', '🔥', '🎬', '🤳'];
+      let index = 0;
+      setInterval(() => {
+        document.getElementById('emoji-spinner').textContent = emojis[index];
+        index = (index + 1) % emojis.length;
+      }, 300);
+
+      const funTexts = [
+        "Preparing for TikTok stardom...",
+        "Crafting viral content strategy...",
+        "Summoning the algorithm gods...",
+        "Polishing your influencer crown...",
+        "Charging up engagement boosters...",
+      ];
+      let textIndex = 0;
+      setInterval(() => {
+        document.getElementById('fun-text').textContent = funTexts[textIndex];
+        textIndex = (textIndex + 1) % funTexts.length;
+      }, 2000);
+    });
+  });
+</script>

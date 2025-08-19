@@ -1,0 +1,13 @@
+<%= bootstrap_form_for(management, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }) do |form| %>
+    <%= form.text_field :name %>
+    <%= form.text_field :pic_name %>
+    <%= form.text_field :pic_email %>
+    <%= form.text_field :phone %>
+    <%= form.text_field :no_ktp %>
+    <%= form.text_field :no_npwp %>
+    <%= form.select :bank_code, BankService::LIST.map { |x| [x[1], x[0]]}, {}, data: {controller: "select2"}, class: 'select2' %>
+    <%= form.text_field :account_number %>
+    <%= form.text_field :address %>
+    <%= form.submit %>
+    <%= link_to 'Cancel', managements_path, class: 'btn' %>
+<% end %>

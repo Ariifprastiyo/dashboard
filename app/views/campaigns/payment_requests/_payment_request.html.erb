@@ -1,0 +1,23 @@
+<tr>
+  <td><%= payment_request.id %></td>
+  <td><%= payment_request.beneficiary.name %></td>
+  <td><%= number_to_currency payment_request.amount %></td>
+  <td><%= number_to_currency payment_request.total_payment %></td>
+  <td><%= payment_request.due_date %></td>
+  <td><%= payement_request_badge payment_request.status %></td>
+  <td><%= payment_request.notes %></td>
+  <td><%= payment_request.paid_at %></td>
+  <td><%= payment_request.requestor.name %></td>
+  <td><%= payment_request.payer&.name %></td>
+  <td><%= payment_request.created_at.to_fs(:day_month_year_short) %></td>
+  <% if policy(payment_request).edit? %>
+    <td>
+      <%= link_to 'Lihat', campaigns_payment_request_path(id: payment_request.campaign_id, payment_request_id: payment_request.id), class: 'btn btn-primary btn-sm' %>
+
+      <% if payment_request.pending? %>
+        <%#= link_to 'Reject', campaigns_payment_request_path(id: payment_request.campaign_id, payment_request_id: payment_request.id), 
+                            data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      <% end %>
+    </td>
+  <% end %>
+</tr>

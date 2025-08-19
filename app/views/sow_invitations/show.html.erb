@@ -1,0 +1,59 @@
+<main>
+  <div class="container">
+
+    <section class="section d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-12 flex-column align-items-center justify-content-center">
+
+            <div class="d-flex justify-content-center py-4">
+              <a href="https://mediarumu.com" target="_blank" class="logo d-flex align-items-center w-auto">
+                <%= image_tag 'mediarumu.png' %>
+                <span class="d-none d-lg-block">MediaRumu</span>
+              </a>
+            </div><!-- End Logo -->
+
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="pt-4 pb-2">
+                  <div id="sow-form">
+                    <% if @sow.management.present? %>
+                      <h4 class="card-title pb-0 fs-4">Hi, <%= @sow.management.name %></h4>
+
+                      <p class="small">Kamu diundang untuk menjadi influencer! Berikut detailnya:</p>
+                      
+                      <%= render 'management_form' %>
+                    <% else %>
+                      <h4 class="card-title pb-0 fs-4">Hi, <%= @influencer.name %></h4>
+
+                      <p class="small">Kamu diundang untuk menjadi influencer! Berikut detailnya:</p>
+                      
+                      <%= render 'influencer_form' %>
+                    <% end %>
+
+                    <hr />
+                    <div class="text-center">
+                      <%= button_to 'Maaf saya belum bisa ikut campaign ini', reject_sow_invitation_path(params[:id]), class: 'small btn btn-sm text-secondary', data: { turbo_confirm: 'Apakah kamu yakin?' }, method: :put %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="credits">
+              Copyright &copy; <%= Date.today.year %> <strong><%= ENV['APPLICATION_NAME'] || 'MediaRumu' %></strong>. All Rights Reserved
+              <!-- All the links in the footer should remain intact. -->
+              <!-- You can delete the links only if you purchased the pro version. -->
+              <!-- Licensing information: https://bootstrapmade.com/license/ -->
+              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+              <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</main><!-- End #main -->

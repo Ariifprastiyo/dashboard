@@ -1,0 +1,65 @@
+<div class="pagetitle">
+  <h1>Social Media Publications for <%= @campaign.name %></h1>
+</div>
+
+<%= render 'shared/breadcrumbs' %>
+
+<%= render 'search_card' %>
+
+<div class="card">
+  <div class ="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">List of social media publications</h5>
+  </div>
+  <div class="card-body">
+    <table class="table my-4">
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">
+            <%= sort_link(@q, :social_media_account_username, 'Account Username') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :url, 'URL') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :social_media_account_size, 'Account Size') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :platform, 'Platform') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :reach, 'Reach') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :likes_count, 'Likes Count') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :share_count, 'Share Count') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :media_comments_count, 'Media Comments Count') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :related_media_comments_count, 'Related Media Comments Count') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :crb, 'CRB') %>
+          </th>
+          <th scope="col">
+            Total Engagement
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :engagement_rate, 'Engagement Rate') %>
+          </th>
+          <th scope="col">
+            <%= sort_link(@q, :created_at, 'Created At') %>
+          </th>
+        </tr>
+      </thead>
+
+      <%= render 'social_media_publications', social_media_publications: @social_media_publications %>
+    </table>
+
+    <%= paginate @social_media_publications, theme: 'bootstrap-5'%>
+  </div>
+</div>

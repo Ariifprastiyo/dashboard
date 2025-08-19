@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.lamadava.com/v1/media/comments/chunk?id=&max_id=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Access-Key:
+      - P0SBEUnlcdFLlBfqxAU3XgFyt9VfFmEV
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Tue, 21 Feb 2023 13:49:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '60'
+      Connection:
+      - keep-alive
+      X-Lama-Error:
+      - AssertionError
+      X-Lama-Reqid:
+      - 32495ef3-fba2-45dc-91d7-ae55507f4918
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=PiavGpXn0S0aXqms1i%2FwHqhGmm5nbdxgbajFdsQvic4kYZB9jFnMO3Gvc%2FtsNSdUVmhxPfMSik7BFxrmyroNaEbpwSLcm0BhXCQ4oUqyqE5cbQE7Tz8Opmy0zalxgwwi%2FK%2FN"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 79cff2ba49116be8-SIN
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"detail":"id must be a number","exc_type":"AssertionError"}'
+  recorded_at: Tue, 21 Feb 2023 13:49:56 GMT
+recorded_with: VCR 6.1.0

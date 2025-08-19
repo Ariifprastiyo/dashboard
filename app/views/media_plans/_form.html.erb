@@ -1,0 +1,17 @@
+<%= bootstrap_form_for(@media_plan, layout: :horizontal, label_col: "col-sm-3", 
+                                    control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+  <%= f.text_field :name %>
+
+  <p><b>Scope Of Work Template</b></p>
+  <%= f.fields_for :scope_of_work_template do |scope_of_work_template_form| %>
+    <% ScopeOfWorkItem::PRICES.each do |name| %>
+      <% scope_of_work_template = @media_plan.scope_of_work_template.nil? ? 0 : @media_plan.scope_of_work_template[name] %>
+      <%= scope_of_work_template_form.text_field name, 
+            label: "#{name.humanize} Qty", 
+            value: scope_of_work_template %>
+    <% end %>
+  <% end %>
+
+  <%= f.primary "next" %>
+  <%= f.hidden_field :campaign_id, value: @media_plan.campaign_id %>
+<% end %>

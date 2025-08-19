@@ -1,0 +1,6 @@
+<%= bootstrap_form_for(@organization, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :description %>
+  <%= f.file_field :logo if current_user.has_role?(:super_admin) && current_user.has_role?(:admin) %>
+  <%= f.primary %>
+<% end %>

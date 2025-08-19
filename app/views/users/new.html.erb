@@ -1,0 +1,30 @@
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">New User</h5>
+
+          <%= render 'shared/error_messages', object: @user %>
+
+          <%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+            <%= f.text_field :name %>
+            <%= f.email_field :email %>
+            <% if current_user.has_role?(:super_admin) %>
+              <%= f.collection_check_boxes :role_ids, Role.all, :id, :name %>
+            <% else %>
+              <%= f.collection_check_boxes :role_ids, Role.where.not(name: "super_admin"), :id, :name %>
+            <% end %>            
+            <%= f.select(:organization_id, Organization.all.collect { |o| [o.name, o.id] }, { include_blank: true }, { class: "form-control" }) if current_user.has_role?(:super_admin) && current_user.has_role?(:admin) %>
+            <%= f.password_field :password %>
+            <%= f.password_field :password_confirmation %>
+            <%= f.primary %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

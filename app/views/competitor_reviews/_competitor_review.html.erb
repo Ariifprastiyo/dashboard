@@ -1,0 +1,6 @@
+<tr>
+  <td><%= competitor_review.id %></td>
+  <td><%= competitor_review.organization.name %></td>
+  <td><%= link_to competitor_review.title, competitor_review_path(competitor_review) %></td>
+  <td><%= link_to 'Edit', edit_competitor_review_path(competitor_review) %>
+</tr>

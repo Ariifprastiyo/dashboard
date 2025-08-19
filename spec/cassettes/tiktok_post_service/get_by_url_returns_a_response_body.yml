@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://mediarumu-social.fly.dev/tiktok-posts/7157111344112700699
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:8000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Host:
+      - localhost:8000
+      Date:
+      - Thu, 09 Feb 2023 00:53:31 GMT
+      - Thu, 09 Feb 2023 00:53:31 GMT
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/8.2.1
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - XSRF-TOKEN=eyJpdiI6IjVMV3kvOVB2QkZ4bXZHQ1pTdEczaWc9PSIsInZhbHVlIjoiNVdzb3NIOXYxZFljMlZUZVhpWVNEYk5veEwyZFluRGFzM0FYdmJHbFBMRDB3bGV1VWRyWk9xaGhWR2V1MjJnTWh2dFo0QlJuQnBJL3lZbFNGenZib0hRWTMzczdMUmsyRUNDemNsbXFrRFBteDUrcHFzMm4vYVNxcjVDL0ZsczgiLCJtYWMiOiI0NzgzMDA2NzkwYWUyMmJlZTJkYzVmZDM4NDMzZWFlMTkwZjZmNTk1YjVjNWUzOTU1OWM2ZGJhZWRhMTcwNzVkIiwidGFnIjoiIn0%3D;
+        expires=Thu, 09 Feb 2023 02:53:31 GMT; Max-Age=7200; path=/; samesite=lax
+      - mediarumu_social_session=eyJpdiI6ImY1R3BjLzdoUjVVYlZDR2ZPZHcxS1E9PSIsInZhbHVlIjoiZkc3cXBobjhuU2ZGT3EzaGhIRGgyUHFhRkw3TkxrcFFwWmR3aVlXQXMxekJXWkhiZlhJaEVEV25DK2Y4VEtNSFYrZVpGQTQ5bzZ5N0IrbEdNaWNGNkdFNUJyS2hxZTR3M1hJTjVvWks0TmVqM3ZOTEFmSXQ5cnNHdkZkaFZDaEYiLCJtYWMiOiI1Mzg5ZmM5MjdiMDk0OTgwYmNlNmY3YmRkZDc0ZGZlOGRhNmExZjA2MGUyY2I3NmJhZjZkZDkzMjBkYjAxZjQ1IiwidGFnIjoiIn0%3D;
+        expires=Thu, 09 Feb 2023 02:53:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+    body:
+      encoding: UTF-8
+      string: '{"author":{"avatarLarger":"https:\/\/p16-sign-va.tiktokcdn.com\/tos-useast2a-avt-0068-giso\/bff6ad577b272ed13dc14e71967cdb8c~c5_1080x1080.jpeg?x-expires=1676073600&x-signature=6LyW2olZnji6NsvUwbRlVWWCoME%3D","avatarMedium":"https:\/\/p16-sign-va.tiktokcdn.com\/tos-useast2a-avt-0068-giso\/bff6ad577b272ed13dc14e71967cdb8c~c5_720x720.jpeg?x-expires=1676073600&x-signature=li0NdVTQrKFGLJvPWpzuKyuBFO4%3D","avatarThumb":"https:\/\/p16-sign-va.tiktokcdn.com\/tos-useast2a-avt-0068-giso\/bff6ad577b272ed13dc14e71967cdb8c~c5_100x100.jpeg?x-expires=1676073600&x-signature=qg45b2rjxmEWU9AmlH0s8QLJjP0%3D","commentSetting":0,"duetSetting":0,"ftc":false,"id":"7123132080322905090","isADVirtual":false,"nickname":"kucing
+        dirumah bu RW","openFavorite":false,"privateAccount":false,"relation":0,"secUid":"MS4wLjABAAAAJu9GE5G8FHvrndADLPQq1PiJyIpuWMLiuB_kgbdfE_3j6hfW1jC4-aoYJAHp0GMl","secret":false,"signature":"","stitchSetting":0,"uniqueId":"keluargaburw","verified":false},"challenges":[{"coverLarger":"","coverMedium":"","coverThumb":"","desc":"","id":"1695997312240657","profileLarger":"","profileMedium":"","profileThumb":"","title":"oyenfamilynihboss"},{"coverLarger":"","coverMedium":"","coverThumb":"","desc":"","id":"1685912370945026","profileLarger":"","profileMedium":"","profileThumb":"","title":"kucingoyennihbos\ud83d\ude02\ud83d\ude02"},{"coverLarger":"","coverMedium":"","coverThumb":"","desc":"","id":"78666315","profileLarger":"","profileMedium":"","profileThumb":"","title":"kucingkusayang"},{"coverLarger":"","coverMedium":"","coverThumb":"","desc":"Coba
+        kedip bisa tangkap si #kucingoren ga nih? \ud83d\udc40\ud83d\udc4c","id":"1637673765168130","profileLarger":"https:\/\/p77-sg.tiktokcdn.com\/obj\/tiktok-obj\/cb31577b89d7a46b2dd269f68e53eaf5","profileMedium":"https:\/\/p77-sg.tiktokcdn.com\/obj\/tiktok-obj\/cb31577b89d7a46b2dd269f68e53eaf5","profileThumb":"https:\/\/p77-sg.tiktokcdn.com\/obj\/tiktok-obj\/cb31577b89d7a46b2dd269f68e53eaf5","title":"kucingoren"}],"createTime":1666394851,"desc":"pagi
+        pagi ngajakin bestie nya main dulu ygy #kucingoyennihbos\ud83d\ude02\ud83d\ude02
+        #kucingkusayang #kucingoren #oyenfamilynihboss ","digged":false,"duetDisplay":0,"duetEnabled":true,"forFriend":false,"id":"7157111344112700699","itemCommentStatus":0,"music":{"album":"Tulus","authorName":"Tulus","coverLarge":"https:\/\/p16-amd-va.tiktokcdn.com\/img\/tos-useast2a-v-2774\/3857ddead42948ce927646889afb1d51~c5_720x720.jpeg","coverMedium":"https:\/\/p16-amd-va.tiktokcdn.com\/img\/tos-useast2a-v-2774\/3857ddead42948ce927646889afb1d51~c5_200x200.jpeg","coverThumb":"https:\/\/p16-amd-va.tiktokcdn.com\/img\/tos-useast2a-v-2774\/3857ddead42948ce927646889afb1d51~c5_100x100.jpeg","duration":60,"id":"6703153593739905025","original":false,"playUrl":"https:\/\/sf16-ies-music-va.tiktokcdn.com\/obj\/tos-useast2a-ve-2774\/184e545b735a4bfe969a96ba96f9c6b8","title":"Teman
+        Hidup"},"officalItem":false,"originalItem":false,"privateItem":false,"secret":false,"shareEnabled":true,"stats":{"commentCount":3,"diggCount":24,"playCount":182,"shareCount":0},"stitchDisplay":0,"stitchEnabled":true,"textExtra":[{"awemeId":"","end":65,"hashtagId":"1685912370945026","hashtagName":"kucingoyennihbos\ud83d\ude02\ud83d\ude02","isCommerce":false,"start":44,"subType":0,"type":1},{"awemeId":"","end":81,"hashtagId":"78666315","hashtagName":"kucingkusayang","isCommerce":false,"start":66,"subType":0,"type":1},{"awemeId":"","end":93,"hashtagId":"1637673765168130","hashtagName":"kucingoren","isCommerce":false,"start":82,"subType":0,"type":1},{"awemeId":"","end":112,"hashtagId":"1695997312240657","hashtagName":"oyenfamilynihboss","isCommerce":false,"start":94,"subType":0,"type":1}],"video":{"bitrate":1999937,"bitrateInfo":[{"Bitrate":1999937,"CodecType":"h264","GearName":"normal_720_0","PlayAddr":{"DataSize":4696104,"FileCs":"c:0-21668-fe5f","FileHash":"d860c9a495830e7a4e3721259ccbc242","Uri":"v0f025gc0000cd9il3bc77u905alevr0","UrlKey":"v0f025gc0000cd9il3bc77u905alevr0_h264_720p_1999937","UrlList":["https:\/\/v16-webapp-prime.tiktok.com\/video\/tos\/useast2a\/tos-useast2a-pve-0037-aiso\/23a2bbdf32764f8eac65487a4d046308\/?a=1988&ch=0&cr=0&dr=0&lr=tiktok&cd=0%7C0%7C0%7C0&br=3906&bt=1953&cs=0&ds=3&ft=4fUEKMvt8Zmo0fH~v64jVqIL-pWrKsdm&mime_type=video_mp4&qs=0&rc=OTk0ZzloZjc6Zjk3NmU5OUBpM3lvODw6ZjZsZzMzZjgzM0AuMWIzX2BhX2IxYV5eX2JhYSNvYl4tcjRfaTZgLS1kL2Nzcw%3D%3D&btag=80000&expire=1675925629&l=202302090053308F3690250B0E7F5A38DA&ply_type=2&policy=2&signature=759865007b6b5b56b474bff5b8c1f9df&tk=tt_chain_token","https:\/\/v19-webapp-prime.tiktok.com\/video\/tos\/useast2a\/tos-useast2a-pve-0037-aiso\/23a2bbdf32764f8eac65487a4d046308\/?a=1988&ch=0&cr=0&dr=0&lr=tiktok&cd=0%7C0%7C0%7C0&br=3906&bt=1953&cs=0&ds=3&ft=4fUEKMvt8Zmo0fH~v64jVqIL-pWrKsdm&mime_type=video_mp4&qs=0&rc=OTk0ZzloZjc6Zjk3NmU5OUBpM3lvODw6ZjZsZzMzZjgzM0AuMWIzX2BhX2IxYV5eX2JhYSNvYl4tcjRfaTZgLS1kL2Nzcw%3D%3D&btag=80000&expire=1675925629&l=202302090053308F3690250B0E7F5A38DA&ply_type=2&policy=2&signature=759865007b6b5b56b474bff5b8c1f9df&tk=tt_chain_token"]},"QualityType":10}],"codecType":"h264","cover":"https:\/\/p77-sign-va.tiktokcdn.com\/obj\/tos-useast2a-p-0037-aiso\/6eb2eb6e3104415cb3c2fd4658618043?x-expires=1675922400&x-signature=sV1CfjlWNnEMo%2BVfDZDjDSKvWPo%3D","definition":"720p","downloadAddr":"https:\/\/v16-webapp-prime.tiktok.com\/video\/tos\/useast2a\/tos-useast2a-pve-0037-aiso\/23a2bbdf32764f8eac65487a4d046308\/?a=1988&ch=0&cr=0&dr=0&lr=tiktok&cd=0%7C0%7C0%7C0&br=3906&bt=1953&cs=0&ds=3&ft=4fUEKMvt8Zmo0fH~v64jVqIL-pWrKsdm&mime_type=video_mp4&qs=0&rc=OTk0ZzloZjc6Zjk3NmU5OUBpM3lvODw6ZjZsZzMzZjgzM0AuMWIzX2BhX2IxYV5eX2JhYSNvYl4tcjRfaTZgLS1kL2Nzcw%3D%3D&btag=80000&expire=1675925629&l=202302090053308F3690250B0E7F5A38DA&ply_type=2&policy=2&signature=759865007b6b5b56b474bff5b8c1f9df&tk=tt_chain_token","duration":18,"dynamicCover":"https:\/\/p16-sign-va.tiktokcdn.com\/obj\/tos-useast2a-p-0037-aiso\/d58ced95a8d64472b63284024e06ade9_1666394853?x-expires=1675922400&x-signature=zYFyWcK7DVCyodITeUstDvmvmFY%3D","encodeUserTag":"","encodedType":"normal","format":"mp4","height":1024,"id":"7157111344112700699","originCover":"https:\/\/p77-sign-va.tiktokcdn.com\/obj\/tos-useast2a-p-0037-aiso\/b32437f068bd40a0a6e5ce7c51eaa900_1666394852?x-expires=1675922400&x-signature=2I592VzY1P2UgR7O8YQvIVcqw0g%3D","playAddr":"https:\/\/v16-webapp-prime.tiktok.com\/video\/tos\/useast2a\/tos-useast2a-pve-0037-aiso\/23a2bbdf32764f8eac65487a4d046308\/?a=1988&ch=0&cr=0&dr=0&lr=tiktok&cd=0%7C0%7C0%7C0&br=3906&bt=1953&cs=0&ds=3&ft=4fUEKMvt8Zmo0fH~v64jVqIL-pWrKsdm&mime_type=video_mp4&qs=0&rc=OTk0ZzloZjc6Zjk3NmU5OUBpM3lvODw6ZjZsZzMzZjgzM0AuMWIzX2BhX2IxYV5eX2JhYSNvYl4tcjRfaTZgLS1kL2Nzcw%3D%3D&btag=80000&expire=1675925629&l=202302090053308F3690250B0E7F5A38DA&ply_type=2&policy=2&signature=759865007b6b5b56b474bff5b8c1f9df&tk=tt_chain_token","ratio":"720p","videoQuality":"normal","volumeInfo":{"Loudness":-12.6,"Peak":0.90157},"width":576,"zoomCover":{"240":"https:\/\/p16-sign-va.tiktokcdn.com\/tos-useast2a-p-0037-aiso\/6eb2eb6e3104415cb3c2fd4658618043~tplv-f5insbecw7-1:240:240.jpeg?x-expires=1675922400&x-signature=DDkoHL%2FPe6EKEcoyfAsZTO8M5v4%3D","480":"https:\/\/p16-sign-va.tiktokcdn.com\/tos-useast2a-p-0037-aiso\/6eb2eb6e3104415cb3c2fd4658618043~tplv-f5insbecw7-1:480:480.jpeg?x-expires=1675922400&x-signature=3adcOxLhjBnIHgIVt6N5TQPcXsg%3D","720":"https:\/\/p16-sign-va.tiktokcdn.com\/tos-useast2a-p-0037-aiso\/6eb2eb6e3104415cb3c2fd4658618043~tplv-f5insbecw7-1:720:720.jpeg?x-expires=1675922400&x-signature=DS4K5pLuudtBQ8Pymq7zZqcRsm0%3D","960":"https:\/\/p16-sign-va.tiktokcdn.com\/tos-useast2a-p-0037-aiso\/6eb2eb6e3104415cb3c2fd4658618043~tplv-f5insbecw7-1:960:960.jpeg?x-expires=1675922400&x-signature=tcluWDCxUgMO8pYgOzsaESbHwzA%3D"}}}'
+  recorded_at: Thu, 09 Feb 2023 00:53:31 GMT
+recorded_with: VCR 6.1.0

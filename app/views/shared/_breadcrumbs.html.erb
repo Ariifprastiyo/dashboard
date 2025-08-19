@@ -1,0 +1,8 @@
+<% if @breadcrumbs %>
+  <ol class="breadcrumb">
+    <% @breadcrumbs.each do |breadcrumb| %>
+      <% active ||= (breadcrumb[:path] == request.path ? 'active' : '') %>
+      <li class="breadcrumb-item <%= active %>"><%= link_to_unless_current breadcrumb[:label], breadcrumb[:path], breadcrumb[:options] %></li>
+    <% end%>
+  </ol>
+<% end %>

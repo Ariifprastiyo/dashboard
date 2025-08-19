@@ -1,0 +1,53 @@
+body {
+  font-size: 14px;
+}
+
+tr:hover:nth-child(even) {
+  background-color: #fff3cd;
+  cursor: pointer;
+}
+
+tr:hover:nth-child(odd) {
+  background-color: #fff3cd;
+  cursor: pointer;
+}
+
+.display-7 {
+  font-size: 1.05rem;
+}
+
+.kpi-card .kpi-value {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.logo img {
+  max-height: 42px !important;
+}
+
+.alert-notice {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #856404;
+}
+
+.alert-alert {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+// NICE ADMIN Customization / Override
+@media (min-width: 1200px) {
+
+  #main,
+  #footer {
+    margin-left: 250px;
+  }
+}

@@ -1,0 +1,23 @@
+<%= bootstrap_form_with(model: @media_plan, url: media_plan_bulk_markup_sell_prices_path(@media_plan), method: :post, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label 'Size' %>
+    </div>
+    <div class="col-md-6">
+      <% SocialMediaAccount.sizes.each do |k,v| %>
+        <%= f.fields_for "social_media_account_sizes" do |p| %>
+          <%= label_tag do %>
+            <%= p.check_box :"#{k}", value: v, label: k.humanize %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <%= f.fields_for :sell_price_percentages do |f_percentage| %>
+    <% ScopeOfWorkItem::PRICES.each do |name| %>
+      <%= f_percentage.text_field name, label: "#{name.humanize} Price (%)" %>
+    <% end %>
+  <% end %>
+  <%= f.primary "Submit" %>
+<% end %>

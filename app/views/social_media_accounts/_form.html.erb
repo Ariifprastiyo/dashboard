@@ -1,0 +1,28 @@
+  <% if @social_media_account.id.present? %>
+    <%= f.text_field :platform,  disabled: true %>
+    <%= f.text_field :username, prepend: "@", disabled: true %>
+    <%= f.select :kind, [["Inflencer", :influencer], ["Media", :media]] %>
+  <% else %>
+    <%= f.select :platform, [["Instagram", :instagram], ["Tiktok", :tiktok]], include_blank: "Select a Platform" %>
+    <%= f.text_field :username, prepend: "@" %>
+  <% end %>
+  <%= f.select :category_ids, Category.all.map { |cat| [cat.name, cat.id] }, {}, { multiple: true} %>
+  <%= f.text_field :story_price, label: 'Story buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :feed_video_price, label: 'Feed video buying price', data: { target: "price-format.input" }, prepend: "Rp"  %>
+  <%= f.text_field :reel_price, label: 'Reel buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :feed_photo_price, label: 'Feed photo buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :story_session_price, label: 'Story session buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :live_price, label: 'Live buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :owning_asset_price, label: 'Owning asset buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :tap_link_price, label: 'Tap link buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :link_in_bio_price, label: 'Link in bio buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :live_attendance_price, label: 'Live attendance buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :host_price, label: 'Host buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :comment_price, label: 'Comment buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :photoshoot_price, label: 'Photoshoot buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :other_price, label: 'Other buying price', data: { target: "price-format.input" }, prepend: "Rp" %>
+
+  <hr />
+  <%= f.text_field :estimated_engagement_rate_branding_post, prepend: '%' %>
+
+  <%= f.primary %>

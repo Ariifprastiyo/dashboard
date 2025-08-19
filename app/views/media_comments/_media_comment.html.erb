@@ -1,0 +1,36 @@
+<tr id="<%= dom_id(media_comment) %>">
+  <td><%= number %></td>
+  <td><%= media_comment.content %></td>
+  <td><%= media_comment.comment_at_in_human_format %></td>
+  <td class="status"><%= media_comment.status %></td>
+  <td class="sentiment">
+    <% case media_comment.sentiment_analysis %>
+      <% when "positive" %>
+        <%= "🟢" %>
+      <% when "neutral" %>
+        <%= "⚪️" %>
+      <% when "negative" %>
+        <%= "🔴" %>
+    <% end %>
+  </td>
+  <td class='text-center'><%= media_comment.manually_reviewed_at.present? ? 'yes' : 'no' %></td>
+  <% if policy(media_comment).edit? %>
+    <td class="text-center">
+      <% if media_comment.related_to_brand? %>
+        <%= button_to 'unrelate',
+                      media_comment_path(id: params[:id], media_comment_id: media_comment.id, number: number, related_to_brand: false),
+                      class: 'btn btn-link',
+                      method: :put,
+                      remote: true,
+                      data: { turbo_stream: '' } %>
+      <% else %>
+        <%= button_to 'relate',
+                      media_comment_path(id: params[:id], media_comment_id: media_comment.id, number: number, related_to_brand: true),
+                      class: 'btn btn-link',
+                      method: :put,
+                      remote: true,
+                      data: { turbo_stream: '' } %>
+      <% end %>
+    </td>
+  <% end %>
+</tr>

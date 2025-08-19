@@ -1,0 +1,121 @@
+<% url = local_assigns[:url] %>
+
+<%= search_form_for @q, class: "row g-3", url: url do |f| %>
+    <div class="col-md-3">
+      <%= f.search_field :username_cont, class: "form-control", placeholder: "Username contains" %>
+    </div>
+    <% if local_assigns.has_key?(:platform) %>
+    <%#= f.hidden_field :platform_eq, value: platform %>
+    <% else %>
+    <div class="col-md-3">
+      <%= f.select :platform_eq, SocialMediaAccount.platforms,{ include_blank: true}, {placeholder: "Platform", class: "form-select"} %>
+    </div>
+    <% end %>
+    <div class="col-md-6">
+      <% SocialMediaAccount.sizes.each do |k,v| %>
+        <%= label_tag do %>
+          <%= check_box_tag('q[size_in][]', v, (true if @q.size_in.try(:include?, v))) %>
+          <%= k %>
+        <% end %>
+      <% end %>
+    </div>
+    
+    <div class="row g-3 mt-0">
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-priceFilter" aria-expanded="false" aria-controls="flush-priceFilter">
+              Price Filter
+            </button>
+          </h2>
+          <div id="flush-priceFilter" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="">
+            <div class="accordion-body">
+              <div class="row g-3">
+                <% %w[story_price story_session_price feed_photo_price feed_photo_price reel_price live_price owning_asset_price].each do |price| %>
+                  <div class="col-md-2">
+                    <%= price.humanize %>
+                  </div>
+                  <div class="col-md-2">
+                    <%= f.search_field "#{price}_gteq_any", class: "form-control", placeholder: "min" %>
+                  </div>
+                  <div class="col-md-2">
+                    <%= f.search_field "#{price}_lteq_any", class: "form-control", placeholder: "max" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingMetricFilter">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-metricFilter" aria-expanded="false" aria-controls="flush-metricFilter">
+              Metric Filter
+            </button>
+          </h2>
+          <div id="flush-metricFilter" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="">
+            <div class="accordion-body">
+              <div class="row g-3">
+                <% %w[estimated_impression estimated_reach estimated_engagement_rate estimated_engagement_rate_branding_post].each do |metric| %>
+                  <div class="col-md-2">
+                    <%= metric.humanize %>
+                  </div>
+                  <div class="col-md-2">
+                    <%= f.search_field "#{metric}_gteq_any", class: "form-control", placeholder: "min" %>
+                  </div>
+                  <div class="col-md-2">
+                    <%= f.search_field "#{metric}_lteq_any", class: "form-control", placeholder: "max" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingMetricFilter">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-category-filter" aria-expanded="false" aria-controls="flush-category-filter">
+              Categories Filter
+            </button>
+          </h2>
+          <div id="flush-category-filter" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="">
+            <div class="accordion-body">
+              <% Category.pluck(:name, :id).each do |category_name, category_id| %>
+                <span class="me-2">
+                  <%= label_tag do %>
+                    <%= check_box_tag('q[categories_id_in][]', category_id, (true if @q.categories_id_in.try(:include?, category_id))) %>
+                    <%= category_name %>
+                  <% end %>
+                </span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <% if @managements.present? %>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingManagementFilter">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-managementFilter" aria-expanded="false" aria-controls="flush-managementFilter">
+              Management Filter
+            </button>
+          </h2>
+          <div id="flush-managementFilter" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="">
+            <div class="accordion-body">
+              <div class="row g-3">
+                <%= f.select :managements_id_eq, @managements, { include_blank: true}, { placeholder: "Management", class: "form-select"} %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-1">
+      <%= f.submit 'search', class: 'btn btn-primary' %>
+    </div>
+    &nbsp;
+    <div class="col-md-1">
+      <%= link_to 'reset', url, class: 'btn btn-secondary' %>
+    </div>
+<% end %>

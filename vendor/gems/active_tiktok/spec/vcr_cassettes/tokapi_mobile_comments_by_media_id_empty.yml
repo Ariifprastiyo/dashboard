@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://tokapi-mobile-version.p.rapidapi.com/v1/post/7339679037096283397/comments?offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Rapidapi-Key:
+      - c9dfe3ffbemsha62dcd937f05624p194eaejsn79512aa63ac7
+      X-Rapidapi-Host:
+      - tokapi-mobile-version.p.rapidapi.com
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 14 Jul 2024 03:58:33 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Requests-Limit:
+      - '1500000'
+      X-Ratelimit-Requests-Remaining:
+      - '1499952'
+      X-Ratelimit-Requests-Reset:
+      - '2525439'
+      Server:
+      - RapidAPI-1.2.8
+      X-Rapidapi-Version:
+      - 1.2.8
+      X-Rapidapi-Region:
+      - AWS - ap-southeast-1
+    body:
+      encoding: ASCII-8BIT
+      string: '{"alias_comment_deleted":false,"comments":null,"cursor":10,"extra":{"api_debug_info":null,"fatal_item_ids":null,"now":1720929513000},"has_more":0,"log_pb":{"impr_id":"202407140358321C6F5EF10A17EAB722EC"},"reply_style":2,"security_guide":0,"status_code":0,"status_msg":"","top_gifts":[],"total":0}'
+  recorded_at: Sun, 14 Jul 2024 03:58:34 GMT
+recorded_with: VCR 6.2.0

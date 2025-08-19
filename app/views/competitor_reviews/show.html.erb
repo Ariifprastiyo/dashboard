@@ -1,0 +1,13 @@
+<h1><%= @competitor_review.title %></h1>
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+      <%= render 'campaign_overview_table', campaigns: @campaigns, competitor_review: @competitor_review %>
+    </div>
+  </div>
+
+  <%= render 'campaign_charts', campaigns: @campaigns if Flipper.enabled?(:competitor_review_campaign_chart, current_user) %>
+</section>
+
+
+

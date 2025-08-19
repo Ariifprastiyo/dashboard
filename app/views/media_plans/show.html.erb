@@ -1,0 +1,65 @@
+<div class="pagetitle">
+  <h1>Media Plan : <strong><%= @media_plan.name %></strong> <%= icon_for @media_plan.campaign.platform %></h1>
+</div>
+
+<div class="d-flex justify-content-between">
+  <%= render 'shared/breadcrumbs' %>
+  <a class="align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+    Options <%= icon_for("three-dots-vertical") %>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li>
+      <%= link_to export_media_plan_path(@media_plan, format: :pdf), class: 'btn btn-sm dropdown-item d-flex align-items-center' do %>
+        <%= icon_for("file-earmark-pdf-fill") %> Export 
+      <% end if current_user.has_any_role?(:admin, :bd) %>
+    </li>
+    <li>
+      <%= link_to new_media_plan_bulk_markup_sell_price_path(@media_plan), class: 'btn btn-sm dropdown-item d-flex align-items-center' do %>
+        <%= icon_for("tags") %> Bulk Markup Sell Price 
+      <% end if current_user.has_any_role?(:admin, :bd) %>
+    </li>
+    <li>
+      <%= button_to campaign_path(@campaign, campaign: { selected_media_plan_id: @media_plan.id }), class: 'btn btn-sm dropdown-item d-flex align-items-center', method: :put, form: { data: { 'turbo-confirm': 'Are you sure?' } } do %>
+        <%= icon_for("check-lg") %> Make primary 
+      <% end  if @campaign.selected_media_plan.blank? && current_user.has_any_role?(:admin, :bd) %>
+    </li>
+    <li>
+      <%= link_to edit_media_plan_path(@media_plan), class: 'btn btn-sm dropdown-item d-flex align-items-center' do %>
+        <%= icon_for("pencil-fill") %> Edit Media Plan 
+      <% end  unless @campaign.selected_media_plan.present? %>
+    </li>
+    <li>
+      <%= button_to media_plan_path(@media_plan), class: 'btn btn-sm dropdown-item d-flex align-items-center', method: :delete, form: { data: { 'turbo-confirm': 'Are you sure?' } } do %>
+        <%= icon_for("trash") %> Delete Media Plan 
+      <% end  if !@media_plan.is_main_media_plan? && current_user.has_any_role?(:admin, :bd) %>
+    </li>
+  </ul>
+</div>
+
+<section class="section">
+  <%= render 'kpi_cards' %>
+
+  <div class="card ">
+    <div class ="card-header mb-2">
+      <h5 class="card-title m-0 p-0">Search in <%= @media_plan.name %></h5>
+    </div>
+    <div class="card-body">
+      <%= render 'search_form', platform: @campaign.platform, url: media_plan_path(@media_plan) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class ="card-header d-flex justify-content-between">
+        <h5 class="card-title m-0 p-0">List of Influencers</h5>
+        <div>
+          <%= link_to "Manage Influencer", new_media_plan_scope_of_work_path(@media_plan), class: "btn btn-primary btn-sm" %>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <%= render 'social_media_accounts', media_plan: @media_plan %>
+      </div>
+    </div>
+  </div>
+</section>

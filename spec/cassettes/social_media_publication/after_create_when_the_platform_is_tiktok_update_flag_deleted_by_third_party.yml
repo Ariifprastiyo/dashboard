@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tikapi.io/public/video?id=https://www.tiktok.com/@capcapungofficial/video/7225149569410059547
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;
+      X-Api-Key:
+      - iKiophlx7vNlYaCiNsrgCsxAYLx0xH213sSXY2D4oc7w70Zq
+      X-Account-Key:
+      - kHCcc6bMjl5RGTLLgOgzDnCWN0RZYKQL9KbgGDT7er67VCeG
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 29 Apr 2023 10:21:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '121'
+      Connection:
+      - keep-alive
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=bEjMTY3zzWzxtZvPn8tUG46pzzHJdgnAi90nYhcOxPDVBo%2BIcO%2Fm5syW0k6AI2ZsVyp%2B0VnsQq8VghFPP14TfI2wxwcI%2BvVFWUlyAQsdnY%2BMWC%2FJBNWtZhJZb6w3coH%2B"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7bf6d1043a76ffb0-CGK
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"id":"A valid video ID or short share video link is required."},"message":"Missing
+        fields.","status":"error"}
+
+        '
+  recorded_at: Sat, 29 Apr 2023 10:21:09 GMT
+recorded_with: VCR 6.1.0

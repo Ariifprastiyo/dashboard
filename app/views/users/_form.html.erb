@@ -1,0 +1,11 @@
+<%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.email_field :email %>
+  <%= f.select(:organization_id, Organization.all.collect { |o| [o.name, o.id] }, { include_blank: true }, { class: "form-control" }) if current_user.has_role?(:super_admin) && current_user.has_role?(:admin) %>
+  <% if current_user.has_role?(:super_admin) %>
+    <%= f.collection_check_boxes :role_ids, Role.all, :id, :name %>
+  <% else %>
+    <%= f.collection_check_boxes :role_ids, Role.where.not(name: "super_admin"), :id, :name %>
+  <% end %>
+  <%= f.primary %>
+<% end %>

@@ -1,0 +1,89 @@
+<div class="pagetitle">
+  <h1>Bulk Publication <%= @bulk_publication.id %></h1>
+</div>
+
+<%= render 'shared/breadcrumbs' %>
+
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body pt-2 pb-2">
+          <table class="table">
+            <tr>
+              <th>
+                Progress
+              </th>
+              <td>
+                <%= show_progress @bulk_publication.current_row, @bulk_publication.total_row %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Processed Records
+              </th>
+              <td>
+                <%= @bulk_publication.current_row %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Total Error
+              </th>
+              <td>
+                <%= @bulk_publication.total_error %>
+              </td>
+            </tr>
+            <tr>
+              <th>Error Messages</th>
+              <td>
+              <% if @bulk_publication.error_messages.present? %>
+                <ul>
+                <% @bulk_publication.error_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              <% end %>
+              </td>
+            </tr>
+            <tr>
+              <th>Job ID</th>
+              <td>
+                <%= @bulk_publication.job_id %>
+              </td>
+            </tr>
+            <tr>
+              <th>Uploaded File</th>
+              <td>
+                <%= link_to 'Download', download_uploaded_file_campaign_import_social_media_publication_path(@bulk_publication) %>
+              </td>
+            </tr>
+            <tr>
+              <th>Cancellation At</th>
+              <td>
+                <%= @bulk_publication.cancelled_at %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Created At
+              </th>
+              <td>
+                <%= @bulk_publication.created_at %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Updated At
+              </th>
+              <td>
+                <%= @bulk_publication.updated_at %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

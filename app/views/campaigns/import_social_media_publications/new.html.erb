@@ -1,0 +1,27 @@
+<div class="pagetitle">
+  <h1>Bulk Import Social Media Publications for <%= @campaign.name %></h1>
+</div>
+
+<%= render 'shared/breadcrumbs' %>
+
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Import social media publication for <%= @campaign.name %></h5>
+          <div class="text-end">
+            <%= link_to "Download SOW Template", download_template_campaign_import_social_media_publications_path(campaign_id: @campaign.id), class: "btn btn-primary btn-sm" %>
+          </div>
+
+          <br/>
+
+          <%= render 'shared/error_messages', object: @bulk_publication %>
+
+          <%= render "form", bulk_publication: @bulk_publication %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

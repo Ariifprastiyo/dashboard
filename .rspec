@@ -1,0 +1,5 @@
+--require rails_helper
+--color
+--format documentation
+--tag ~slow
+--exclude-pattern spec/policies/*

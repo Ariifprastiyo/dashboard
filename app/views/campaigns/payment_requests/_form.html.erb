@@ -1,0 +1,21 @@
+<%= f.select :beneficiary_sgid, grouped_options_for_select(
+  { "Social Media Account" => sgid_options_for_collection(@social_media_accounts, @campaign),
+    "Management" => sgid_options_for_collection(@managements, @campaign),
+  }
+), { include_blank: true }, data: { action: 'change->payment-request-remaining-amounts#updateRemainingAmount' } %>
+
+
+  <%= f.date_field :due_date %>
+  <%= f.text_field :amount, data: { 'price-format-target': 'input' } %>
+  <div class="row mb-3">
+    <div class="col-sm-3">
+      <span>Remaining amount that needs to be paid</span>
+    </div>
+
+    <div class="col-sm-9">
+      <span data-payment-request-remaining-amounts-target="remainingAmount">-</span>
+    </div>
+  </div>
+  <%= f.file_field :invoice %>
+  <%= f.text_field :notes %>
+  <%= f.primary %>

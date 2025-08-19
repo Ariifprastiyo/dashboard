@@ -1,0 +1,9 @@
+<tr>
+  <th scope="row"><%= brand.id %></th>
+  <td><%= image_tag url_for(brand.logo.variant(:thumb)) if brand.logo.attached? %></td>
+  <td><%= link_to brand.name, brand %></td>
+  <td><%= number_with_delimiter(brand.total_social_media_publications) %></td>
+  <td><%= number_with_delimiter(brand.total_reach) %></td>
+  <td><%= number_with_delimiter(brand.total_engagement) %></td>
+  <td><%= number_with_delimiter(brand.total_investment) %></td>
+</tr>

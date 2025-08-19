@@ -1,0 +1,36 @@
+<div class="row nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+  <div class="col">
+    <% if current_user.has_any_role? :admin, :kol %>
+      <%= f.select :name, ScopeOfWorkItem::PRICES.map { |x| [x.humanize, x]}, floating: true %>
+    <% else %>
+      <%= f.text_field :name, floating: true, disabled: true %>
+    <% end %>
+  </div>
+
+  <div class="col">
+    <%= f.text_field :price, data: { target: "price-format.input" }, floating: true, label: 'Buying price' %>
+  </div>
+
+  <div class="col">
+    <% if current_user.has_any_role? :admin, :kol %>
+      <%= f.datetime_field :scheduled_at, floating: true %>
+    <% else %>
+      <%= f.text_field :scheduled_at, floating: true, disabled: true %>
+    <% end %>
+  </div>
+
+  <% if current_user.has_any_role?(:admin, :bd) %>
+    <div class="col">
+      <%= f.text_field :sell_price, data: { target: "price-format.input" }, floating: true %>
+    </div>
+  <% end %>
+
+  <% if current_user.has_any_role? :admin, :kol %>
+  <div class="col">
+    <button type="button" data-action="nested-form#remove" class="btn btn-danger btn-sm">Remove</button>
+  </div>
+  <% end %>
+
+
+  <%= f.hidden_field :_destroy %>
+</div>

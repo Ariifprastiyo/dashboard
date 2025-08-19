@@ -1,0 +1,23 @@
+<div class="pagetitle">
+  <h1>Editing Publication History : <strong>ID <%= @publication_history.id %></strong></h1>
+</div>
+
+<section class="section">
+
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Name your Media Plan</h5>
+        <%= turbo_frame_tag 'edit_publication_history' do %>
+          <%= render 'shared/error_messages', object: @publication_history %>
+          <%= render "form", publication_history: @publication_history %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+

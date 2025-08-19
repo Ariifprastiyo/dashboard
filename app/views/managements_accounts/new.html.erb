@@ -1,0 +1,44 @@
+<!-- Page Title -->
+<div class="pagetitle">
+  <h1><%= @management.name %> <%= icon_link_to('pencil-square', edit_management_path(@management)) %></h1>
+</div>
+<!-- End Page Title -->
+
+<%= render 'shared/breadcrumbs' %>
+
+<section class="section">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <table class="table mt-2">
+          <% %w[id phone no_ktp no_npwp bank_code account_number address].each do |attr| %>
+          <tr>
+            <th class='col-4'><%= attr.capitalize %></th>
+            <td><%= @management.send(attr) %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card ">
+        <div class ="card-header d-flex justify-content-between">
+          <h5 class="card-title m-0 p-0">Add Influencers to Media Plan</h5>
+          <div>
+            <%= link_to "Done", management_path(@management), class: "btn btn-primary btn-sm" %>
+          </div>
+        </div>
+        <div class="card-body">
+          <%= render 'managements/search_form', url: management_path(@management) %>
+        </div>
+      </div>
+
+      <%= render 'social_media_accounts' %>
+      <%= paginate @social_media_accounts, theme: 'bootstrap-5'%>
+    </div>
+  </div>
+</section>

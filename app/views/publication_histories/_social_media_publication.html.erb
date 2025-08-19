@@ -1,0 +1,21 @@
+<tr>
+  <td><%= social_media_publication.id %></td>
+  <td>
+    <%= link_to image_tag(social_media_publication.thumbnail, style: "height: 50px;"), social_media_publication.public_url, target: "_blank" %>
+  </td>
+  <td><%= truncate(social_media_publication.caption) %></td>
+  <td><%= social_media_publication.post_created_at %></td>
+  <td><%= number_with_delimiter social_media_publication.comments_count %></td>
+  <td><%= number_with_delimiter social_media_publication.likes_count %></td>
+  <td><%= number_with_delimiter social_media_publication.share_count %></td>
+  <td><%= number_with_delimiter social_media_publication.impressions %></td>
+  <td><%= publication.saves_count %></td>
+  <td><%= number_with_delimiter social_media_publication.reach %></td>
+  <td><%= number_to_percentage social_media_publication.engagement_rate, precision: 2 %></td>
+  <td>
+    <%= link_to 'edit', edit_scope_of_work_item_social_media_publication_path(@scope_of_work_item, social_media_publication), data: { turbo_frame: "edit_social_media_publication" } %>
+  </td>
+  <td>
+    <%= link_to 'delete', scope_of_work_item_social_media_publication_path(@scope_of_work_item, social_media_publication), data: { turbo_confirm: "Are you sure?", turbo_method: :delete } %>
+  </td>
+</tr>

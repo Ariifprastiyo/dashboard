@@ -1,0 +1,104 @@
+ <%= bootstrap_form_for(payment_request, url: pay_campaigns_payment_request_path(id: payment_request.campaign_id, payment_request_id: payment_request.id),
+                           method: :put, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off", data: { controller: 'payment-request-taxes' } }) do |f| %>
+  <%= f.text_field :beneficiary_name, disabled: true %>
+  <%= f.text_field :due_date, disabled: true %>
+  <%= f.text_field :requestor_name, disabled: true %>
+
+  <%= render 'attachment', attachment: payment_request.invoice %>
+
+  <%= f.text_field :amount, disabled: true, value: format_to_idr(payment_request.amount), data: { amount: payment_request.amount, "payment-request-taxes-target": "amount" } %>
+
+  <div class="row mb-3">
+    <div class="col-sm-3">
+      <span>Remaining amount that needs to be paid</span>
+    </div>
+
+    <div class="col-sm-9">
+      <%= format_to_idr payment_request.remaining_amount_that_needs_to_be_paid %>
+    </div>
+  </div>
+
+  <%= f.select :pph_option, [['Gross Up', 'gross_up'], ['Dipotong', 'nett']], { label: 'PPh' },
+                data: { action: 'change->payment-request-taxes#updateTotalPpnAndTotalPayment change->payment-request-taxes#toggleTotalPph', 'payment-request-taxes-target': 'pphOption' },
+                disabled: !payment_request.pending? %>
+
+  <% if @payment_request.pending? %>
+    <%= f.number_field :total_pph, label: 'Total PPh', min: 0,
+                    data: { 'payment-request-taxes-target': 'totalPph', action: 'keyup->payment-request-taxes#updateTotalPpnAndTotalPayment' },
+                    disabled: !payment_request.pending? %>
+  <% else %>
+    <div id="payment_request_total_pph" class="mb-3 row">
+      <div class="col-sm-3">
+        <span>Total PPh</span>
+      </div>
+
+      <div class="col-md-9">
+        <%= format_to_idr payment_request.total_pph %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= f.select :ppn, [['Ada', true], ['Tidak ada', false]], { label: 'PPN' }, 
+               data: { 'payment-request-taxes-target': 'ppn', action: 'change->payment-request-taxes#updateTotalPpnAndTotalPayment change->payment-request-taxes#toggleTaxInvoiceNumber' },
+               disabled: !payment_request.pending? %>
+
+  <div id="tax_invoice_number_field" data-payment-request-taxes-target="taxInvoiceNumber" class="<%= 'd-none' if payment_request.pending? %>">
+    <%= f.text_field :tax_invoice_number, label: 'No. Faktur Pajak',
+                    data: { 'payment-request-taxes-target': 'taxInvoiceNumberInput' },
+                    disabled: !payment_request.pending? %>
+  </div>
+
+
+  <div id="payment_request_total_ppn" class="mb-3 row">
+    <div class="col-sm-3">
+      <span>Total PPN</span>
+    </div>
+
+    <div class="col-md-9">
+      <% if payment_request.pending? %>
+        <span data-payment-request-taxes-target="totalPpn" data-total-ppn="0">
+          <div class="spinner-border" role="total-ppn">
+            <span class="sr-only"></span>
+          </div>
+        </span>
+      <% else %>
+        <%= format_to_idr payment_request.total_ppn %>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="payment_request_total_payment" class="mb-3 row">
+    <div class="col-sm-3">
+      <span>Total Payment</span>
+    </div>
+
+    <div class="col-md-9">
+      <% if payment_request.pending? %>
+        <span data-payment-request-taxes-target="totalPayment">
+          <div class="spinner-border" role="total-payment">
+            <span class="sr-only"></span>
+          </div>
+        </span>
+      <% else %>
+        <%= format_to_idr payment_request.total_payment %>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+
+  <% if payment_request.processed? %>
+    <%= f.file_field :payment_proof %>
+  <% else %>
+    <%= render 'attachment', attachment: payment_request.payment_proof %>
+  <% end %>
+  
+  <%= f.text_field :notes, disabled: payment_request.rejected_or_paid? %>
+
+  <% unless payment_request.paid? %>
+    <div class="d-flex justify-content-between" id="payment-actions">
+      <%= f.submit 'Pay', class: 'btn btn-primary', data: { turbo_confirm: 'Are you sure?' } %>
+      <%= f.submit 'Reject', class: 'btn btn-danger', data: { turbo_confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,39 @@
+ <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Actual</h5>   
+    <table class="table table-bordered">
+      <tr class="strong">
+        <th rowspan="2" class="align-middle">Month</th>
+        <th colspan="7" class="text-center">Actual</th>
+      </tr>
+      <tr>
+        <th>Reach</th>
+        <th>Cost</th>
+        <th>Engagement</th>
+        <th>CPR</th>
+        <th>CPE</th>
+        <th>%CRB</th>
+      </tr>
+      <% @actual_reports.each do |report| %>
+        <tr>
+          <td><%= report[:month].strftime("%B") %></td>
+          <td><%= report[:total_reach] %></td>
+          <td><%= report[:total_budget_spent] %></td>
+          <td><%= report[:total_engagement] %></td>
+          <td><%= report[:total_cpr] %></td>
+          <td><%= report[:total_cpe] %></td>
+          <td><%= report[:total_crb] %></td>
+        </tr>
+      <% end %>
+      <tr class="fw-bold">
+        <td>Total</td>
+        <td><%= number_with_delimiter @campaign.reach %></td>
+        <td><%= number_to_currency @campaign.budget_spent_sell_price %></td>
+        <td><%= number_with_delimiter @campaign.engagement %></td>
+        <td><%= number_to_currency @campaign.cpr %></td>
+        <td><%= number_to_currency @campaign.cpe %></td>
+        <td><%= number_to_percentage @campaign.crb, precision: 2 %></td>
+      </tr>
+    </table>
+  </div>
+</div>

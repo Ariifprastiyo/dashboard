@@ -1,0 +1,19 @@
+<div class="pagetitle">
+  <h1>Payment request for <%= @campaign.name %></h1>
+</div>
+
+<%= render 'shared/breadcrumbs' %>
+
+<%= render 'filter_card' %>
+
+<div class="card">
+  <div class ="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">List of payment requests</h5>
+    <%= link_to "New Payment Request", campaigns_payment_requests_new_path(id: @campaign.id), class: "btn btn-primary btn-sm" %>
+  </div>
+  <div class="card-body">
+    <%= render 'payment_requests_table', payment_requests: @payment_requests, q: @q %>
+
+    <%= paginate @payment_requests, theme: 'bootstrap-5'%>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="row mt-4">
+  <div class="col-lg-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Posts Distribution</h5>
+        <%= column_chart campaigns.map { |campaign| 
+          [campaign.name, campaign.social_media_publications.count] 
+        },
+        title: false,
+        colors: ["#4e73df"],
+        suffix: " posts",
+        height: "400px",
+        library: { plugins: { legend: { display: false } } } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Reach Comparison</h5>
+        <%= bar_chart campaigns.map { |campaign| 
+          [campaign.name, campaign.reach] 
+        },
+        title: false,
+        colors: ["#1cc88a"],
+        suffix: " reach",
+        thousands: ",",
+        height: "400px",
+        library: { plugins: { legend: { display: false } } } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Engagement Metrics</h5>
+        <%= line_chart campaigns.map { |campaign| 
+          [campaign.name, campaign.engagement] 
+        },
+        title: false,
+        colors: ["#36b9cc"],
+        suffix: " engagements",
+        thousands: ",",
+        height: "400px",
+        curve: false,
+        points: true,
+        library: { plugins: { tooltip: { intersect: false }, legend: { display: false } } } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Investment Distribution</h5>
+        <%= pie_chart campaigns.map { |campaign| 
+          [campaign.name, campaign.budget_spent_sell_price] 
+        },
+        title: false,
+        legend: "right",
+        suffix: " USD",
+        thousands: ",",
+        height: "400px",
+        library: { plugins: { legend: { display: true, position: 'right' } } },
+        tooltips: true,
+        donut: false,
+        messages: { empty: "No data" },
+        dataset: { borderWidth: 1 },
+        prefix: "$" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Views vs Investment Analysis</h5>
+        <%= scatter_chart campaigns.map { |campaign|
+          {
+            name: campaign.name,
+            data: [[campaign.reach.to_i, campaign.budget_spent_sell_price.to_i]]
+          }
+        },
+        ytitle: "Investment (IDR)",
+        xtitle: "Total Reach",
+        thousands: ",",
+        prefix: "Rp ",
+        legend: false %>
+      </div>
+    </div>
+  </div>
+</div> 

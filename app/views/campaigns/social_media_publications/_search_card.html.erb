@@ -1,0 +1,60 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Search</h5>
+
+    <%= search_form_for @q, class: "row g-3", url: campaigns_social_media_publications_path do |f| %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.label 'Account username mengandung', class: 'col-form-label fw-bold' %>
+          <%= f.search_field :social_media_account_username_cont, class: "form-control", placeholder: "Search" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mt-2">
+          <%= f.label 'Account media size', class: 'col-form-label fw-bold d-block' %>
+          <% SocialMediaAccount.sizes.each do |k,v| %>
+            <%= label_tag do %>
+              <%= check_box_tag('q[social_media_account_size_in][]', v, (true if @q.social_media_account_size_in.try(:include?, v))) %>
+              <%= k %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingMetricFilter">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-metricFilter" aria-expanded="false" aria-controls="flush-metricFilter">
+              Advance Filter
+            </button>
+          </h2>
+          <div id="flush-metricFilter" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="">
+            <div class="accordion-body">
+              <div class="row g-3">
+                <% %w[likes_count media_comments_count related_media_comments_count share_count engagement_rate].each do |advance| %>
+                  <div class="col-md-2">
+                    <%= advance.humanize %>
+                  </div>
+                  <div class="col-md-2">
+                    <%= f.search_field "#{advance}_gteq_any", class: "form-control", placeholder: "min" %>
+                  </div>
+                  <div class="col-md-2">
+                    <%= f.search_field "#{advance}_lteq_any", class: "form-control", placeholder: "max" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mt-4">
+          <%= f.submit 'Filter', class: 'btn btn-primary' %>
+          <%= link_to 'Reset', campaigns_social_media_publications_path(@campaign), class: "btn btn-default ml-2" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

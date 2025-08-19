@@ -1,0 +1,42 @@
+<div class="card">
+  <div class ="card-header d-flex justify-content-between align-items-center">
+    <h5 class="card-title m-0 p-0">Activity Report</h5>
+    <div>
+      <%= link_to 'Export to pdf', campaign_activity_report_path(@campaign, request.params.merge(format: :pdf)), class: 'btn btn-primary' %>
+      <%= link_to 'Export to csv', campaign_activity_report_path(@campaign, request.params.merge(format: :csv, summary: true)), class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <div class="card-body">
+    <div>
+      <% if params[:q] && params[:q][:created_at_lteq].present? %>
+        <strong>Periode : <%= params[:q][:created_at_gteq].to_fs(:day_month_year_short) %> - <%= params[:q][:created_at_lteq].to_fs(:day_month_year_short) %></strong>
+      <% else %>
+        <strong>Periode : Campaign all time</strong>
+      <% end %>
+    </div>
+    <table class="table mt-3">
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">Tier</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Number of KOL</th>
+          <th scope="col"><%= @campaign.reach_metric_name %></th>
+          <th scope="col"><%= @campaign.cpi_or_cpv_name %></th>
+          <th scope="col">ER</th>
+          <th scope="col">CPE</th>
+          <th scope="col">CRB %</th>
+          <th scope="col">CRB count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if params[:q] && params[:q][:social_media_account_size_in] %>
+          <%= render 'activity_report_row', data: @mega, size: 'Mega' if params[:q][:social_media_account_size_in].include?('3') %>
+          <%= render 'activity_report_row', data: @macro, size: 'Macro' if params[:q][:social_media_account_size_in].include?('2') %>
+          <%= render 'activity_report_row', data: @micro, size: 'Micro' if params[:q][:social_media_account_size_in].include?('1') %>
+          <%= render 'activity_report_row', data: @nano, size: 'Nano' if params[:q][:social_media_account_size_in].include?('0') %>
+        <% end %>
+        <%= render 'activity_report_row', data: @total, size: 'Total' %>
+      </tbody>
+    </table>
+  </div>
+</div>

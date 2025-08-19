@@ -1,0 +1,4 @@
+<%= bootstrap_form_for(@bulk_publication, url: campaign_import_social_media_publications_path,layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+  <%= f.file_field :bulk_publication_file, required: true %>
+  <%= f.primary %>
+<% end %>

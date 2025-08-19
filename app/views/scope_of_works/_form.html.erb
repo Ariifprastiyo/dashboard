@@ -1,0 +1,41 @@
+<%= bootstrap_form_with(model: @scope_of_work, 
+      url: media_plan_scope_of_work_path(media_plan_id: @media_plan, id: @scope_of_work), 
+      label_col: "col-sm-3", control_col: "col-sm-9", 
+      html: { autocomplete: "off" }, 
+      data: { controller: "price-format nested-form", 
+              nested_form_wrapper_selector_value: '.nested-form-wrapper',
+              action: "submit->price-format#submitForm" }) do |f| %>
+  <div class="row">
+    <h5>General Settings</h5>
+
+    <%= f.number_field :agreement_maximum_payment_day, value: @scope_of_work.agreement_maximum_payment_day || 0 %>
+    <%= f.number_field :agreement_absent_day, value: @scope_of_work.agreement_absent_day || 0 %>
+    <%= f.date_field :agreement_end_date, value: @scope_of_work.agreement_end_date %>
+    <%= f.text_area :agreement_payment_terms_note, value: @scope_of_work.agreement_payment_terms_note || @agreement_payment_terms_note %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div class="row mt-5">
+    <h5>Scope of work items</h5>
+
+    <template data-nested-form-target="template">
+      <%= f.fields_for :scope_of_work_items, ScopeOfWorkItem.new, child_index: 'NEW_RECORD' do |scope_of_work_item_fields| %>
+        <%= render 'scope_of_work_item_form', f: scope_of_work_item_fields %>
+      <% end %>
+    </template>
+
+    <%= f.fields_for :scope_of_work_items do |scope_of_work_item_fields| %>
+      <%= render 'scope_of_work_item_form', f: scope_of_work_item_fields %>
+    <% end %>
+
+    <!-- Inserted elements will be injected before that target. -->
+    <div data-nested-form-target="target"></div>
+
+    <% if current_user.has_any_role? :admin, :kol %>
+    <div class="mb-5">
+      <%= link_to 'add item', '', data: {action: "nested-form#add" } %>
+    </div>
+    <% end %>
+  </div>
+  <%= f.primary('Submit') %>   <%= link_to "Cancel Edit", media_plan_path(@media_plan) %>
+<% end %>

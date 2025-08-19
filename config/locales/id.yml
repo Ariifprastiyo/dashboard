@@ -1,0 +1,27 @@
+id:
+  number:
+    currency:
+      format:
+        strip_insignificant_zeros: true
+        precision: 0
+  activerecord:
+    errors:
+      models:
+        payment_request:
+          attributes:
+            invoice:
+              blank: "tidak boleh kosong"
+              taken: "sudah terpakai"
+              invalid: "tidak valid"
+              too_short: "terlalu pendek (minimal %{count} karakter)"
+              too_long: "terlalu panjang (maksimal %{count} karakter)"
+              not_a_number: "bukan angka"
+              content_type_invalid: "tipe file tidak valid"
+              content_type_whitelist_error: "tipe file tidak diizinkan"
+              content_type_blacklist_error: "tipe file tidak diterima"
+              size_invalid: "terlalu besar (maksimal ukuran adalah %{max_size} bytes)"
+              size_too_short: "terlalu pendek (minimal ukuran adalah %{min_size} bytes)"
+              size_too_long: "terlalu panjang (maksimal ukuran adalah %{max_size} bytes)"
+              extension_blacklist_error: "ekstensi file tidak valid"
+              extension_whitelist_error: "ekstensi file tidak valid"
+              file_size_out_of_range: "ukuran file terlalu besar"

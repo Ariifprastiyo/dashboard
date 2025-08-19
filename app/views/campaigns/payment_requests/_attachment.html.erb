@@ -1,0 +1,15 @@
+<% if attachment.attached? %>
+  <div class="mb-3 row">
+    <div class="col-sm-3">
+      <span><%= attachment.name.humanize %></span>
+    </div>
+
+    <div class="col-md-9">
+      <% if attachment.content_type.start_with?('image/') %>
+        <%= image_tag url_for(attachment), class: 'img-fluid' if attachment.attached? %>
+      <% else %>
+        <%= link_to 'Download file', rails_blob_path(attachment, disposition: 'attachment') %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

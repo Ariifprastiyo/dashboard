@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tikapi.io/public/video?id=7172051470618037530
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;
+      X-Api-Key:
+      - xxx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 11 Jul 2024 02:33:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Bandwidth-Left:
+      - '1310227886.0'
+      X-Requests-Left:
+      - '151'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=BpZt85VEqVrCH%2B3hxOX7WKK7bNwwnyFZ2VpsZCN%2F4E7JkwOIgIlzOcuCgEeJHPepBLbifYXsCIYuyScGJ9K8FjRzAnBh667ec%2FR%2B%2FV1KRLDpaAzm88u6uWVQdfjKPKh0"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8a1562e32c4940b9-SIN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"$other":{"videoLinkHeaders":{"Cookie":"tt_chain_token=QJrak3aFn7GIHWivFSmXZA==;","Origin":"https://www.tiktok.com","Referer":"https://www.tiktok.com/"}},"extra":{"fatal_item_ids":[],"logid":"202407110233008FF61ABEFE63C69C3F13","now":1720665181000},"itemInfo":{"itemStruct":{"AIGCDescription":"","BAInfo":"","adAuthorization":false,"adLabelVersion":0,"aigcLabelType":0,"author":{"avatarLarger":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/bff6ad577b272ed13dc14e71967cdb8c~c5_1080x1080.jpeg?lk3s=a5d48078&nonce=58069&refresh_token=9583a9a0d8d0db0dd5dba7907f87c13b&x-expires=1720836000&x-signature=I%2F1b3yDA2WPEeF%2FX%2B69Vo3Q8APg%3D&shp=a5d48078&shcp=b59d6b55","avatarMedium":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/bff6ad577b272ed13dc14e71967cdb8c~c5_720x720.jpeg?lk3s=a5d48078&nonce=37709&refresh_token=8368495b0ec0baaa8f545d6b19d30dac&x-expires=1720836000&x-signature=W0DnCM1oGfgEgW1udybmkjmwWCE%3D&shp=a5d48078&shcp=b59d6b55","avatarThumb":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/bff6ad577b272ed13dc14e71967cdb8c~c5_100x100.jpeg?lk3s=a5d48078&nonce=40387&refresh_token=34d74172e1bb2625137dd578d6542a96&x-expires=1720836000&x-signature=TY1%2BRdpRz4F40Ya4ud0ST8%2BAcTI%3D&shp=a5d48078&shcp=b59d6b55","commentSetting":0,"downloadSetting":0,"duetSetting":0,"ftc":false,"id":"7123132080322905090","isADVirtual":false,"isEmbedBanned":false,"nickname":"kucing
+        dirumah bu RW","openFavorite":false,"privateAccount":false,"relation":0,"secUid":"MS4wLjABAAAAJu9GE5G8FHvrndADLPQq1PiJyIpuWMLiuB_kgbdfE_3j6hfW1jC4-aoYJAHp0GMl","secret":false,"signature":"","stitchSetting":0,"ttSeller":false,"uniqueId":"keluargaburw","verified":false},"authorStats":{"diggCount":184,"followerCount":41,"followingCount":41,"friendCount":0,"heart":963,"heartCount":963,"videoCount":11},"challenges":[{"coverLarger":"","coverMedium":"","coverThumb":"","desc":"","id":"7063080696058740762","isCommerce":false,"profileLarger":"","profileMedium":"","profileThumb":"","stats":{"videoCount":0,"viewCount":0},"title":"gadenkcandabgt"}],"collected":false,"contents":[{"desc":"selama
+        umroh kemarin, ga lupa nyari\u00b2 anabul buat di wawancara..  pertanyaannya
+        seputar:  1. berapa lama tinggal disini?  2. suka duka nya apa aja?  #gadenkcandabgt
+        ","textExtra":[{"awemeId":"","end":163,"hashtagId":"7063080696058740762","hashtagName":"gadenkcandabgt","isCommerce":false,"secUid":"","start":148,"subType":0,"type":1,"userId":"","userUniqueId":""}]}],"createTime":1669873365,"desc":"selama
+        umroh kemarin, ga lupa nyari\u00b2 anabul buat di wawancara..  pertanyaannya
+        seputar:  1. berapa lama tinggal disini?  2. suka duka nya apa aja?  #gadenkcandabgt
+        ","digged":false,"diversificationId":10019,"duetDisplay":0,"duetEnabled":true,"duetInfo":{"duetFromId":"0"},"forFriend":false,"id":"7172051470618037530","isActivityItem":false,"isAd":false,"itemCommentStatus":0,"itemMute":false,"music":{"album":"","authorName":"kucing
+        dirumah bu RW","coverLarge":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/bff6ad577b272ed13dc14e71967cdb8c~c5_1080x1080.jpeg?lk3s=a5d48078&nonce=58069&refresh_token=9583a9a0d8d0db0dd5dba7907f87c13b&x-expires=1720836000&x-signature=I%2F1b3yDA2WPEeF%2FX%2B69Vo3Q8APg%3D&shp=a5d48078&shcp=b59d6b55","coverMedium":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/bff6ad577b272ed13dc14e71967cdb8c~c5_720x720.jpeg?lk3s=a5d48078&nonce=37709&refresh_token=8368495b0ec0baaa8f545d6b19d30dac&x-expires=1720836000&x-signature=W0DnCM1oGfgEgW1udybmkjmwWCE%3D&shp=a5d48078&shcp=b59d6b55","coverThumb":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/bff6ad577b272ed13dc14e71967cdb8c~c5_100x100.jpeg?lk3s=a5d48078&nonce=40387&refresh_token=34d74172e1bb2625137dd578d6542a96&x-expires=1720836000&x-signature=TY1%2BRdpRz4F40Ya4ud0ST8%2BAcTI%3D&shp=a5d48078&shcp=b59d6b55","duration":64,"id":"7172051520580569883","original":true,"playUrl":"https://v16m.tiktokcdn.com/9a2b950af0c5412927153c6f0829a542/668f52ad/video/tos/useast2a/tos-useast2a-v-27dcd7-aiso/o4hvUnTtBuaIj4KEtPxxMPf9QZ9zkCohBaFPIA/?a=1233&bti=NDU3ZjAwOg%3D%3D&ch=0&cr=0&dr=0&er=2&cd=0%7C0%7C0%7C0&br=250&bt=125&ft=.NpOcInz7Th7IrkrXq8Zmo&mime_type=audio_mpeg&qs=6&rc=N2RlZGhpOGZlaDhkZmY2NEBpM3RnPDg6ZnA2aDMzZjU8M0AwMGMwMzI2NjMxLWFiXzM2YSM1aDEzcjRvcTFgLS1kMWNzcw%3D%3D&vvpl=1&l=202407110233008FF61ABEFE63C69C3F13&btag=e00090000&cc=3&download=true","title":"original
+        sound - kucing dirumah bu RW"},"officalItem":false,"originalItem":false,"playlistId":"","privateItem":false,"secret":false,"shareEnabled":true,"showNotPass":false,"stats":{"collectCount":22,"commentCount":17,"diggCount":567,"playCount":7455,"shareCount":10},"statsV2":{"collectCount":"22","commentCount":"17","diggCount":"567","playCount":"7455","repostCount":"0","shareCount":"10"},"stickersOnItem":[{"stickerText":["kucing
+        penghuni masjid Nabawi, gua Hira dan Jeddah"],"stickerType":4}],"stitchDisplay":0,"stitchEnabled":true,"textExtra":[{"awemeId":"","end":163,"hashtagId":"7063080696058740762","hashtagName":"gadenkcandabgt","isCommerce":false,"secUid":"","start":148,"subType":0,"type":1,"userId":"","userUniqueId":""}],"video":{"VQScore":"66.5","bitrate":2256985,"bitrateInfo":[{"Bitrate":2256985,"CodecType":"h264","GearName":"normal_720_0","MVMAF":"\"\"","PlayAddr":{"DataSize":18178887,"FileCs":"c:0-69758-0a97","FileHash":"e393e55845819e55877a84d692361da6","Uri":"v0f025gc0000ce43shrc77ub32099560","UrlKey":"v0f025gc0000ce43shrc77ub32099560_h264_720p_2256985","UrlList":["https://v19-web-newkey.tiktokcdn.com/fc88b2ed3cf928ceaba3067abc71fc02/668f98fd/video/tos/useast2a/tos-useast2a-pve-0037-aiso/o8I34QRMxihjNlCIALfho8zjBxAK8UVUIGtUnB/?a=1988&bti=NDU3ZjAwOg%3D%3D&ch=0&cr=3&dr=0&lr=tiktok&cd=0%7C0%7C1%7C&cv=1&br=4408&bt=2204&cs=0&ds=3&ft=piJEeMFx8Zmo0mq-H-4jV_CbrpWrKsd.&mime_type=video_mp4&qs=0&rc=ZmU0aTY2aWY5PDc1NjdmNEBpMzg8NWU6Zms2aDMzZjgzM0BfXzItLTZeNS8xLzRiY14uYSMzNi0wcjRvcDFgLS1kL2Nzcw%3D%3D&vvpl=1&l=202407110233008FF61ABEFE63C69C3F13&btag=e00090000","https://v16-web-newkey.tiktokcdn.com/88027d495babe4d70d5ec8370c084505/668f98fd/video/tos/useast2a/tos-useast2a-pve-0037-aiso/o8I34QRMxihjNlCIALfho8zjBxAK8UVUIGtUnB/?a=1988&bti=NDU3ZjAwOg%3D%3D&ch=0&cr=3&dr=0&lr=tiktok&cd=0%7C0%7C1%7C&cv=1&br=4408&bt=2204&cs=0&ds=3&ft=piJEeMFx8Zmo0mq-H-4jV_CbrpWrKsd.&mime_type=video_mp4&qs=0&rc=ZmU0aTY2aWY5PDc1NjdmNEBpMzg8NWU6Zms2aDMzZjgzM0BfXzItLTZeNS8xLzRiY14uYSMzNi0wcjRvcDFgLS1kL2Nzcw%3D%3D&vvpl=1&l=202407110233008FF61ABEFE63C69C3F13&btag=e00090000"]},"QualityType":10}],"codecType":"h264","cover":"https://p16-sign-useast2a.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/o4XKCeIDVPQbp56YPQCDSQ5iIAMjEWnW9HtDeB?lk3s=b59d6b55&nonce=6116&refresh_token=bb7eb40a34f7d44d87b58eec3e904638&x-expires=1720836000&x-signature=cqjeZLahzGyNugugoWjChxS2TQ8%3D&shp=b59d6b55&shcp=-","definition":"720p","downloadAddr":"https://v19-web-newkey.tiktokcdn.com/fc88b2ed3cf928ceaba3067abc71fc02/668f98fd/video/tos/useast2a/tos-useast2a-pve-0037-aiso/o8I34QRMxihjNlCIALfho8zjBxAK8UVUIGtUnB/?a=1988&bti=NDU3ZjAwOg%3D%3D&ch=0&cr=3&dr=0&lr=tiktok&cd=0%7C0%7C1%7C&cv=1&br=4408&bt=2204&cs=0&ds=3&ft=piJEeMFx8Zmo0mq-H-4jV_CbrpWrKsd.&mime_type=video_mp4&qs=0&rc=ZmU0aTY2aWY5PDc1NjdmNEBpMzg8NWU6Zms2aDMzZjgzM0BfXzItLTZeNS8xLzRiY14uYSMzNi0wcjRvcDFgLS1kL2Nzcw%3D%3D&vvpl=1&l=202407110233008FF61ABEFE63C69C3F13&btag=e00090000","duration":64,"dynamicCover":"https://p16-sign-useast2a.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/ede9594c2ea64c3dbb04502eb4b8c645_1669873376?lk3s=b59d6b55&nonce=19447&refresh_token=a55ee6c0b9bebb28f1b4bbf4665f2604&x-expires=1720836000&x-signature=UuJpKuBIj%2BFcOCJ1A9kNMxHsb8E%3D&shp=b59d6b55&shcp=-","encodeUserTag":"","encodedType":"normal","format":"mp4","height":1024,"id":"7172051470618037530","originCover":"https://p16-sign-useast2a.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/3a9a4b8c50a946d3a832cc8596808dd2_1669873375?lk3s=b59d6b55&nonce=34775&refresh_token=1b93487858fd8bb4559f8a649feda5aa&x-expires=1720836000&x-signature=cJD2RkwKNG%2F40o0D5sv%2F7zQXGg8%3D&shp=b59d6b55&shcp=-","playAddr":"https://v19-web-newkey.tiktokcdn.com/fc88b2ed3cf928ceaba3067abc71fc02/668f98fd/video/tos/useast2a/tos-useast2a-pve-0037-aiso/o8I34QRMxihjNlCIALfho8zjBxAK8UVUIGtUnB/?a=1988&bti=NDU3ZjAwOg%3D%3D&ch=0&cr=3&dr=0&lr=tiktok&cd=0%7C0%7C1%7C&cv=1&br=4408&bt=2204&cs=0&ds=3&ft=piJEeMFx8Zmo0mq-H-4jV_CbrpWrKsd.&mime_type=video_mp4&qs=0&rc=ZmU0aTY2aWY5PDc1NjdmNEBpMzg8NWU6Zms2aDMzZjgzM0BfXzItLTZeNS8xLzRiY14uYSMzNi0wcjRvcDFgLS1kL2Nzcw%3D%3D&vvpl=1&l=202407110233008FF61ABEFE63C69C3F13&btag=e00090000","ratio":"720p","reflowCover":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/o4XKCeIDVPQbp56YPQCDSQ5iIAMjEWnW9HtDeB~tplv-photomode-video-cover:480:480.jpeg?lk3s=b59d6b55&nonce=99384&refresh_token=4ec2ee0db654d952de519970aec6cebd&x-expires=1720836000&x-signature=wDhbfumK%2Bljd5Vj7GIDD25nIgWA%3D&shp=b59d6b55&shcp=-","shareCover":["https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/o4XKCeIDVPQbp56YPQCDSQ5iIAMjEWnW9HtDeB~tplv-photomode-video-share-card:630:630:20.jpeg?lk3s=b59d6b55&nonce=33693&refresh_token=9e529605a38a004326ee3ed73a747d7e&x-expires=1721268000&x-signature=Y8BlvZ%2FBMbkS62LLEkAEw2qodGc%3D&shp=b59d6b55&shcp=-"],"size":18178887,"subtitleInfos":[{"Format":"webvtt","LanguageCodeName":"eng-US","LanguageID":"2","Size":305,"Source":"MU","Url":"https://v16-webapp.tiktok.com/af0bf61ef285d422a1b8c6cee8c4077a/668f98fd/video/tos/useast2a/tos-useast2a-pv-0037-aiso/16acaea5567e47799e0f1587be3f1afc/?a=1988&bti=NDU3ZjAwOg%3D%3D&ch=0&cr=3&dr=0&lr=tiktok&cd=0%7C0%7C1%7C&cv=1&br=4078&bt=2039&cs=0&ds=6&ft=4b~OyMFx8Zmo0mq-H-4jV_CbrpWrKsd.&mime_type=video_mp4&qs=13&rc=Mzg8NWU6Zms2aDMzZjgzM0BpMzg8NWU6Zms2aDMzZjgzM0AzNi0wcjRvcDFgLS1kL2NzYSMzNi0wcjRvcDFgLS1kL2Nzcw%3D%3D&vvpl=1&l=202407110233008FF61ABEFE63C69C3F13&btag=e00050000","UrlExpire":1720686845,"Version":"3","VideoSubtitleID":-822758299},{"Format":"creator_caption","LanguageCodeName":"eng-US","LanguageID":"2","Size":1431,"Source":"LC","Url":"https://v16-webapp.tiktok.com/6490cdebe7622aa6720e50f8010588e7/668f98fd/video/tos/useast2a/tos-useast2a-v-0037-euttp/91dff23540ac4017a675319072b5c0d8/?a=1988&bti=NDU3ZjAwOg%3D%3D&ch=0&cr=3&dr=0&lr=tiktok&cd=0%7C0%7C1%7C&cv=1&br=4078&bt=2039&cs=0&ds=6&ft=4b~OyMFx8Zmo0mq-H-4jV_CbrpWrKsd.&mime_type=video_mp4&qs=13&rc=Mzg8NWU6Zms2aDMzZjgzM0BpMzg8NWU6Zms2aDMzZjgzM0AzNi0wcjRvcDFgLS1kL2NzYSMzNi0wcjRvcDFgLS1kL2Nzcw%3D%3D&vvpl=1&l=202407110233008FF61ABEFE63C69C3F13&btag=e00050000","UrlExpire":1720686845,"Version":"3","VideoSubtitleID":-1345446711}],"videoQuality":"normal","volumeInfo":{"Loudness":-11.8,"Peak":1},"width":576,"zoomCover":{"240":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/o4XKCeIDVPQbp56YPQCDSQ5iIAMjEWnW9HtDeB~tplv-photomode-zoomcover:240:240.jpeg?lk3s=b59d6b55&nonce=68371&refresh_token=dd3fb0d87c4f6d4e0978a5a1b1ec629d&x-expires=1720836000&x-signature=CE5Bph75hftq3Xh%2FhGkpOE5gCuM%3D&shp=b59d6b55&shcp=-","480":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/o4XKCeIDVPQbp56YPQCDSQ5iIAMjEWnW9HtDeB~tplv-photomode-zoomcover:480:480.jpeg?lk3s=b59d6b55&nonce=47401&refresh_token=dc693168da0b9c1e0fc3fae9384ce0b5&x-expires=1720836000&x-signature=w2J0vd2MpBPFFCZi6rfC22YHUkc%3D&shp=b59d6b55&shcp=-","720":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/o4XKCeIDVPQbp56YPQCDSQ5iIAMjEWnW9HtDeB~tplv-photomode-zoomcover:720:720.jpeg?lk3s=b59d6b55&nonce=48217&refresh_token=2cea9ce0fdef88d8464ecabe90e10ed1&x-expires=1720836000&x-signature=MicUxJKq7Hy%2B6o%2Bu3oQbeShQVKs%3D&shp=b59d6b55&shcp=-","960":"https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/o4XKCeIDVPQbp56YPQCDSQ5iIAMjEWnW9HtDeB~tplv-photomode-zoomcover:960:960.jpeg?lk3s=b59d6b55&nonce=50300&refresh_token=a7268f17a1c88a1959c1a9ef8de835cc&x-expires=1720836000&x-signature=9iemALs9Z0Lmg5ZzOT7zWzf01KY%3D&shp=b59d6b55&shcp=-"}},"vl1":false}},"log_pb":{"impr_id":"202407110233008FF61ABEFE63C69C3F13"},"message":"","shareMeta":{"desc":"567
+        likes, 17 comments. \u201cselama umroh kemarin, ga lupa nyari\u00b2 anabul
+        buat di wawancara..  pertanyaannya seputar:  1. berapa lama tinggal disini?  2.
+        suka duka nya apa aja?\u201d","title":"TikTok \u00b7 kucing dirumah bu RW"},"status":"success","statusCode":0,"status_code":0,"status_msg":""}
+
+        '
+  recorded_at: Thu, 11 Jul 2024 02:33:02 GMT
+recorded_with: VCR 6.2.0

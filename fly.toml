@@ -1,0 +1,73 @@
+# fly.toml file generated for rocket-invoice on 2022-08-03T14:51:55+07:00
+
+app = "mediarumu-dashboard-dev"
+kill_signal = "SIGINT"
+kill_timeout = 5
+
+[build]
+  [build.args]
+    BUNDLER_VERSION = "2.3.9"
+    NODE_VERSION = "18.12.0"
+    RUBY_VERSION = "3.2.3"
+
+[deploy]
+  release_command = "bundle exec rails db:migrate"
+
+[env]
+  PORT = "8080"
+  SERVER_COMMAND = "bundle exec puma -C config/puma.rb"
+  ASSET_HOST = "https://mediarumu-dashboard-dev.fly.dev"
+  MEDIARUMU_SOCIAL_API = "https://mediarumu-social.fly.dev"
+  S3_ACCESS_KEY="00abc098697f5a4a5ada"
+  S3_SECRET_KEY="ZcTNMhWBkq+VhgLwQP/hQg/eaDe4IVxvQ3lutF5m"
+  S3_REGION="idn"
+  S3_BUCKET="medias"
+  S3_ENDPOINT="https://nos.wjv-1.neo.id"
+  DATALAMA_API="https://api.hikerapi.com"
+  TIKAPI_API="https://api.tikapi.io"
+  LAMADAVA_API="https://api.hikerapi.com"
+  SCOUT_APP_NAME="Mediarumu"
+  SENTRY_DSN="https://65076ae6015854617675e097c6c505ce@o4504528521658368.ingest.sentry.io/4506777353977856"
+  NEW_RELIC_LICENSE_KEY="32adc2432a96343e5bc87345dfcf240f5954NRAL"
+
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
+
+[processes]
+  web = "bundle exec puma -C config/puma.rb"
+  worker = "bundle exec good_job --max-threads=3"
+
+
+[[services]]
+  http_checks = []
+  internal_port = 8080
+  processes = ["web"]
+  protocol = "tcp"
+  script_checks = []
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
+
+[[statics]]
+  guest_path = "/app/public"
+  url_prefix = "/"

@@ -1,0 +1,20 @@
+<tbody>
+  <% social_media_publications.each.with_index(1) do |publication, index| %>
+    <tr>
+      <td><%= index_for(index) %></td>
+      <td><%= publication.social_media_account_username %></td>
+      <td><%= link_to publication.post_identifier, publication.platform_full_url, target: '_blank' %></td>
+      <td><%= publication.social_media_account_size %></td>
+      <td><%= icon_for publication.platform %></td>
+      <td><%= publication.reach %></td>
+      <td><%= publication.likes_count %></td>
+      <td><%= publication.share_count %></td>
+      <td><%= publication.media_comments_count %></td>
+      <td><%= publication.related_media_comments_count %></td>
+      <td><%= number_to_percentage(publication.comment_related_to_brand_percentage, precision: 2) %></td>
+      <td><%= publication.total_engagement %></td>
+      <td><%= number_to_percentage publication.engagement_rate, precision: 2 %></td>
+      <td><%= publication.created_at_in_formatted %></td>
+    </tr>
+  <% end %>
+</tbody>

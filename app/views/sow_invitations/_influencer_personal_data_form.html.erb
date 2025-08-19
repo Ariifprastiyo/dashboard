@@ -1,0 +1,10 @@
+<h5>Personal Info</h5>
+<p>Data ini akan digunakan untuk proses pembayaran</p>
+<%= f.fields_for :influencer do |i| %>
+  <%= i.text_field :no_ktp, required: true %>
+  <%= i.select :have_npwp, has_npwp_options, label: 'Apakah sudah memiliki NPWP?', default: true %>
+  <%= i.text_field :no_npwp, help: 'Kosongkan jika tidak memiliki NPWP', required: false%>
+  <%= i.text_area :address, require: true %>
+  <%= i.select :bank_code, BankService::LIST.map { |x| [x[1], x[0]]}, {label: 'Bank', include_blank: true}, data: {controller: "select2"}, class: 'select2', required: true %>
+  <%= i.text_field :account_number, required: true %>
+<% end %>

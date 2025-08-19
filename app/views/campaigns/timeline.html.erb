@@ -1,0 +1,31 @@
+  
+
+<div class="pagetitle">
+  <h1>Timeline for Campaign : <%= link_to @campaign.name, @campaign %></h1>
+</div>
+
+<%= render 'shared/breadcrumbs' %>
+
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+    <div class="card">
+        <div class ="card-header d-flex justify-content-between">
+          <h5 class="card-title m-0 p-0">Post timeline</h5>
+        </div>
+        <div class="card-body mt-2">
+          <%= month_calendar( attribute: :scheduled_at) do |date| %>
+            <%= date.day %>
+              <% scheduled =  @selected_media_plan.scope_of_work_items.scheduled_between( date.beginning_of_day, date.end_of_day).group_by_social_media_account_size.count %>
+              <% posted =  @selected_media_plan.scope_of_work_items.posted_between( date.beginning_of_day, date.end_of_day).group_by_social_media_account_size.count %>
+              <% combined = scheduled.merge(posted) %>
+              <% combined.each do |k,v| %>
+                <% label = SocialMediaAccount.sizes.key(k) %>
+                <div class="bg-<%= label %> p-1 mt-1"><strong><%= label %></strong> <%= scheduled[k] || 0 %>/<%= posted[k] || 0 %></div>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

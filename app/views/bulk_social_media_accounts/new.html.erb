@@ -1,0 +1,25 @@
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title d-flex justify-content-between align-items-center">
+            <div>
+              Bulk Import Social Media Accounts
+            </div>
+            <%= link_to "Download CSV Template", download_template_management_bulk_social_media_accounts_path(@management), class: "btn btn-primary btn-sm" %>
+          </h5>
+          <br/>
+
+          <%= bootstrap_form_with(url: management_bulk_social_media_accounts_path, layout: :horizontal, label_col: "col-sm-1", control_col: "col-sm-5", html: { autocomplete: "off" }) do |f| %>
+            <%= f.file_field :file, required: true %>
+            <br>
+            <%= f.primary %>
+            <%= link_to 'Back', management_path(@management), class: 'btn btn-default' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

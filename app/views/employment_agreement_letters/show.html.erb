@@ -1,0 +1,73 @@
+<main>
+  <div class="container">
+
+    <section class="section d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-12 flex-column align-items-center justify-content-center">
+
+            <div class="d-flex justify-content-center py-4">
+              <a href="https://mediarumu.com" target="_blank" class="logo d-flex align-items-center w-auto">
+                <%= image_tag 'mediarumu.png' %>
+                <span class="d-none d-lg-block">MediaRumu</span>
+              </a>
+            </div><!-- End Logo -->
+
+            <div class="card mb-3">
+
+              <div class="card-body">
+
+                <div class="pt-4 pb-2">
+                  <div id="sow-form">
+                    <% if @scope_of_work.management.present? %>
+                      <h4 class="card-title pb-0 fs-4">Hi, Influencer Management <%= @scope_of_work.management.name %></h4>
+                    <% else %>
+                      <h4 class="card-title pb-0 fs-4">Hi, <%= @influencer.name %></h4>
+                    <% end %>
+
+                    <p class="small">Terima Kasih atas ketertarikannya untuk mengikuti campaign <strong><%= @scope_of_work.campaign.name %></strong>. Selanjutnya kamu diminta untuk menandatangani document berikut dan menguploadnya kembali di halaman ini.</p>
+                    <div class="row mb-2">
+                      <div class="col-1 text-center"><span class="display-5">1</span></div>
+                      <div class="col-9 mt-2">Download file SPK berikut 
+                      <%= link_to "Download SPK", download_employment_agreement_letter_path(@scope_of_work.uuid, format: :pdf), target: '_blank', class: "btn btn-primary btn-sm" %></div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="col-1 text-center"><span class="display-5">2</span></div>
+                      <div class="col-9 mt-2">Bubuhkan tanda tangan file SPK</div>
+                    </div>
+                    <%= bootstrap_form_for(@scope_of_work, url: employment_agreement_letter_path(@scope_of_work.uuid), method: :put, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+
+                    <div class="row mb-2">
+                      <div class="col-1 text-center"><span class="display-5">3</span></div>
+                      <div class="col-9 mt-2">Upload SPK yang sudah ditanda tangani di bawah ini </div>
+                    </div>
+
+                    <%= f.file_field :agreement_letter, label: 'Upload SPK', class: 'input' %>
+
+                    <%= f.primary "Submit" %>
+
+                    <% end %>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="credits">
+              Copyright &copy; <%= Date.today.year %> <strong><%= ENV['APPLICATION_NAME'] || 'MediaRumu' %></strong>. All Rights Reserved
+              <!-- All the links in the footer should remain intact. -->
+              <!-- You can delete the links only if you purchased the pro version. -->
+              <!-- Licensing information: https://bootstrapmade.com/license/ -->
+              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+              <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</main><!-- End #main -->

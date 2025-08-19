@@ -1,0 +1,50 @@
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">Filter</h5>
+  </div>
+
+  <div class="card-body py-4">
+    <%= search_form_for @q do |f| %>
+      <div class="col-md-6">
+        <%= f.label :status, class: 'col-form-label fw-bold' %>
+        <%= f.select :related_to_brand_eq, related_to_brand_options, {}, class: "form-control" %>
+      </div>
+      <br>
+      <div class="col-md-6">
+        <%= f.label 'Manual Reviewed', class: 'col-form-label fw-bold' %>
+        <%= f.select :manually_reviewed_at_null, manual_reviewed_at_options, {}, class: "form-control" %>
+      </div>
+      <br>
+      <%= f.submit 'Filter', class: 'btn btn-primary px-4' %>
+      <%= link_to 'Reset', media_comments_path, class: 'btn btn-default px-4' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">List of comments</h5>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col" class="w-50">Comment</th>
+          <th scope="col">Date</th>
+          <th scope="col">Status</th>
+          <th scope="col">Sentiment</th>
+          <th scope="col">Manual Reviewed</th>
+          <% if policy(MediaComment.new).edit? %>
+            <th scope="col" class="text-center">Action</th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% @comments.each.with_index(1) do |comment, index| %>
+          <%= render comment, number: comment_no_for(index) %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div> 

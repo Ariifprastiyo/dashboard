@@ -1,0 +1,52 @@
+<% @bulk_publications.each do |publication| %>
+  <tr>
+    <th scope="row"><%= link_to publication.id, campaign_import_social_media_publication_path(@campaign, publication) %></th>
+    <td><%= publication.total_row %></td>
+    <td><%= publication.current_row %></td>
+    <td><%= publication.total_error %></td>
+    <td><%= show_progress publication.current_row, publication.total_row %></td>
+    <td>
+      <% if publication.total_row == publication.current_row %>
+        Complete
+      <% elsif publication.cancelled_at.present? %>
+        Cancel
+      <% else %>
+        Running
+      <% end %>
+
+      <% if publication.error_messages.present? %>
+        with Error
+      <% else %>
+        with Success
+      <% end %>
+    </td>
+    <td>
+      <a class="align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+        <%= icon_for("three-dots-vertical") %>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <%= link_to download_uploaded_file_campaign_import_social_media_publication_path(@campaign, publication), class: "btn btn-danger btn-sm dropdown-item d-flex align-items-center" do %>
+            <%=  icon_for("file-earmark-arrow-down-fill") %>
+            <span>Download Uploaded File</span>
+          <% end %>
+        </li>
+        <% if publication.total_row == publication.current_row %>
+        <li>
+          <%= button_to campaign_import_social_media_publication_path(@campaign, publication), method: :delete, form: { data: { 'turbo-confirm': 'Are you sure want to delete?' } }, class: "btn btn-danger btn-sm dropdown-item d-flex align-items-center" do %>
+            <%=  icon_for("trash") %>
+            <span>Remove</span>
+          <% end %>
+        </li>
+        <% else %>
+        <li>
+          <%= button_to cancel_campaign_import_social_media_publication_path(@campaign, publication), method: :put, form: { data: { 'turbo-confirm': 'Are you sure want to cancel ?' } }, class: "btn btn-danger btn-sm dropdown-item d-flex align-items-center" do %>
+            <%=  icon_for("x-circle") %>
+            <span>Cancel</span>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+<% end %>

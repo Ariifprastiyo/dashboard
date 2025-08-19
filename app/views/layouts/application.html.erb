@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= ENV['APPLICATION_NAME'] || 'MediaRumu' %> Dashboard</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+
+    <script
+      src="https://js.sentry-cdn.com/65076ae6015854617675e097c6c505ce.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <%= javascript_include_tag "hotwire_spark" if Rails.env.development? %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/sidebar' %>
+
+    <main id="main" class="main">
+      <div id="flash">
+        <%= render "layouts/flash" %>
+      </div>
+      <%= yield %>
+    </main>
+
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

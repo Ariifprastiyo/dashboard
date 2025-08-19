@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Publication History</h4>
+    <%= turbo_frame_tag 'edit_publication_history' do %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Updated at</th>
+            <th scope="col">Likes</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Comments</th>
+            <th scope="col">Views</th>
+            <th scope="col">Saves</th>
+            <th scope="col">ER</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render publication_histories %>
+        </tbody>
+      </table>
+      <%= link_to 'new publication history', new_publication_history_path(social_media_publication_id: @social_media_publication.id) %>
+    <% end %>
+  </div>
+</div>
+

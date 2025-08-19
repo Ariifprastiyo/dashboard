@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">Publication Histories</h5>
+    <%= link_to 'Export to CSV', campaign_activity_report_path(@campaign, request.params.merge(format: :csv)), class: 'btn btn-primary' %>
+  </div>
+  <div class="card-body">
+    <!-- Responsive Table Wrapper -->
+    <div class="table-responsive">
+      <table class="table table-striped table-hover mt-3">
+        <thead class="table-primary">
+          <tr>
+          <% if current_user.has_role?(:super_admin) %>
+            <th scope="col">#</th>
+            <th scope="col">Publication ID</th>
+          <% end %>
+            <th scope="col">URL</th>
+            <th scope="col">Additional info</th>
+            <th scope="col">Account</th>
+            <th scope="col">Size</th>
+            <th scope="col">Platform</th>
+            <th scope="col"><%= @campaign.reach_metric_name %></th>
+            <th scope="col">Likes</th>
+            <th scope="col">Share</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Total Engagement</th>
+            <th scope="col">ER</th>
+            <th scope="col">CRB %</th>
+            <th scope="col">CRB count</th>
+            <th scope="col">Price</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Posted At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: 'publication_history', collection: @publication_histories %>
+        </tbody>
+      </table>
+    </div>
+    <!-- End Responsive Table -->
+  </div>
+</div>

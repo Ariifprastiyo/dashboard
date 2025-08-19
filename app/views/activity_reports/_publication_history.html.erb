@@ -1,0 +1,24 @@
+<tr>
+  <% if current_user.has_role?(:super_admin) %>
+    <td scope="col"><%= publication_history.id %></td>
+    <td scope="col"><%= publication_history.social_media_publication_id %></td>
+  <% end %>
+  <td scope="col"><%= link_to publication_history.social_media_publication.url, publication_history.social_media_publication.public_url %></td>
+  <td scope="col"><%= publication_history.publication_additional_info %></td>
+  <td scope="col"><%= publication_history.social_media_account.username %></td>
+  <td scope="col"><%= publication_history.social_media_account_size %></td>
+  <td scope="col"><%= icon_for publication_history.platform %></td>
+  <td scope="col"><%= number_with_delimiter publication_history.impressions %></td>
+  <td scope="col"><%= number_with_delimiter publication_history.likes_count %></td>
+  <td scope="col"><%= number_with_delimiter publication_history.share_count %></td>
+  <td scope="col"><%= number_with_delimiter publication_history.comments_count %></td>
+  <td scope="col"><%= publication_history.total_engagement %></td>
+  <td scope="col"><%= number_to_percentage publication_history.engagement_rate, precision: 2 %></td>
+  <td scope="col"><%= number_to_percentage publication_history.social_media_publication.crb, precision: 2 %></td>
+  <td scope="col"><%= publication_history.related_media_comments_count %></td>
+  <td scope="col"><%= number_to_currency publication_history.social_media_publication.scope_of_work_item.sell_price %></td>
+  <td scope="col"><%= publication_history.created_at.to_fs(:day_month_year_short) %></td>
+  <td scope="col">
+    <%= publication_history.social_media_publication.scope_of_work_item.posted_at&.to_fs(:day_month_year_short) %>
+  </td>
+</tr>

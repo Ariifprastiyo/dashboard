@@ -1,0 +1,21 @@
+<% %w(id beneficiary_name requestor_name due_date status
+amount remaining_amount_that_needs_to_be_paid total_pph total_ppn total_payment
+paid_at created_at).each do |attr| %>
+
+  <div class="mb-3 row">
+    <div class="col-sm-3">
+      <span><%= attr.humanize %></span>
+    </div>
+
+    <div class="col-md-9">
+    <% if attr != 'id' && @payment_request.send(attr).is_a?(Numeric) %>
+      <%= number_to_currency @payment_request.send(attr) %>
+    <% else %>
+      <%= @payment_request.send(attr) %>
+    <% end %>
+    </div>
+  </div>
+<% end %>
+
+<%= render 'attachment', attachment: @payment_request.invoice %>
+<%= render 'attachment', attachment: @payment_request.payment_proof %>

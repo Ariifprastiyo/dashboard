@@ -1,0 +1,181 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://mediarumu-social.fly.dev/instagram-profiles/tasyakamila
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:8000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Host:
+      - localhost:8000
+      Date:
+      - Wed, 21 Dec 2022 09:32:04 GMT
+      - Wed, 21 Dec 2022 09:32:04 GMT
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/8.1.13
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - XSRF-TOKEN=eyJpdiI6ImVnYkRYT2pnaDRBaW9MemNSVTl6eHc9PSIsInZhbHVlIjoiZktyeXpvTStMZnVrbDRzdGR1OS8wMjd6MUxTM2lzMFhlVEYweEdMSGZPeGlOSkdWQ1VyYmVlQmdkK0dSTTFsZmdhZEE5c2xqVms0WVV4Q1lxbmppMnVvUGdJRUNtNlMxWEFBc3dFN2VDQXdXdTkyeTB3SUtkOWhId2NOV09jbEEiLCJtYWMiOiJjZjZhZDdkNjcwMWYxYTUwNjFlMDc2Zjg5ZDI2NGIyZDZiYjViMGY5MWY0ZmZjY2ZjYjMwOWIwOTIzZTQwYmMyIiwidGFnIjoiIn0%3D;
+        expires=Wed, 21 Dec 2022 11:32:04 GMT; Max-Age=7200; path=/; samesite=lax
+      - laravel_session=eyJpdiI6IlNPUTdodGxqeUNPTm5TZGVtWGVNWWc9PSIsInZhbHVlIjoibWVUMkFwYUs4N1Frb2YyNHBQRUJWZU9mYi9CNllsdjlWLzZRMkZDcGdMZndaRzc4N3V4TDN1Wk1GT2g1ZzU3V3Y2Vk1tVGZ5RlM2MllxandjTzFpRzVhWjVxOUlVVGdTeU1rQ3JWR0Uyd0lIOEhERlEwRHUrTFo2ZWJRcHlDVGMiLCJtYWMiOiI4YjYxNTQ2OGM0MmQ3ODZhYjc0NWI3ZjJlZjc1NzU1MTcwMTYyZmEwOWNhNzIwMjBmYmFjOGQ2MmZlZDA5MzYzIiwidGFnIjoiIn0%3D;
+        expires=Wed, 21 Dec 2022 11:32:04 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+    body:
+      encoding: UTF-8
+      string: '{"id":12505559,"fullname":"Tasya Kamila","biography":"#SelaluRiangSertaGembira\nSinger\/
+        Actress\/ Presenter | @arrasya_bachtiar\u2019s Mama | Brand Ambassador of
+        @johnsonsbaby_id | Founder of @greenmovement_id","profile_picture":"https:\/\/scontent-cgk1-2.cdninstagram.com\/v\/t51.2885-19\/241017596_255449262966774_6527550047178474718_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-cgk1-2.cdninstagram.com&_nc_cat=1&_nc_ohc=jdNQVIPpPLIAX_-9QFC&tn=-zpi_6sCyXy01Gbf&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfA5MaT0CwIA8SvMj2xmVCEe_c_dLtpO-L4WQksD1u1D6Q&oe=63A85B44&_nc_sid=8fd12b","followers":4993184,"following":301,"media_count":1844}'
+  recorded_at: Wed, 21 Dec 2022 09:32:04 GMT
+- request:
+    method: get
+    uri: https://mediarumu-social.fly.dev/instagram-profiles/tasyakamila/posts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:8000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Host:
+      - localhost:8000
+      Date:
+      - Wed, 21 Dec 2022 09:32:05 GMT
+      - Wed, 21 Dec 2022 09:32:05 GMT
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/8.1.13
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - XSRF-TOKEN=eyJpdiI6Im9EdTBTUk8yb3h2cFUxdDk4ZHVWckE9PSIsInZhbHVlIjoiaEpJRWdRTWRJUTVmLzhyT0pySkRLbE9OQUZyOFJWdXVnV0xacGdqTTJHb3hVcnNoaWQ4RDZSVTNycUVPQWJQT3VJZEpPUlRzcmtMY01ydHJTUTVnK3poS2I4WGk0NnNkNmV6UGo1cThjcis5STNQaFM5ZFk4Y3VYSmUvTitEdlUiLCJtYWMiOiI0MDljYzRkNTViNWI1YmVjZTk1ZWMxODVlN2ZmYjkyZmQ1MjEzNmIyZjAwMzUwMTM0YjljMDM1ZGUwNDBiMTk5IiwidGFnIjoiIn0%3D;
+        expires=Wed, 21 Dec 2022 11:32:05 GMT; Max-Age=7200; path=/; samesite=lax
+      - laravel_session=eyJpdiI6Imd1a0RvRTFIQ0x4YVJYeXJMOTZGM0E9PSIsInZhbHVlIjoibTQ5NitvejNJZTlXYWFUcmZRK3F2ZHJibHRKR1Q0S3ZsaHdwV3FQeVIrVm92YTVKMko0b3hSbjV5Kzh1ZGFVZzNFOFE0cFFha1ZSbWM2VHU5S3c0RG9USnhIZGpxNHVPSlpORG9xakpDaXJNdUNhUGtnazczK2JpVUlxM21nU3UiLCJtYWMiOiI4ZWY1NzViMTQ5MjEzNjg1MGVkZmZlMmIzZTVkZWNlY2ZlNzM4NDliMTU0MjNlMTY4NmZhYmNhOWM4NmM3YzUxIiwidGFnIjoiIn0%3D;
+        expires=Wed, 21 Dec 2022 11:32:05 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":2997396418902802792,"type":"GraphVideo","caption":"Congratulations
+        my dearest husband @randibachtiar for finishing your masters in Mechanical
+        Engineering!! I\u2019m soooo proud of you!! All the struggles and all the
+        sacrifice, it\u2019s all paid off \ud83e\udd79\ud83e\udd79\ud83e\udd79 \n\nSemoga
+        ilmu yang kamu dapat bermanfaat, barokah, dan membawa rezeki yang berlimpah
+        \ud83e\udd32\ud83c\udffb I adore you, I respect you, and most of all, I love
+        you \u2764\ufe0f","likes":185171,"comments":929,"video_view_count":1310370,"date":{"date":"2022-12-20
+        12:06:04.000000","timezone_type":3,"timezone":"UTC"}},{"id":2994497274970922566,"type":"GraphImage","caption":"Arr
+        paling betah dehh main kipas di rumahh dan nyaman banget pake basic wear dari
+        @velvetjunior \ud83e\udd70 Bahannya enakk, adem, dan motif terbarunya juga
+        lucuu bangeet. Gemeshh!","likes":7295,"comments":9,"video_view_count":0,"date":{"date":"2022-12-16
+        11:58:34.000000","timezone_type":3,"timezone":"UTC"}},{"id":2994430239979681860,"type":"GraphImage","caption":"Yang
+        doyan ngemil mana suaranyaaa? \ud83d\ude4b\ud83c\udffb\u200d\u2640\ufe0f Udah
+        cek kebersihan giginya beloomm, ada yg nyangkut gak tuu? \ud83d\ude06\ud83d\ude06
+        Kalo akuu makin PD niih buat senyum nyengiiir karena aku sikat gigi dengan
+        Oral B Cross Action Ultrathin Charcoal.\nCocok banget buat membersihkan gigi
+        kita apalagi yang suka ngemil kayak aku.\nSikat gigi yang unik banget dengan
+        bulu sikat menyilang yang 20x lebih tipis bisa membantu mengangkat bakteri
+        plak & menjangkau area lebih dalam. Jadi maksimal deh gosok giginya!\nYuk
+        ibu - ibu langsung ke @alfamart terdekat mumpung lagi ada promo diskon 40%
+        jadi 15 ribuan aja! Ayo Stock yang banyak!\n\n#oralbindonesia #oralbcharcoalcollection
+        #fasxoralb #oralbalfamart #Sikatgigi","likes":2519,"comments":5,"video_view_count":0,"date":{"date":"2022-12-16
+        09:45:23.000000","timezone_type":3,"timezone":"UTC"}},{"id":2993013222517987754,"type":"GraphVideo","caption":"Ini
+        niih suplemen herbal @anaksehatsidomuncul favorit aku dari kecil dan sekarang
+        aku kasih juga ke anakku untuk bantu nafsu makan, daya tahan tubuh, dan kesehatan
+        mata \ud83d\udc9c Cobain deeh utk si Kecil @anaksehatsidomuncul","likes":918,"comments":23,"video_view_count":89057,"date":{"date":"2022-12-14
+        11:06:36.000000","timezone_type":3,"timezone":"UTC"}},{"id":2991524391533088586,"type":"GraphVideo","caption":"Gak
+        kerasa yaahh sekarang Arr sudah sebesar ini dan udah mau jadi abang \ud83e\udd79\ud83e\udd79
+        siapa yg udah ngikutin perkembangan Arr dari duluu? Aku inget semua perkembangannya,
+        dari umur 1 tahun waktu Arr baru mulai berjalan, lagi belajar ngomong, sampai
+        di tahap Arr usia 3 tahun yang sudah mulai pintar berhitung. MasyaAllah. \n\nAlhamdulillah,
+        stimulasi dan nutrisi yang aku berikan untuk Arrasya selama ini udah tepat
+        untuk siapkan Arr jadi pemenang. Untuk memenuhi Winning Nutrition nya, aku
+        berikan Arr Nutrilon Royal yang mengandung FOS, GOS, Omega 3&6, dan DHA.\n\nYuk
+        Ma penuhi Winning Nutrition si Kecil dengan Nutrilon Royal sebagai #BekalUntukMenang
+        nya! Beli sekarang di mynutri.club\/product \n@nutriclub_id","likes":20917,"comments":68,"video_view_count":200414,"date":{"date":"2022-12-12
+        09:33:30.000000","timezone_type":3,"timezone":"UTC"}},{"id":2988711261409458436,"type":"GraphVideo","caption":"\"Arrasya
+        minum susu apa siii?\" Nah itu sering banget ditanya ke akuu. Di sini aku
+        akan jawab soal gimana sih cara pilih susu yang terbaik untuk memenuhi Winning
+        Nutritionnya si Kecil. \n\nUntuk ku, yang paling penting diperhatikan ketika
+        memilih susu si Kecil adalah kandungan nutrisinya. Aku pilih Nutrilon Royal
+        yang mengandung Winning Nutrition seperti FOS, GOS, Omega 3 & 6, dan DHA.
+        \nFOS dan GOS dalam Nutrilon Royal itu baik untuk daya tahan tubuh si Kecil.
+        Kemudian, Omega 3&6 bermanfaat untuk pertumbuhan otaknya.\n\nWinning Nutrition
+        si Kecil penting banget loh Ma sebagai #BekalUntukMenang nya si Kecil.\nYuk
+        Ma, penuhi nutrisi si Kecil dengan Nutrilon Royal! Beli sekarang di mynutri.club\/product!
+        @nutriclub_id","likes":2706,"comments":10,"video_view_count":40697,"date":{"date":"2022-12-08
+        12:24:58.000000","timezone_type":3,"timezone":"UTC"}},{"id":2988429893152681586,"type":"GraphVideo","caption":"Hai
+        #KawanAksi, siapa pun bisa kok mencapai kesuksesan di usia muda! Kuncinya,
+        dengan selalu menerapkan nilai-nilai integritas, seperti kerja keras dan selalu
+        bertanggung jawab.\n\nInilah dua kebiasaan yang aku terapin sejak kecil, karena
+        tanpa kedua nilai integritas tadi, kesuksesan gak akan pernah bisa kita raih
+        dengan cuma-cuma.\n\nSekalian aku juga mau ingetin nih buat #KawanAksi, di
+        tanggal 09 Desember 2022, seluruh dunia bakal memperingati Hari Antikorupsi
+        Sedunia (HAKORDIA). Yuk, dukung peringatan Hakordia dengan terapkan nilai-nilai
+        integritas agar Indonesia bersih dari perilaku koruptif. Jangan lupa buat
+        kunjungi website https:\/\/www.kpk.go.id\/hakordia2022\/ untuk cari tahu info
+        lengkap mengenai peringatan Hakordia 2022!\n\nYuk, #KawanAksi, serukan bersama-sama
+        ''Indonesia Pulih Bersatu Berantas Korupsi''\n\n#BersatuBerantasKorupsi #BeraniJujurHebat
+        #Hakordia2022","likes":1975,"comments":13,"video_view_count":35317,"date":{"date":"2022-12-08
+        03:08:51.000000","timezone_type":3,"timezone":"UTC"}},{"id":2988001872373488240,"type":"GraphVideo","caption":"Dari
+        kehamilan pertama sampai sekarang, aku selalu memastikan kesehatanku terjaga.
+        Karena kalau akunya sehat, pasti bisa dukung tumbuh kembang si Kecil juga.
+        \n\nNah yang ngga berubah dari kehamilan pertama, selain makan sehat, aku
+        rutin konsumsi @blackmoresid Blackmores Pregnancy & Breastfeeding Gold yang
+        mengandung 17 Nutrisi esensial seperti Asam Folat, Zat Besi, Kalsium + Vitamin
+        D3, termasuk Omega 3 (DHA & EPA) untuk dukung #SehatnyaBundaUntukSiKecil.
+        \n\nYuk bumil, jaga kesehatan di masa kehamilan sebagai wujud #KasihYangLengkap
+        agar pertumbuhan si Kecil optimal! \n#BlackmoresPBGold","likes":7726,"comments":40,"video_view_count":463998,"date":{"date":"2022-12-07
+        12:59:48.000000","timezone_type":3,"timezone":"UTC"}},{"id":2984814003806973223,"type":"GraphVideo","caption":"Resah
+        karena anak rewel \u274c\nResah karena anak tiba2 sunyi... \u2705\ud83d\ude02\n--\nDOWNLOAD
+        DAN DAFTAR PAKE KODE REFERRAL AKU: \u201cTASYAKAMILA\u201d BUAT DAPETIN VOUCHER
+        REWARDNYA\n\nJadi gausah pusing lah ya kalau bahan makanan pada abis, kan
+        udah ada Alfagift! Solusi belanja praktis gapake ribet, apalagi ada program
+        #BonusTanpaBatas! Belanja hari apa aja dari senin sampe minggu tetep bisa
+        dapet promo dengan reward yang berbeda-beda. GRATIS ONGKIR TANPA MINIMAL PEMBELIAN,
+        cepat sampai, dan nggak nunggu berhari-hari! Yuk, belanja di Alfagift! @Alfamart
+        #BonusTanpaBatas #GercepTanpaBatas #Alfagift","likes":8849,"comments":39,"video_view_count":203110,"date":{"date":"2022-12-03
+        03:24:11.000000","timezone_type":3,"timezone":"UTC"}},{"id":2984327929783397542,"type":"GraphVideo","caption":"Wowww
+        ada kejutan nih Maaa dari @nutriclub_id!! Nutrilon sedang mengadakan kompetisi
+        #BekalUntukMenang dan berkesempatan raih hadiah senilai total 20 juta rupiah!
+        \nCaranya gampang!\nMama bisa ceritakan 8 Winning skill si Kecil dan manfaat
+        Nutrilon Royal\nTag @Nutriclub_id, sertakan hastag #BekalUntukMenang, dan
+        mention 3 temen Mama. \nJangan lupa untuk ajak Mama lainnya untuk ikutan ya.
+        Periodenya hingga tanggal 16 Desember. \nCek Instagram @nutriclub_id untuk
+        informasi lengkapnya!","likes":2270,"comments":17,"video_view_count":38964,"date":{"date":"2022-12-02
+        11:14:37.000000","timezone_type":3,"timezone":"UTC"}},{"id":2977765931924959595,"type":"GraphVideo","caption":"Ini
+        diaa perlengkapan nyusu, MPASI, dan per-bobo-an si Adik yang mau aku siapin
+        \u2728\n\nAku pilih produk2 @drbrownsindo dan @babymoov_id karena udah terbukti
+        kepakeee dan cocok banget dari jaman Arrasya babyy \ud83e\udd70","likes":3004,"comments":30,"video_view_count":71796,"date":{"date":"2022-11-23
+        10:04:01.000000","timezone_type":3,"timezone":"UTC"}},{"id":2977177733358382766,"type":"GraphVideo","caption":"It\u2019s
+        my first day in my 30s \ud83e\udd79\ud83d\udc95","likes":16979,"comments":85,"video_view_count":185200,"date":{"date":"2022-11-22
+        14:29:14.000000","timezone_type":3,"timezone":"UTC"}}],"total":12}'
+  recorded_at: Wed, 21 Dec 2022 09:32:05 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Initial</h5>
+    <table class="table table-bordered">
+      <tr class="strong text-center">
+        <th colspan="5">Intial Plan</th>
+      </tr>
+      <tr class="strong">
+        <th rowspan="2" class="align-middle">Month</th>
+        <th colspan="4" class="text-center">Target</th>
+      </tr>
+      <tr>
+        <th>Reach</th>
+        <th>CPR</th>
+        <th>CPE</th>
+        <th>%CRB</th>
+      </tr>
+      <% @months.each do |m| %>
+        <tr>
+          <td><%= m.strftime("%B") %></td>
+          <td><%= @campaign.kpi_reach / @months.size %></td>
+          <td><%= number_to_currency @campaign.kpi_cpr %></td>
+          <td><%= number_to_currency @campaign.kpi_cpe %></td>
+          <td><%= number_to_percentage @campaign.kpi_crb, precision: 2 %></td>
+        </tr>
+      <% end %>
+      <tr class="fw-bold">
+        <td>Total</td>
+        <td><%= @campaign.kpi_reach %></td>
+        <td><%= number_to_currency @campaign.kpi_cpr %></td>
+        <td><%= number_to_currency @campaign.kpi_cpe %></td>
+        <td><%= number_to_percentage @campaign.kpi_crb, precision: 2 %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+

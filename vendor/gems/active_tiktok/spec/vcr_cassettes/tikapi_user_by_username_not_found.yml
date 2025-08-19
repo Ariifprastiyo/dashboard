@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tikapi.io/public/check?username=fadiljaidi1233475890
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;
+      X-Api-Key:
+      - iAV4YtBkar7ZlQtrZGmU7E1GZ1qsqm4mp7svLLCH6k1DRutD
+      X-Account-Key:
+      - kHCcc6bMjl5RGTLLgOgzDnCWN0RZYKQL9KbgGDT7er67VCeG
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 403
+      message: FORBIDDEN
+    headers:
+      Date:
+      - Sat, 26 Oct 2024 04:42:34 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=TZY0FyLqndaAyy5MAlq%2BydQc1gewbsOwfqrkMbdVOcGPmMBh5upENEf3vG4t5GcqHoGSJIELz01F6qwRAhY6ErXXtJlgkcfhCIQEzS%2F3KufFbFTVLyD3LqKeYeorZPOM"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d87c7c48b4587f3-SIN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Server-Timing:
+      - cfL4;desc="?proto=TCP&rtt=18866&sent=5&recv=8&lost=0&retrans=1&sent_bytes=4122&recv_bytes=942&delivery_rate=61970&cwnd=156&unsent_bytes=0&cid=9f620ee119196c24&ts=1344&x=0"
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"TikTok user is not available","status":"error","statusCode":10221}
+
+        '
+  recorded_at: Sat, 26 Oct 2024 04:42:34 GMT
+recorded_with: VCR 6.2.0

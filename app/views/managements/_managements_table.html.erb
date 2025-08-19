@@ -1,0 +1,24 @@
+<div class="card">
+  <div class ="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">List of managements</h5>
+    <div>
+      <%= link_to "New management", new_management_path, class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Default Table -->
+    <table id="managements" class="table table-striped table-hover mt-3">
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render managements %>
+      </tbody>
+    </table>
+    <!-- End Default Table Example -->
+  </div>
+</div>

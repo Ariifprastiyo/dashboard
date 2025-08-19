@@ -1,0 +1,12 @@
+<tr>
+  <th scope="row"><%= user.id %></th>
+  <td><%= link_to user.name, edit_user_path(user) %></td>
+  <td><%= user.email %></td>
+  <% if current_user.has_role?(:super_admin) %>
+    <td><%= user.organization.try(:name) %></td>
+  <% end %>
+  <td><%= user.created_at %></td>
+  <td><%= user.deactivated_at %></td>
+  <td><%= delete_user_button(user) %></td>
+  <td><%= deactivate_user_button(user) %> <%= activate_user_button(user) %></td>
+</tr>

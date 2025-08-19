@@ -1,0 +1,30 @@
+<div class="card">
+  <div class ="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">List of Brands</h5>
+    <div>
+      <% if policy(:brand).new? %>
+        <%= link_to "New Brand", new_brand_path, class: "btn btn-primary btn-sm" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Default Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Logo</th>
+          <th scope="col">Name</th>
+          <th scope="col">Total Posts</th>
+          <th scope="col">Total Reach</th>
+          <th scope="col">Total Engagement</th>
+          <th scope="col">Total Investment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @brands %>
+      </tbody>
+    </table>
+    <!-- End Default Table Example -->
+  </div>
+</div>

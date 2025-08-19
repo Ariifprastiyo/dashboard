@@ -1,0 +1,24 @@
+# frozen_string_literal: true
+
+class AccountsController < ApplicationController
+  before_action :authenticate_user!
+
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+
+    if @user.update(user_params)
+      redirect_to edit_account_path(@user)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  private
+    def user_params
+      params.require(:user).permit(:email, :name, :password, :password_confirmation)
+    end
+end

@@ -1,0 +1,28 @@
+<div class="pagetitle">
+  <h1>Payment request for <%= @campaign.name %></h1>
+</div>
+
+<%= render 'shared/breadcrumbs' %>
+
+<div class="card">
+  <div class ="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">Review payment request</h5>
+    <%= link_to "Back", campaigns_payment_requests_path(id: @campaign.id), class: "btn btn-primary btn-sm px-4" %>
+  </div>
+  <div class="card-body py-4">    
+    <%= render 'process_or_reject_form', payment_request: @payment_request if @payment_request.pending? %>
+    <%= render 'pay_or_reject_form', payment_request: @payment_request if @payment_request.processed? %>
+    <%= render 'payment_request_detail' if @payment_request.paid? || @payment_request.rejected?  %>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Related Payments</h5>
+  </div>
+
+  <div class="card-body">
+    <%= render 'campaigns/payment_requests/payment_requests_table', payment_requests: @payment_requests, q: @q %>
+  </div>
+</div>

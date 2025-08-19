@@ -1,0 +1,12 @@
+<tr>
+  <td><%= publication_history.id %></td>
+  <td><%= publication_history.updated_at.to_fs(:long) %></td>
+  <td><%= number_with_delimiter publication_history.likes_count %></td>
+  <td><%= number_with_delimiter publication_history.share_count %></td>
+  <td><%= number_with_delimiter publication_history.comments_count %></td>
+  <td><%= number_with_delimiter publication_history.impressions %></td>
+  <td><%= number_with_delimiter publication_history.saves_count %></td>
+  <td><%= number_to_percentage publication_history.engagement_rate, precision: 2 %></td>
+  <td><%= link_to 'edit', edit_publication_history_path(publication_history), data: { turbo_frame: "edit_publication_history" } if policy(publication_history).edit? %></td>
+  <td><%= link_to 'delete', publication_history_path(publication_history), data: { turbo_confirm: "Are you sure?", turbo_method: :delete } if policy(publication_history).destroy? %></td>
+</tr>

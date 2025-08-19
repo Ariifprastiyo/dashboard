@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.rollbar.com/api/1/item/
+    body:
+      encoding: UTF-8
+      string: '{"data":{"timestamp":1678198014,"environment":"test","level":"error","language":"ruby","framework":"Rails:
+        7.0.4.2","server":{"host":"MacBook-Pro.local","root":"/Users/philiplambok/Codes/ruby/mediarumu-dashboard","pid":85767},"notifier":{"name":"rollbar-gem","version":"3.4.0","configured_options":{"access_token":"******","environment":"test","default_logger":"#<Proc:0x00007fdbcd77eba0
+        /usr/local/var/rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/rollbar-3.4.0/lib/rollbar/plugins/rails/railtie_mixin.rb:13>","root":"/Users/philiplambok/Codes/ruby/mediarumu-dashboard","framework":"Rails:
+        7.0.4.2","filepath":"MediarumuDashboard.rollbar"}},"body":{"message":{"body":"No
+        publication found with id: 0 for platform: tiktok"}},"uuid":"6a845c1e-b291-4812-8067-308431124ab5"}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      X-Rollbar-Access-Token:
+      - 2b1f9712709e404095f5948105dbe562
+  response:
+    status:
+      code: 429
+      message: Too Many Requests
+    headers:
+      Server:
+      - nginx/1.17.9
+      Date:
+      - Tue, 07 Mar 2023 14:06:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '125'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Rate-Limit-Limit:
+      - '50000'
+      X-Rate-Limit-Remaining:
+      - '49999'
+      X-Rate-Limit-Remaining-Seconds:
+      - '60'
+      X-Rate-Limit-Reset:
+      - '1678198075'
+      Etag:
+      - W/"7d-dPXjfjXYmWiB6OhYeIPdgQ"
+      X-Response-Time:
+      - 20.834ms
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "err": 1,
+          "message": "Over free plan monthly limit. Project id 613615 access token 2b1f9712709e404095f5948105dbe562."
+        }
+  recorded_at: Tue, 07 Mar 2023 14:06:55 GMT
+recorded_with: VCR 6.1.0

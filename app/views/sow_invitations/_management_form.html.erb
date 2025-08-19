@@ -1,0 +1,35 @@
+<%= bootstrap_form_for(@social_media_account, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }, url: sow_invitation_path(@sow.uuid)) do |f| %>
+  <h5>Rate Card</h5>
+  <p>Harga yang kamu tawarkan untuk setiap SOW (termasuk Pajak)</p>
+  <% @management_sizes.each do |k,v| %>
+    <%= f.fields_for k do |p| %>
+      <h4><%= k.humanize %></h4>
+      <hr>
+      <% @management_prices.each do |sow| %>
+        <% unless sow[1].zero? %>
+        <%= p.text_field "#{sow[0]}", value: sow[1], required: true %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+      
+
+  <% if @influencer.personal_data_completed? %>
+    <a class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Edit personal data
+    </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <%= render 'influencer_personal_data_form', f: f %>
+    </div>
+  <% else %>
+    <hr />
+    <%= render 'influencer_personal_data_form', f: f %>
+  <% end %>
+
+  <%= f.primary 'Submit'%>
+  <div class="mt-4">
+    <p class="small">Dengan menekan tombol Submit maka kamu telah menyetujui <%= link_to "Syarat dan Ketentuan", company_toc_path %> yang berlaku</p>
+  </div>
+  
+<% end %>

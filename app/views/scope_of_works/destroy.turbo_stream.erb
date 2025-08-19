@@ -1,0 +1,55 @@
+<%= turbo_stream.remove dom_id(@social_media_account) %>
+
+<%= turbo_stream.update 'kpi-card-number-of-kol' do %>
+  <%= render 'media_plans/kpi_card', 
+      name: 'KPI # KOL', 
+      meet: @campaign.kpi_number_of_social_media_accounts <= @media_plan.social_media_accounts.count,
+      value: number_with_delimiter(@campaign.kpi_number_of_social_media_accounts),
+      media_plan_value: number_with_delimiter(@media_plan.social_media_accounts.count) %>
+<% end %>
+
+<%= turbo_stream.update 'kpi-card-engagement-rate' do %>
+  <%= render 'media_plans/kpi_card', 
+      name: 'KPI ER', 
+      meet: @campaign.kpi_engagement_rate <= @media_plan.estimated_engagement_rate,
+      value: number_to_percentage(@campaign.kpi_engagement_rate, precision: 2),
+      media_plan_value: number_to_percentage(@media_plan.estimated_engagement_rate, precision: 2) %>
+<% end %>
+
+
+<%= turbo_stream.update 'kpi-card-impression' do %>
+  <%= render 'media_plans/kpi_card', 
+    name: 'KPI Imprsn', 
+    meet: @campaign.kpi_impression <= @media_plan.estimated_impression,
+    value: number_with_delimiter(@campaign.kpi_impression),
+    media_plan_value: number_with_delimiter(@media_plan.estimated_impression) %>
+<% end %>
+
+<%= turbo_stream.update 'kpi-card-reach' do %>
+  <%= render 'media_plans/kpi_card', 
+    name: 'KPI Reach', 
+    meet: @campaign.kpi_reach <= @media_plan.estimated_reach,
+    value: number_with_delimiter(@campaign.kpi_reach),
+    media_plan_value: number_with_delimiter(@media_plan.estimated_reach) %>
+<% end %>
+
+<%= turbo_stream.update 'kpi-card-costs' do %>
+  <div class="card kpi-card">
+    <div class="card-body pt-2 pb-2">
+      <span class="fw-bold">KPI Costs</span>
+      <div class="font-monospace">
+        <div class="kpi-value">CPV : <%= number_to_currency @media_plan.cpv %></div>
+        <div class="kpi-value">CPR : <%= number_to_currency @media_plan.cpr %></div>
+        <div class="kpi-value">CPE : <%= number_to_currency @media_plan.cpe %></div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= turbo_stream.update 'kpi-card-budget' do  %>
+  <%= render 'media_plans/kpi_card', 
+    name: 'Budget',
+    meet: @campaign.budget <= @media_plan.estimated_budget, 
+    value: number_to_currency(@campaign.budget),
+    media_plan_value: number_to_currency(@media_plan.estimated_budget) %>
+<% end %>

@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-lg">
+      <div class="card">
+        <div class="card-body pt-2 pb-2">
+          <table class="table">
+            <th>Metric</th>
+            <th>Target</th>
+            <th>Actual</th>
+            <th>Progress</th>
+            <tr>
+              <td>Reach</td>
+              <td><%= number_with_delimiter @campaign.kpi_reach %></td>
+              <td><%= number_with_delimiter @campaign.reach %></td>
+              <td><%= show_progress @campaign.reach_progress %></td>
+            </tr>
+            <tr>
+              <td>Views</td>
+              <td><%= number_with_delimiter @campaign.kpi_impression %></td>
+              <td><%= number_with_delimiter @campaign.impressions %></td>
+              <td><%= show_progress @campaign.impressions_progress %></td>
+            </tr>
+            <tr>
+              <td>ER</td>
+              <td><%= number_to_percentage @campaign.kpi_engagement_rate, precision: 2 %></td>
+              <td><%= number_to_percentage((@campaign.engagement_rate.nan? ? 0 : @campaign.engagement_rate), precision: 2) %></td>
+              <td><%= show_progress @campaign.er_progress %></td>
+            </tr>
+            <tr>
+              <td>CRB</td>
+              <td><%= number_to_percentage @campaign.kpi_crb, precision: 2 %></td>
+              <td><%= number_to_percentage(@campaign.comment_related_to_brand_percentage, precision: 2) %></td>
+              <td><%= show_progress @campaign.kpi_crb_progress %></td>
+            </tr>
+          </table>
+          <% if current_user.has_any_role? :admin, :bd  %>
+            <%= link_to "Activity Report", campaign_activity_report_path(@campaign, {q: {social_media_account_size_in: ["0", "1", "2", "3"], created_at_gteq: @campaign.start_at.beginning_of_day, created_at_lteq: @campaign.end_at.end_of_day}}), class: 'btn btn-sm btn-secondary' %>
+            <%= link_to "Performance Report", campaign_performance_report_path(@campaign), class: 'btn btn-sm btn-secondary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card">
+        <div class="card-body pt-2 pb-2">
+          <table class="table">
+            <th>Budget</th>
+            <th>Value</th>
+            <tr>
+              <td>Total</td>
+              <td><%= number_to_currency @campaign.budget %></td>
+            </tr>
+            <tr>
+              <td>Spent</td>
+              <td><%= number_to_currency @campaign.budget_spent %></td>
+            </tr>
+            <tr>
+              <td>Remaining</td>
+              <td><%= number_to_currency @campaign.budget_remaining %></td>
+            </tr>
+          </table>
+          <% if policy(:payment_request).index? %>
+            <%= link_to "Payment Requests", campaigns_payment_requests_path(@campaign), class: 'btn btn-sm btn-secondary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% if current_user.has_any_role? :admin, :bd %>
+    <div class="col-lg">
+      <div class="card">
+        <div class="card-body pt-2 pb-2">
+          <table class="table">
+            <th>Cost</th>
+            <th>Value</th>
+            <tr>
+              <td>CPV</td>
+              <td><%= number_to_currency @campaign.cpv, precision: 2 %></td>
+            </tr>
+              <td>CPE</td>
+              <td><%= number_to_currency @campaign.cpe, precision: 2 %></td>
+            </tr>
+            
+          </table>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>

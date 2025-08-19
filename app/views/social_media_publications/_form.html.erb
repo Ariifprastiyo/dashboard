@@ -1,0 +1,7 @@
+<%= bootstrap_form_for(@social_media_publication, url: scope_of_work_item_social_media_publications_path(@scope_of_work_item), layout: :horizontal, label_col: "col-sm-3", 
+                                    control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+ 
+  <%= f.text_field :url, label: "POST ID (without url)", required: true %>
+  <%= f.text_field :additional_info, label: "Additional info" %>
+  <%= f.primary "Add" %>
+<% end %>

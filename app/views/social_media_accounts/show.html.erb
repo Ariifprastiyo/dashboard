@@ -1,0 +1,16 @@
+<!-- Page Title -->
+<div class="pagetitle">
+<h1><%= icon_link_to('pencil-square', edit_influencer_path(@influencer)) %> </h1>
+</div>
+<!-- End Page Title -->
+
+<section class="section">
+  <div class="row">
+    <h2 class="mb-3">Detail Influencer</h2>
+    <%= render 'influencer', influencer: @influencer %>
+
+    <div class="col-lg-12 text-center">
+      <%= link_to "Add Social Media Account", new_influencer_social_media_account_path(@influencer), class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
+</section>

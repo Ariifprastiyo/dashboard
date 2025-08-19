@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Campaign Overview Table</h5>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Campaign</th>
+          <th>Total Posts</th>
+          <th>Total Reach</th>
+          <th>Total Engagement</th>
+          <th>Est. Investment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% campaigns.each do |campaign| %>
+          <tr>
+            <td><%= campaign.brand.name %></td>
+            <td><%= link_to campaign.name, show_campaign_competitor_review_path(competitor_review, campaign) %></td>
+            <td><%= campaign.social_media_publications.count %></td>
+            <td><%= number_with_delimiter(campaign.reach) %></td>
+            <td><%= number_with_delimiter(campaign.engagement) %></td>
+            <td><%= number_to_currency(campaign.budget_spent_sell_price) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div> 

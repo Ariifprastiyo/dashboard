@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://tokapi-mobile-version.p.rapidapi.com/v1/user/@keluargaburwwwww
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Rapidapi-Key:
+      - 31cc58fd1amsh211c61eabe930afp15aec1jsn8954aecdcacf
+      X-Rapidapi-Host:
+      - tokapi-mobile-version.p.rapidapi.com
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 06 Nov 2024 05:04:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '56'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Requests-Limit:
+      - '1500000'
+      X-Ratelimit-Requests-Remaining:
+      - '1465654'
+      X-Ratelimit-Requests-Reset:
+      - '534270'
+      Server:
+      - RapidAPI-1.2.8
+      X-Rapidapi-Version:
+      - 1.2.8
+      X-Rapidapi-Region:
+      - AWS - ap-southeast-1
+      X-Rapidapi-Request-Id:
+      - 227e64dc65d561c7cc8713e6829f84440fba7ae1978c51859e6375992914e07e
+    body:
+      encoding: UTF-8
+      string: '{"error":"Can''t get the user_id by username, try again"}'
+  recorded_at: Wed, 06 Nov 2024 05:04:42 GMT
+recorded_with: VCR 6.2.0

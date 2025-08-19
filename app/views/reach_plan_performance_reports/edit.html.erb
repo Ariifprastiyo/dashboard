@@ -1,0 +1,6 @@
+<%= turbo_frame_tag "#{params[:date]}_updated_reach_plan" do %>
+  <%= form_with(url: campaign_reach_plan_performance_report_path(campaign_id: @campaign.id, date: params[:date]), method: :put) do |form| %>
+    <%= form.number_field :reach_plan, class: "form-control", value: @updated_plan %>
+    <%= form.submit 'Save', class: 'btn btn-primary px-2 btn-sm mt-2' %>
+  <% end %>
+<% end %>

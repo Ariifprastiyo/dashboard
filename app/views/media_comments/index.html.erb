@@ -1,0 +1,24 @@
+<div class="pagetitle">
+  <h1>Comment Related to Brand review</h1>
+</div>
+
+<%= render 'shared/breadcrumbs' %>
+
+<%= render 'comment_ai_card' if @campaign.comment_ai_analysis.present? %>
+<%= render 'ai_analysis_buttons' %>
+
+<%= render 'word_cloud_card' if @campaign.word_cloud_image.attached? %>
+
+
+<% if !current_user.has_role?(:spectator) %>
+  <div class="text-center mb-3">
+    <%= button_to analyze_comment_word_cloud_campaign_path(@campaign), method: :post, class: "btn btn-primary btn-sm mb-3" do %>
+        <%= icon_for("cloud") %>
+        <span>Analyze Word Cloud</span>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render 'comments_section' %>
+
+<%= paginate @comments, theme: 'bootstrap-5'%>

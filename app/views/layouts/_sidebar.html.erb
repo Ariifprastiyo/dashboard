@@ -1,0 +1,96 @@
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <%= link_to root_path, class: 'nav-link collapsed' do %>
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      <% end %>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <%= link_to brands_path, class: 'nav-link collapsed' do %>
+        <i class="bi bi-buildings"></i>
+        <span>Brand</span>
+      <% end %>
+    </li><!-- End Brand Page Nav -->
+
+    <li class="nav-item">
+      <%= link_to campaigns_path, class: 'nav-link collapsed' do %>
+        <i class="bi bi-megaphone"></i>
+        <span>Campaign</span>
+      <% end %>
+    </li><!-- End Campaign Page Nav -->
+
+
+    <% unless current_user.has_role? :spectator %>
+      <li class="nav-item">
+        <%= link_to '#', class: 'nav-link collapsed', data: { 'bs-target' => '#influencers-nav', 'bs-toggle' => 'collapse' } do %>
+          <i class="bi bi-person-badge"></i>
+          <span>Influencers</span>
+          <i class="bi bi-chevron-down ms-auto"></i>
+        <% end %>
+          
+        <ul id="influencers-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <%= link_to managements_path, class: 'nav-link collapsed' do %>
+              <i class="bi bi-circle"></i>
+              <span>Managements / Agents</span>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to influencers_path, class: 'nav-link collapsed' do %>
+              <i class="bi bi-circle"></i>
+              <span>Influencers List</span>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to bulk_influencers_path, class: 'nav-link collapsed' do %>
+              <i class="bi bi-circle"></i>
+              <span>Bulk Influencers</span>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to social_media_accounts_path, class: 'nav-link collapsed' do %>
+              <i class="bi bi-circle"></i>
+              <span>Sosmed Accounts</span>
+            <% end %>
+          </li>
+        </ul>
+      </li><!-- End Influencers Nav -->
+    <% end %>
+
+    <% if current_user.has_role? :admin %>
+      <li class="nav-item">
+        <%= link_to users_path, class: 'nav-link collapsed' do %>
+          <i class="bi bi-person"></i>
+          <span>Administration</span>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to competitor_reviews_path, class: 'nav-link collapsed' do %>
+          <i class="bi bi-search"></i>
+          <span>Competitor Review</span>
+        <% end %>
+      </li>
+      
+      <!-- End Administration Page Nav -->
+    <% end %>
+
+    <% if current_user.has_role? :super_admin %>
+      <li class="nav-item">
+        <%= link_to organizations_path, class: 'nav-link collapsed' do %>
+          <i class="bi bi-building"></i>
+          <span>Organization</span>
+        <% end %>
+      </li><!-- End Administration Page Nav -->
+    <% end %>
+
+  </ul>
+
+</aside><!-- End Sidebar-->

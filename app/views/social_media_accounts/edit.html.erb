@@ -1,0 +1,24 @@
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Editing Influencer</h5>
+          <%= bootstrap_form_for(@social_media_account, 
+                                  url: influencer_social_media_account_path(@influencer, @social_media_account), 
+                                  layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", 
+                                  data: { controller: "price-format", action: "submit->price-format#submitForm" },
+                                  html: { autocomplete: "off" }) do |f| %>
+            <%= render 'shared/error_messages', object: @influencer %>
+            <%= render "form", f: f, influencer: @influencer %>
+          <% end %>
+          <br/>
+          <%= archive_button(@social_media_account) %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

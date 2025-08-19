@@ -1,0 +1,32 @@
+  <!-- Page Title -->
+  <div class="pagetitle">
+    <h1>Dashboard</h1>
+  </div>
+  <!-- End Page Title -->
+
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+    <div class="card">
+        <div class ="card-header d-flex justify-content-between">
+          <h5 class="card-title m-0 p-0">Post timeline</h5>
+        </div>
+        <div class="card-body mt-2">
+          <%= month_calendar(attribute: :scheduled_at) do |date| %>
+            <%= date.day %>
+            <% date_scheduled = @scheduled_posts[date] || {} %>
+            <% date_posted = @posted_posts[date] || {} %>
+            <% combined_keys = (date_scheduled.keys + date_posted.keys).uniq.compact %>
+            
+            <% combined_keys.each do |size| %>
+              <div class="bg-<%= size %> p-1 mt-1">
+                <strong><%= size %></strong> 
+                <%= date_scheduled[size] || 0 %>/<%= date_posted[size] || 0 %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

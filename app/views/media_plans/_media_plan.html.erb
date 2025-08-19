@@ -1,0 +1,10 @@
+<tr>
+  <td scope="col"><%= media_plan.id %></td>
+  <td scope="col"><%= link_to media_plan.name, media_plan_path(media_plan) %></td>
+  <td scope="col"><%= media_plan.social_media_accounts.count %></td>
+  <td scope="col"><%= media_plan.estimated_impression %></td>
+  <td scope="col"><%= media_plan.estimated_reach %></td>
+  <td scope="col"><%= media_plan.estimated_engagement_rate %></td>
+  <td scope="col"><%= media_plan.estimated_engagement_rate_branding_post %></td>
+  <td scope="col"><%= media_plan.estimated_budget %></td>
+</tr>

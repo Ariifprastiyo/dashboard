@@ -1,0 +1,41 @@
+<div class="pagetitle">
+  <h1>Campaign <%= @campaign.name %> 
+      <%= link_to '(edit)' , edit_campaign_path(@campaign) if policy(:campaign).edit? %> 
+      <%= badge_campaign_status(@campaign.status) %>
+  </h1>
+  <div class="row">
+    <div class="col-lg">
+      <h2>Brand : <%= @campaign.brand.name %></h2>
+    </div>
+    <div class="col-lg">
+      <div class="row">
+        <div class="col-lg p-1">
+          <div class="card p-2 mb-1">
+            <div class="fw-bold">Campaign period :</div>
+            <%= @campaign.start_at.strftime('%d %b %Y') %> - <%= @campaign.end_at.strftime('%d %b %Y') %>
+          </div>
+        </div>
+        <div class="col-lg p-1">
+          <div class="card p-2 mb-1">
+            <div class="fw-bold">Remaining days :</div>
+            <%= @campaign.remaining_days %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <% if @campaign.selected_media_plan %>
+    <% if current_user.has_role?(:spectator) %>
+      <%= render 'campaign_summary_spectator'  %>
+    <% else %>
+      <%= render 'campaign_summary' %>
+    <% end %>
+
+    <%= render 'selected_media_plan', media_plan: @selected_media_plan %>
+  <% else %>
+    <%= render 'media_plan_alternatives' %>
+  <% end %>
+</section>

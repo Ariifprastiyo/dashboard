@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tikapi.io/user/comment/list?cursor=0&media_id=7339679037096283397
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;
+      X-Api-Key:
+      - iAV4YtBkar7ZlQtrZGmU7E1GZ1qsqm4mp7svLLCH6k1DRutD
+      X-Account-Key:
+      - kHCcc6bMjl5RGTLLgOgzDnCWN0RZYKQL9KbgGDT7er67VCeG
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 14 Jul 2024 03:59:46 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Bandwidth-Left:
+      - '1949856906.0'
+      X-Requests-Left:
+      - '231'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=ZO4qOUXHvU7a%2B%2FU7kFaH%2B0yJMCjxxCjQzgRyqH486gLmRH2wPNJ9f5QThMl7wQE%2F3kuQeeK2li4Vd5tur9Q6JO7Gqix0LhrMfq6zylcDMtrH2YmccPrNOe9esbNlEyxQ"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8a2e99fa7bfa9fcd-SIN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"alias_comment_deleted":false,"comments":null,"cursor":20,"extra":{"api_debug_info":null,"fatal_item_ids":null,"now":1720929585000},"has_more":0,"log_pb":{"impr_id":"20240714035944F5E2F3C1BB9D8EC18679"},"message":"","reply_style":2,"status":"success","status_code":0,"status_msg":"","top_gifts":[],"total":0}
+
+        '
+  recorded_at: Sun, 14 Jul 2024 03:59:47 GMT
+recorded_with: VCR 6.2.0

@@ -1,0 +1,84 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "8280b78c68cfb3bd7b0d1877fe9c7bb07a073582b8287a8dc01f4b8b4cdb9bb8",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/campaigns/payment_requests/index.html.erb",
+      "line": 57,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => PaymentRequest.includes(:beneficiary, :payer, :requestor).where(:campaign => Campaign.find(params[:id])).order(:created_at => :desc).ransack(params[:q]).result(:distinct => true).page(params[:page]).per(20), {})",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "Campaigns::PaymentRequestsController",
+          "method": "index",
+          "line": 17,
+          "file": "app/controllers/campaigns/payment_requests_controller.rb",
+          "rendered": {
+            "name": "campaigns/payment_requests/index",
+            "file": "app/views/campaigns/payment_requests/index.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "campaigns/payment_requests/index"
+      },
+      "user_input": "params[:page]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "fb974d45fd4818b5c90a783647de215e377ebd6f9d9bc131fe7c37f1358392ab",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/influencers/_influencers_table.html.erb",
+      "line": 23,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => Influencer.kept.order(:created_at => :desc).ransack(params[:q]).result(:distinct => true).page(params[:page]).per(50), {})",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "InfluencersController",
+          "method": "index",
+          "line": 12,
+          "file": "app/controllers/influencers_controller.rb",
+          "rendered": {
+            "name": "influencers/index",
+            "file": "app/views/influencers/index.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "influencers/index",
+          "line": 17,
+          "file": "app/views/influencers/index.html.erb",
+          "rendered": {
+            "name": "influencers/_influencers_table",
+            "file": "app/views/influencers/_influencers_table.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "influencers/_influencers_table"
+      },
+      "user_input": "params[:page]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    }
+  ],
+  "updated": "2023-04-02 12:53:41 +0700",
+  "brakeman_version": "5.4.0"
+}

@@ -1,0 +1,30 @@
+<div class="pagetitle">
+  <h1>Media Plan : <strong><%= @media_plan.name %></strong> <%= icon_for @media_plan.campaign.platform %></h1>
+</div>
+
+<%= render 'shared/breadcrumbs' %>
+
+
+<section class="section">
+  <%= render 'media_plans/kpi_cards' %>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card ">
+        <div class ="card-header d-flex justify-content-between">
+          <h5 class="card-title m-0 p-0">Add Influencers to Media Plan</h5>
+          <div>
+            <%= link_to "Done", media_plan_path(@media_plan), class: "btn btn-primary btn-sm" %>
+          </div>
+        </div>
+        <div class="card-body">
+          <%= render 'social_media_accounts/search_form', platform: @campaign.platform, url: new_media_plan_scope_of_work_path(@media_plan) %>
+        </div>
+      </div>
+
+      <%= render 'social_media_accounts', media_plan: @media_plan %>
+      <%= paginate @social_media_accounts, theme: 'bootstrap-5'%>
+    </div>
+  </div>
+  
+</section>

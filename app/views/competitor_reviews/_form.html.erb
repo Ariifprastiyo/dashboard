@@ -1,0 +1,20 @@
+<%= bootstrap_form_for(competitor_review, 
+                      layout: :horizontal, 
+                      label_col: "col-sm-3",
+                       control_col: "col-sm-9") do |f| %>
+  <%= f.text_field :title %>
+  <%= f.select :organization_id,
+               options_from_collection_for_select(Organization.all, :id, :name, f.object.organization_id),
+               { include_blank: "Select an organization" },
+               { data: { controller: "select2" }, class: 'select2' } %>
+  <%= f.select :campaign_ids,
+               options_from_collection_for_select(Campaign.all, :id, :name, f.object.campaign_ids),
+               { label: "Select campaigns" },
+               { multiple: true, data: { controller: "select2" }, class: 'select2' } %>
+  <div class="form-group row">
+    <div class="col-sm-9 offset-sm-3">
+      <%= f.primary %>
+      <%= link_to 'Cancel', competitor_reviews_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+<% end %>

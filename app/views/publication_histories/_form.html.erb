@@ -1,0 +1,16 @@
+<%= bootstrap_form_for(@publication_history, 
+                        layout: :horizontal, label_col: "col-sm-3", 
+                         control_col: "col-sm-9", 
+                         html: { autocomplete: "off" }) do |f| %>
+  <%= f.datetime_field :updated_at %>
+  <%= f.number_field :likes_count %>
+  <%= f.number_field :comments_count %>
+  <%= f.number_field :impressions %>
+  <%= f.number_field :reach %>
+  <%= f.text_field :engagement_rate %>
+  <%= f.number_field :share_count %>
+  <%= f.number_field :saves_count %>
+  <%= f.hidden_field :social_media_publication_id %>
+  <%= f.submit %>
+  <%= link_to "Cancel", :back %>
+<% end %>

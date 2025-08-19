@@ -1,0 +1,94 @@
+<h1><%= @competitor_review.title %></h1>
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="badge bg-light text-primary rounded-pill">
+              <%= @campaign.brand.name %>
+            </span>
+            <%= @campaign.name %>
+          </h5>
+          
+          <div class="card mb-4">
+            <div class="card-body">
+              <h6 class="card-title">Campaign Summary by Influencer Tier</h6>
+              <table class="table table-bordered" id="campaign-summary-by-tier">
+                <thead>
+                  <tr>
+                    <th>Tier</th>
+                    <th>Total Accounts</th>
+                    <th>Total Reach</th>
+                    <th>Total Engagement</th>
+                    <th>Total Est. Investment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% SocialMediaAccount.sizes.keys.each do |tier| %>
+                    <% tier_sows = @scope_of_works.select { |sow| sow.social_media_account.size == tier } %>
+                    <tr>
+                      <td><%= tier.capitalize %></td>
+                      <td><%= number_with_delimiter(tier_sows.count) %></td>
+                      <td><%= number_with_delimiter(tier_sows.sum { |sow| sow.reach.to_i }) %></td>
+                      <td><%= number_with_delimiter(tier_sows.sum { |sow| sow.total_engagement.to_i }, locale: :id) %></td>
+                      <td><%= number_to_currency(tier_sows.sum { |sow| sow.budget_spent_sell_price }) %></td>
+                    </tr>
+                  <% end %>
+                  <tr class="table-primary">
+                    <td><strong>Total</strong></td>
+                    <td><strong><%= number_with_delimiter(@scope_of_works.count) %></strong></td>
+                    <td><strong><%= number_with_delimiter(@scope_of_works.sum { |sow| sow.reach.to_i }) %></strong></td>
+                    <td><strong><%= number_with_delimiter(@scope_of_works.sum { |sow| sow.total_engagement.to_i }, locale: :id) %></strong></td>
+                    <td><strong><%= number_to_currency(@scope_of_works.sum { |sow| sow.budget_spent_sell_price }) %></strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h6 class="card-title">Scope of Works Details</h6>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Account Name</th>
+                    <th>Content</th>
+                    <th>Tier</th>
+                    <th>Reach</th>
+                    <th>Engagement</th>
+                    <th>Est. Investment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @scope_of_works_data.each do |row| %>
+                    <tr>
+                      <td><%= row[:account_name] %></td>
+                      <td><%= row[:content] %></td>
+                      <td><%= row[:tier] %></td>
+                      <td><%= number_with_delimiter(row[:reach]) %></td>
+                      <td><%= number_with_delimiter(row[:engagement]) %></td>
+                      <td><%= number_to_currency(row[:est_investment]) %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+
+              <div class="mt-3">
+                <%= link_to show_campaign_competitor_review_path(@competitor_review, @campaign, format: :csv), class: "btn btn-primary" do %>
+                  <i class="fas fa-file-export me-2"></i>Export to CSV
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+

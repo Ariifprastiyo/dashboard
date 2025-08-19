@@ -1,0 +1,44 @@
+<table class="table my-4">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">
+        <%= sort_link(q, :beneficiary, 'Beneficiary') %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :amount, 'Amount') %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :total_payment, 'Total Payment') %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :due_date, 'Due date') %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :status, 'Status') %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :notes, 'Notes') %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :paid_at, 'Paid at') %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :requestor, 'Requestor') %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :payer, 'Payer') %>
+      </th>
+      <th scope="col">
+        <%= sort_link(q, :created_at, 'Created at') %>
+      </th>
+      <% if policy(PaymentRequest.new).edit? %>
+        <th scope="col">
+          Action
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <%= render payment_requests %>
+</table>

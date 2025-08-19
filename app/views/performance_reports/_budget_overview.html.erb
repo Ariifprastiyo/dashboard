@@ -1,0 +1,24 @@
+
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="card-title">Budget Overview</h5>
+      <div>
+        <%= link_to 'Export to pdf', campaign_performance_report_path(format: :pdf), class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <table class="table table-bordered">
+      <tr class="strong">
+        <th rowspan="2" class="align-middle">Budget</th>
+        <th>Total Plan</th>
+        <th>Total Actual</th>
+        <th>Remaining</th>
+      </tr>
+      <tr>
+        <td><%= number_to_currency @campaign.budget_from_brand %></td>
+        <td><%= number_to_currency @campaign.budget_spent_sell_price %></td>
+        <td><%= number_to_currency @campaign.budget_remaining_sell_price %></td>
+      </tr>
+    </table>
+  </div>
+</div>

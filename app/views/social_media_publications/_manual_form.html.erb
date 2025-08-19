@@ -1,0 +1,18 @@
+<%= bootstrap_form_for(@social_media_publication, url: scope_of_work_item_social_media_publications_path(@scope_of_work_item), layout: :horizontal, label_col: "col-sm-3", 
+                                    control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+ 
+  <%= f.text_field :url, label: "POST ID / URL", required: true %>
+  <%= f.text_field :additional_info %>
+  <%= f.datetime_field :post_created_at %>
+  <%= f.text_field :caption %>
+  <%= f.file_field :proof %>
+  <%= f.number_field :comments_count %>
+  <%= f.number_field :likes_count %>
+  <%= f.number_field :share_count %>
+  <%= f.number_field :impressions %>
+  <%= f.number_field :saves_count %>
+  <%= f.number_field :reach %>
+  <%= f.text_field :engagement_rate %>
+  <%= f.hidden_field :manual, value: true %>
+  <%= f.primary "Add" %>
+<% end %>

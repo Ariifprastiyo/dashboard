@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tikapi.io/public/check?username=fadiljaidi
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;
+      X-Api-Key:
+      - iAV4YtBkar7ZlQtrZGmU7E1GZ1qsqm4mp7svLLCH6k1DRutD
+      X-Account-Key:
+      - kHCcc6bMjl5RGTLLgOgzDnCWN0RZYKQL9KbgGDT7er67VCeG
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Nov 2024 05:19:04 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Bandwidth-Left:
+      - '1908915250.0'
+      X-Requests-Left:
+      - '1939'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=KkKCepC2s0pR5kaLUzfkVjg0dhaW9vOnOh7hBUS9erE85BbV0J8xFbVry%2FfND6JEUPiFv1gWUbWnvEjw2LIVKEABwoaUUOj4efay1nphMYk64tIZh8j0f2zI9cTY3sxn"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8de2a0428eed4c2f-SIN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Server-Timing:
+      - cfL4;desc="?proto=TCP&rtt=15537&sent=4&recv=7&lost=0&retrans=0&sent_bytes=2784&recv_bytes=932&delivery_rate=195649&cwnd=160&unsent_bytes=0&cid=b21ac461aace3b74&ts=5841&x=0"
+    body:
+      encoding: ASCII-8BIT
+      string: '{"extra":{"fatal_item_ids":[],"logid":"20241106051904E0CA03D63D9E000CD2AE","now":1730870344000},"log_pb":{"impr_id":"20241106051904E0CA03D63D9E000CD2AE"},"message":"","shareMeta":{"desc":"@fadiljaidi
+        15.0m Followers, 50 Following, 464.1m Likes - Watch awesome short videos created
+        by Fadil Jaidi","title":"Fadil Jaidi on TikTok"},"status":"success","statusCode":0,"status_code":0,"status_msg":"","userInfo":{"stats":{"diggCount":0,"followerCount":15000000,"followingCount":50,"friendCount":47,"heart":464100000,"heartCount":464100000,"videoCount":443},"user":{"avatarLarger":"https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/7311152514726887425.jpeg?lk3s=a5d48078&nonce=42673&refresh_token=1b3d5a60e2d1f65de9f022aea296376d&x-expires=1731042000&x-signature=ltCzP1FL8zmj40qsADvcE%2B%2FKOvE%3D&shp=a5d48078&shcp=81f88b70","avatarMedium":"https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/7311152514726887425.jpeg?lk3s=a5d48078&nonce=41511&refresh_token=9ba94b874eb783a6f5bc7d3da8fda569&x-expires=1731042000&x-signature=UHKtaI4NhYQtOFCCKt%2BvdMKd5I8%3D&shp=a5d48078&shcp=81f88b70","avatarThumb":"https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/7311152514726887425.jpeg?lk3s=a5d48078&nonce=4594&refresh_token=931a91a3773000d9c78c06a88df07f87&x-expires=1731042000&x-signature=TyLBTMeQ7I6hS%2Fu0sn9ayUV8dV8%3D&shp=a5d48078&shcp=81f88b70","bioLink":{"link":"https://youtu.be/9ywpa6r6UZk","risk":0},"canExpPlaylist":true,"commentSetting":0,"commerceUserInfo":{"commerceUser":false},"downloadSetting":0,"duetSetting":0,"followingVisibility":1,"ftc":false,"id":"6558656645008998401","isADVirtual":false,"isEmbedBanned":false,"isUnderAge18":false,"nickname":"Fadil
+        Jaidi","openFavorite":false,"privateAccount":false,"profileEmbedPermission":1,"profileTab":{"showPlayListTab":false},"relation":0,"secUid":"MS4wLjABAAAAr8BhiSmkWNQH0v5SVFCgQnoqUd5_RMsesTVppIiN-LGo6_-VyQxnNx8-U6vBbxHo","secret":false,"signature":"Hai
+        guys\nAku akan post video sama papa diTikTok ya TIDAK di instagramku\nmaacih\u2764\ufe0f","stitchSetting":0,"ttSeller":false,"uniqueId":"fadiljaidi","verified":true}}}
+
+        '
+  recorded_at: Wed, 06 Nov 2024 05:19:04 GMT
+- request:
+    method: get
+    uri: https://api.tikapi.io/public/check?username=fadiljaidi
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;
+      X-Api-Key:
+      - iAV4YtBkar7ZlQtrZGmU7E1GZ1qsqm4mp7svLLCH6k1DRutD
+      X-Account-Key:
+      - kHCcc6bMjl5RGTLLgOgzDnCWN0RZYKQL9KbgGDT7er67VCeG
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Nov 2024 05:19:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Bandwidth-Left:
+      - '1908880323.0'
+      X-Requests-Left:
+      - '1938'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=GVTiUCpd3BfDjIvYr7rnNe0WTQh6tv3%2Ff0oMZ5piVlfI%2BfPNRI5mUlv%2FWTx4ehmh9lx6g8t%2BtSo1WwZABfqFMJF%2FrOCFUFRC%2BBPAM0y9S4lgyX%2BNCe3RcCHotbQLrJ%2Fi"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8de2a06748b55658-SIN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Server-Timing:
+      - cfL4;desc="?proto=TCP&rtt=15256&sent=4&recv=7&lost=0&retrans=0&sent_bytes=2785&recv_bytes=932&delivery_rate=195980&cwnd=175&unsent_bytes=0&cid=409a1c5df6c9c350&ts=1226&x=0"
+    body:
+      encoding: ASCII-8BIT
+      string: '{"extra":{"fatal_item_ids":[],"logid":"202411060519050F376977B3E02B0CFC80","now":1730870345000},"log_pb":{"impr_id":"202411060519050F376977B3E02B0CFC80"},"message":"","shareMeta":{"desc":"@fadiljaidi
+        15.0m Followers, 50 Following, 464.1m Likes - Watch awesome short videos created
+        by Fadil Jaidi","title":"Fadil Jaidi on TikTok"},"status":"success","statusCode":0,"status_code":0,"status_msg":"","userInfo":{"stats":{"diggCount":0,"followerCount":15000000,"followingCount":50,"friendCount":47,"heart":464100000,"heartCount":464100000,"videoCount":443},"user":{"avatarLarger":"https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/7311152514726887425.jpeg?lk3s=a5d48078&nonce=75818&refresh_token=bf57af7f0ea634f3c3fa969988c12ec7&x-expires=1731042000&x-signature=ltCzP1FL8zmj40qsADvcE%2B%2FKOvE%3D&shp=a5d48078&shcp=81f88b70","avatarMedium":"https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/7311152514726887425.jpeg?lk3s=a5d48078&nonce=16134&refresh_token=2b68876ced3fd0417a1d0964684ae7cf&x-expires=1731042000&x-signature=UHKtaI4NhYQtOFCCKt%2BvdMKd5I8%3D&shp=a5d48078&shcp=81f88b70","avatarThumb":"https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/7311152514726887425.jpeg?lk3s=a5d48078&nonce=89751&refresh_token=adcecf22391dd6ec157bd1ac1b4cd3c0&x-expires=1731042000&x-signature=TyLBTMeQ7I6hS%2Fu0sn9ayUV8dV8%3D&shp=a5d48078&shcp=81f88b70","bioLink":{"link":"https://youtu.be/9ywpa6r6UZk","risk":0},"canExpPlaylist":true,"commentSetting":0,"commerceUserInfo":{"commerceUser":false},"downloadSetting":0,"duetSetting":0,"followingVisibility":1,"ftc":false,"id":"6558656645008998401","isADVirtual":false,"isEmbedBanned":false,"isUnderAge18":false,"nickname":"Fadil
+        Jaidi","openFavorite":false,"privateAccount":false,"profileEmbedPermission":1,"profileTab":{"showPlayListTab":false},"relation":0,"secUid":"MS4wLjABAAAAr8BhiSmkWNQH0v5SVFCgQnoqUd5_RMsesTVppIiN-LGo6_-VyQxnNx8-U6vBbxHo","secret":false,"signature":"Hai
+        guys\nAku akan post video sama papa diTikTok ya TIDAK di instagramku\nmaacih\u2764\ufe0f","stitchSetting":0,"ttSeller":false,"uniqueId":"fadiljaidi","verified":true}}}
+
+        '
+  recorded_at: Wed, 06 Nov 2024 05:19:05 GMT
+recorded_with: VCR 6.2.0

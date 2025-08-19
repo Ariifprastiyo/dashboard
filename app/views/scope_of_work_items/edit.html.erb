@@ -1,0 +1,51 @@
+<div class="pagetitle">
+  <h1>Editing Scope of Work item for <strong>@<%= link_to @social_media_account.username, @social_media_account.platform_url, target: '_blank' %></strong></h1>
+</div>
+
+<%= render 'shared/breadcrumbs' %>
+
+<section class="section">
+
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Scope of work item details</h5>
+        <%= bootstrap_form_for(@scope_of_work_item, url: scope_of_work_scope_of_work_item_path(@scope_of_work, @scope_of_work_item),layout: :horizontal, label_col: "col-sm-3",
+                                    control_col: "col-sm-5", html: { autocomplete: "off", class: "mt-3" }) do |f| %>
+
+        <%= f.select :name, ScopeOfWorkItem::PRICES.map { |x| [x,x] }, {} ,disabled: 'disabled' %>
+        <%= f.datetime_field :scheduled_at %>
+        <% if @scope_of_work_item.posted_at.present? %>
+          <%= f.text_field :posted_at, disabled: 'disabled', value: f.object.posted_at&.strftime('%d/%m/%Y, %H.%M') %>
+        <% end %>
+        <%= f.primary "Submit" %>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <% if @social_media_publication.persisted? %>
+          <h5 class="card-title">Publication</h5>
+          <%= turbo_frame_tag 'edit_social_media_publication' do %>
+            <%= render "social_media_publications/social_media_publications_table", social_media_publications: [@social_media_publication] %>
+          <% end %>
+          <% if @social_media_publication.last_error_during_sync.present? %>
+            <div class="alert alert-danger"><%= @social_media_publication.last_error_during_sync %></div>
+          <% end %>
+        <% else %>
+          <h5 class="card-title">Add publication</h5>
+          <%= render 'shared/error_messages', object: @social_media_publication %>
+          <% if @scope_of_work_item.can_be_track_automatically? %>
+            <%= render "social_media_publications/form", social_media_publication: @social_media_publication %>
+          <% else %>
+            <div class="alert alert-notice">This scope of work item cannot be tracked automatically. Please add the publication manually.</div>
+            <%= render "social_media_publications/manual_form", social_media_publication: @social_media_publication %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <%= render 'publication_histories/publication_histories_table', publication_histories: @publication_histories if @social_media_publication.persisted? %>
+  </div>
+</section>

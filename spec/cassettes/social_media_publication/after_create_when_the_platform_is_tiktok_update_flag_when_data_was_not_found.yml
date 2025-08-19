@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tikapi.io/public/video?id=7171787903637458202
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json;
+      X-Api-Key:
+      - iKiophlx7vNlYaCiNsrgCsxAYLx0xH213sSXY2D4oc7w70Zq
+      X-Account-Key:
+      - kHCcc6bMjl5RGTLLgOgzDnCWN0RZYKQL9KbgGDT7er67VCeG
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 429
+      message: Too Many Requests
+    headers:
+      Date:
+      - Sat, 29 Apr 2023 10:06:10 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '59'
+      Connection:
+      - keep-alive
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=wWPxIcGnfN7DIkkZigsfaEmmNY6Hjyd2X1bKb%2FD21SJ5TxUsupx%2BUC98tB9H6g47jZE7Utijw5y87B7abcXm7ME26LZrNhq4lMIw9fSMOexWsyWgCjm4tmDoxB%2BhCISD"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7bf6bb111e264ac9-CGK
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"message":"API Key Rate-Limit reached.","status":"error"}
+
+        '
+  recorded_at: Sat, 29 Apr 2023 10:06:10 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,13 @@
+<%= bootstrap_form_for(@brand, layout: :horizontal, 
+  label_col: "col-sm-3", 
+  control_col: "col-sm-9", 
+  html: { autocomplete: "off" },
+  data: { turbo: true }
+) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.file_field :logo %>
+  <%= f.text_field :description %>
+  <%= f.text_field :instagram %>
+  <%= f.text_field :tiktok %>
+  <%= f.primary %>
+<% end %>

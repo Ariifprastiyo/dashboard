@@ -1,0 +1,64 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Filter payment requests</h5>
+  </div>
+
+  <div class="card-body py-4">
+    <%= search_form_for(@q, class: 'row', url: campaigns_payment_requests_path(@campaign)) do |f| %>
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <span>Beneficiary</span>
+        </div>
+        <div class="col-md-4">
+          <%= f.select 'beneficiary_id_eq', @beneficiaries.pluck(:name, :id), { include_blank: 'All beneficiary' }, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <span>Amount</span>
+        </div>
+        <div class="col-md-2">
+          <%= f.search_field "amount_gteq_any", class: "form-control", placeholder: "min" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.search_field "amount_lteq_any", class: "form-control", placeholder: "max" %>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <span>Total payment</span>
+        </div>
+        <div class="col-md-2">
+          <%= f.search_field "total_payment_gteq_any", class: "form-control", placeholder: "min" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.search_field "total_payment_lteq_any", class: "form-control", placeholder: "max" %>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <span>Status</span>
+        </div>
+        <div class="col-md-4">
+          <% PaymentRequest.statuses.each do |k,v| %>
+            <%= label_tag do %>
+              <%= check_box_tag('q[status_in][]', v, (true if @q.status_in.try(:include?, v))) %>
+              <%= k.humanize %>
+            <% end %>
+            &nbsp;
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1">
+          <%= f.submit 'Search', class: 'btn btn-primary' %>
+        </div>
+        <div class="col-sm-1">
+          <%= link_to 'Reset', campaigns_payment_requests_path(@campaign), class: 'btn btn-secondary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<table class="table table-striped table-hover table-responsive">
+  <thead class="table-primary">
+    <tr>
+      <th></th>
+      <th><%= sort_link(@q, :social_media_account_username) %></th>
+      <th><%= sort_link(@q, :social_media_account_followers) %></th>
+      <th>Size</th>
+      <th>Platform</th>
+      <th>Est Views</th>
+      <th><%= sort_link(@q, :impressions, 'Views') %></th>
+      <th><%= sort_link(@q, :likes_count, 'Likes') %></th>
+      <th><%= sort_link(@q, :share_count, 'Share') %></th>
+      <th><%= sort_link(@q, :comments_count, 'Comment') %></th>
+      <th>Total</th>
+      <th><%= sort_link(@q, :engagement_rate, 'ER') %></th>
+      <th>VR</th>
+      <th>Publication</th>
+      <th><%= current_user.has_role?(:spectator) ? 'Price' : 'Budget Spent' %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @scope_of_works.each do |sow| %>
+      <tr id=<%= dom_id(sow.social_media_account) %>>
+        <td class="align-middle"><%= image_tag url_for(sow.social_media_account.profile_picture.variant(:thumb)), class: 'rounded-circle' %></td>
+        <td class="align-middle"><%= link_to_social_media_account(sow.social_media_account.username, sow.social_media_account.platform) %>
+        <td class="align-middle"><%= number_with_delimiter sow.social_media_account.followers %></td>
+        <td class="align-middle"><%= number_with_delimiter sow.social_media_account.size %></td>
+        <td class="align-middle"><%= icon_for sow.social_media_account.platform %></td>
+        <td class="align-middle"><%= number_with_delimiter sow.social_media_account.gross_estimated_reach %></td>
+        <td class="align-middle"><%= number_with_delimiter sow.impressions.to_i %></td>
+        <td class="align-middle"><%= number_with_delimiter sow.likes_count.to_i %></td>
+        <td class="align-middle"><%= number_with_delimiter sow.share_count.to_i %></td>
+        <td class="align-middle"><%= number_with_delimiter sow.comments_count.to_i %></td>
+        <td class="align-middle"><%= number_with_delimiter sow.total_engagement.to_i, locale: :id %></td>
+        <td class="align-middle"><%= number_to_percentage sow.engagement_rate, precision: 2 %></td>
+        <td class="align-middle"><%= number_to_percentage sow.view_rate, precision: 2 %></td>
+
+        <td class="align-middle">
+          <% sow.social_media_publications.each do |p| %>
+            <%= link_to icon_for("link"), p.public_url, target: '_blank', class: 'text-decoration-none', data: { bs_toggle: 'tooltip', bs_placement: 'top' }, title: p.public_url %>
+          <% end %>
+        </td>
+        <td class="align-middle"><%= current_user.has_role?(:spectator) ? number_to_currency(sow.budget_spent_sell_price) : number_to_currency(sow.budget_spent) %></td>
+          
+        <td class="align-middle">
+          <% unless current_user.has_role?(:spectator) %>
+          <a class="align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <%= icon_for("three-dots-vertical") %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <%= link_to scope_of_work_scope_of_work_items_path(scope_of_work_id: sow.id), class: "btn btn-sm dropdown-item d-flex align-items-center" do %>
+                <%=  icon_for("plus-circle-fill") %>
+                <span>Manage Publication</span>
+              <% end %>
+            </li>
+          </ul>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- kaminari pagination -->
+<%= paginate @scope_of_works, theme: 'bootstrap-5' %>
+

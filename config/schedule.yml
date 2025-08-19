@@ -1,0 +1,17 @@
+social_media_account_updater:
+  cron: "0 1 * * *"
+  class: "SocialMediaAccountUpdaterJob"
+  queue: default
+  status: "disabled"
+  description: "Track social media account performance"
+publication_daily_batch_updater:
+  cron: "0 3 * * *"
+  class: SocialMediaPublicationUpdaterJob
+  queue: default
+  status: "disabled"
+  description: "Update in batch"
+publication_daily_updater:
+  cron: "0 3 * * *"
+  class: "SocialMediaPublicationsDailyUpdaterJob"
+  queue: default
+  description: "Update individually, will spawn another job"

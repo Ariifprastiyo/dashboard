@@ -1,0 +1,5 @@
+<%= bootstrap_form_for(organization_setting, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.file_field :logo, help: 'For best result upload 1013x122 png image' %>
+  <%= f.submit %>
+<% end %>

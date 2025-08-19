@@ -1,0 +1,29 @@
+<div class="card">
+  <div class ="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">List of Bulk Influencers</h5>
+    <div>
+      <%= link_to "Add Bulk Influencer", new_bulk_influencer_path, class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Default Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Total Records</th>
+          <th scope="col">Processed Records</th>
+          <th scope="col">Error Records</th>
+          <th scope="col">Progress</th>
+          <th scope="col">Status</th>
+          <th scope="col">Created At</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @bulk_influencers %>
+      </tbody>
+    </table>
+    <!-- End Default Table Example -->
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<table class="table table-striped table-hover table-responsive">
+  <thead class="table-primary">
+    <tr>
+      <th colspan="4"></th>
+      <th colspan="5" class="text-center"><%= @management.name %></th>
+      <th colspan="1" class="text-center"></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Username</th>
+      <th>Follower</th>
+      <th>Size</th>
+      <th>Views</th>
+      <th>ER</th>
+      <th>ERB</th>
+      <th>ER AVG</th>
+      <th>Reach</th>
+      <th>Categories</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @social_media_accounts.each do |account| %>
+      <tr id=<%= dom_id(account) %>>
+        <td class="align-middle"><%= image_tag url_for(account.profile_picture.variant(:thumb)), class: 'rounded-circle' %></td>
+        <td class="align-middle"><%= link_to_social_media_account(account.username, account.platform) %>
+        <td class="align-middle"><%= number_with_delimiter account.followers %></td>
+        <td class="align-middle"><%= account.size %></td>
+        <td class="align-middle"><%= number_with_delimiter account.estimated_impression.to_i, locale: :id %></td>
+        <td class="align-middle"><%= number_to_percentage account.estimated_engagement_rate, precision: 2 %></td>
+        <td class="align-middle"><%= number_to_percentage account.estimated_engagement_rate_branding_post, precision: 2 %></td>
+        <td class="align-middle"><%= number_to_percentage account.estimated_engagement_rate_average, precision: 2 %></td>
+        <td class="align-middle"><%= number_with_delimiter account.estimated_reach.to_i %></td>
+
+       
+        <td class="align-middle">
+          <%= badges_for(account.categories.map { |cat| cat.name }) %>
+        </td>
+        <td class="align-middle">
+          <%= button_to icon_for("plus-lg"), management_managements_accounts_path, method: :post, params: { management_id: @management.id, social_media_account_id: account.id }, class: "btn btn-primary btn-sm" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

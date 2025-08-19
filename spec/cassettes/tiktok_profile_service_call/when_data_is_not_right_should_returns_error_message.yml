@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://mediarumu-social.fly.dev/tiktok-profiles/sddksadksadkasdkasda
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:8000
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Host:
+      - localhost:8000
+      Date:
+      - Thu, 09 Feb 2023 00:54:39 GMT
+      - Thu, 09 Feb 2023 00:54:39 GMT
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/8.2.1
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - XSRF-TOKEN=eyJpdiI6InBhUXEvNFpUdXhQbnZwakZZbGkxaHc9PSIsInZhbHVlIjoiSVBhRmttSXZ0OHBNcHFpVXZyYWh1djd5YVI2aE44YzdQMTZPQ0JCejJmQzdmejh0VCtEY3JseFFYL0U1WTduQmt6VlVzbDMyaUdLVTlnOEJJdUFWNHZrT3kwQnpPRWhNUE5KVHozUXMxZXNsQzNDc1BlaVRmL1huSzlFc0U5TUEiLCJtYWMiOiIxZDFiZTM0YWU2NDA4OGE0Y2Q4MmY5ZjVkZmJkYzg3OWU3OTMzZjFmMzIxZjU1YWFiYTI3NjBhMjY1MDNmM2E5IiwidGFnIjoiIn0%3D;
+        expires=Thu, 09 Feb 2023 02:54:39 GMT; Max-Age=7200; path=/; samesite=lax
+      - mediarumu_social_session=eyJpdiI6IkM1U3Y2YmZBcjB0UktWejduUHVXb0E9PSIsInZhbHVlIjoiQWw3S3A0aVlKdllzUCt0aUVaNkdCY2ZGS0F6Z202c25kQ0ppaGtRb1lHaGtlRGR3UlRYbnpDNDd1cTNYSmdrenByTTdVb2tqN1lKZEp2Qzd1SzU2RFFsTUpkWVUzTDdURll0K2JVdi95K01WbWFoTHBpcnp0OTFuaWI5Zjgwam0iLCJtYWMiOiI4MTVlYWUyODhmODhhZDIyNzc1ZmU5YmI4MmFlOGEyOGFmNDQ3MjA4NDY2NjlmMjBjYzM5MTA2ZTE1ZTM3ZjE5IiwidGFnIjoiIn0%3D;
+        expires=Thu, 09 Feb 2023 02:54:39 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+    body:
+      encoding: UTF-8
+      string: '{"error":"User Tiktok not found"}'
+  recorded_at: Thu, 09 Feb 2023 00:54:39 GMT
+recorded_with: VCR 6.1.0

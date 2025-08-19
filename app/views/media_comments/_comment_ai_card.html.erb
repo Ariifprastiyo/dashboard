@@ -1,0 +1,33 @@
+<div class="card">
+  <div class ="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">AI 🤖 Analisys Result</h5>
+  </div>
+  <div class="card-body">
+    <div class="text-center mb-3 mt-3">
+      <h5>Sentiment Analisys</h5>
+      <div class="progress">
+        <% total_count = @campaign.media_comments_count %>
+        <% positive_percentage = (@campaign.media_comments.positive.count.to_f / total_count * 100).round(2) %>
+        <% neutral_percentage = (@campaign.media_comments.neutral.count.to_f / total_count * 100).round(2) %>
+        <% negative_percentage = (@campaign.media_comments.negative.count.to_f / total_count * 100).round(2) %>
+        <div class="progress-bar bg-success" role="progressbar" style="width: <%= positive_percentage %>%;" aria-valuenow="<%= positive_percentage %>" aria-valuemin="0" aria-valuemax="100">
+          Positive (<%= positive_percentage %>%)
+        </div>
+        <div class="progress-bar bg-warning" role="progressbar" style="width: <%= neutral_percentage %>%;" aria-valuenow="<%= neutral_percentage %>" aria-valuemin="0" aria-valuemax="100">
+          Neutral (<%= neutral_percentage %>%)
+        </div>
+        <div class="progress-bar bg-danger" role="progressbar" style="width: <%= negative_percentage %>%;" aria-valuenow="<%= negative_percentage %>" aria-valuemin="0" aria-valuemax="100">
+          Negative (<%= negative_percentage %>%)
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <h5>Overall Conclusion</h5>
+      <p id="overall-conclusion"><%= markdown(@campaign.comment_ai_analysis) %></p>
+    </div>
+  </div>
+  <div class="card-footer text-center">
+    <h5>Total Comments</h5>
+    <p class="h6 mb-0" id="total-comments"><%= total_count %></p>
+  </div>
+</div>

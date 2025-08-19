@@ -1,0 +1,14 @@
+<!-- flash messages if any -->
+<% flash.each do |key, value| %>
+  <div class="alert alert-dismissible fade show alert-<%= key %>">
+    <% if value.kind_of?(Array) %>
+      <ul>
+        <% value.each do |el| %>
+          <li><%= el %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <%= value %>
+    <% end %>
+  </div>
+<% end %>

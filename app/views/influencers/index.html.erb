@@ -1,0 +1,22 @@
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Influencers</h1>
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Search</h5>
+              <%= search_form_for @q, class: "row g-3" do |f| %>
+                  <div class="col-md-6">
+                    <%= f.search_field :name_cont, class: "form-control", placeholder: "Name contains" %>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+
+
+        <%= render 'influencers_table' %>
+        <%= paginate @influencers, theme: 'bootstrap-5'%>
+    </div>
+  </div>
+</div>
+

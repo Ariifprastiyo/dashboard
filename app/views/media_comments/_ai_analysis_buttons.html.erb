@@ -1,0 +1,12 @@
+<div class="text-center mb-3">
+  <% if !current_user.has_role?(:spectator) %>
+    <%if @campaign.comment_ai_prompt.blank? %>
+      <p>Prompt is empty! You need to edit Comment AI Prompt first! <%= link_to 'click here to edit', edit_campaign_path(@campaign) %></p>
+    <% else %>
+      <%= button_to analyze_comment_with_ai_campaign_path(@campaign), method: :post, class: "btn btn-primary btn-sm mb-3" do %>
+        <%= icon_for("robot") %>
+        <span>Analyze comment with AI</span>
+      <% end %>
+    <% end %>
+  <% end %>
+</div> 

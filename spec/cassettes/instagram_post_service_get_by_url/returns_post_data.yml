@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://mediarumu-social.fly.dev/instagram-posts/CmY5Cl_usFo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:8000
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Host:
+      - localhost:8000
+      Date:
+      - Wed, 21 Dec 2022 00:13:09 GMT
+      - Wed, 21 Dec 2022 00:13:09 GMT
+      Connection:
+      - close
+      X-Powered-By:
+      - PHP/8.1.13
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - XSRF-TOKEN=eyJpdiI6InVTcHk4YnZrQTNJdFBFaWJMR2FEQ0E9PSIsInZhbHVlIjoid3VYYVZqY3JaUmJVOWRMcjd5MlJCeVl5SzN0bVZzaUE0QnZIRjludmVmVHJiK2llZjhkdFFHc3kzRE9PZml3MnBuU3NGS0FNMXZYSjRSSDIweXNDRzgzN21RSWVSVVlndzROMDFLT0ZEWktrOGdlTmwyamJyZm5TYWxTcHhvVWUiLCJtYWMiOiJjNzRmZDJkOWMxMjFiYzA5YjQ2ZWY5YTNjNGQwY2MwMjJhMmEwNzNlNTkwZDEyYTI0NjAzZjE3MGYyNTU4ZTI3IiwidGFnIjoiIn0%3D;
+        expires=Wed, 21 Dec 2022 02:13:09 GMT; Max-Age=7200; path=/; samesite=lax
+      - laravel_session=eyJpdiI6IlhCNTdIT1pXY2FFZ1hidHBDVlg4dkE9PSIsInZhbHVlIjoiTUFSaWxaOE5rc3pkLzNxMTRJMVdRNk8rZ1F5bUVxajdoRTM5TEpPUlJITldmYjJKd3JDMlVuSGo2NjZ1U2FPaDk2QUoyeGY5ak9UUlMvTHB0dkV2NlJlYk1EKzh4TVlSQVhWTVd0K2kxbXM4WW9JbzFTZ2tiYWtjaG1KRWJxelQiLCJtYWMiOiJhZTg0NGYxYjlmMjRhMTlkYzAwMWMzNmZjMzUwNDhkZDZmM2M2MWE2Yzg3NTRjZDIxM2VkMDM4ZGEyMzk4NGMzIiwidGFnIjoiIn0%3D;
+        expires=Wed, 21 Dec 2022 02:13:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+    body:
+      encoding: UTF-8
+      string: '{"id":2997396418902802792,"type":"video","caption":"Congratulations
+        my dearest husband @randibachtiar for finishing your masters in Mechanical
+        Engineering!! I\u2019m soooo proud of you!! All the struggles and all the
+        sacrifice, it\u2019s all paid off \ud83e\udd79\ud83e\udd79\ud83e\udd79 \n\nSemoga
+        ilmu yang kamu dapat bermanfaat, barokah, dan membawa rezeki yang berlimpah
+        \ud83e\udd32\ud83c\udffb I adore you, I respect you, and most of all, I love
+        you \u2764\ufe0f","likes":154544,"comments":825,"video_view_count":1020412,"date":{"date":"2022-12-20
+        12:06:05.000000","timezone_type":3,"timezone":"UTC"}}'
+  recorded_at: Wed, 21 Dec 2022 00:13:09 GMT
+recorded_with: VCR 6.1.0

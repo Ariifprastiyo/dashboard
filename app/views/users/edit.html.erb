@@ -1,0 +1,26 @@
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Edit <%= @user.name %></h5>
+
+          <%= render 'shared/error_messages', object: @user %>
+
+          <%= render 'form' %>
+
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title">Update Password for <%= @user.name %></h5>
+
+          <%= render 'form_password' %>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

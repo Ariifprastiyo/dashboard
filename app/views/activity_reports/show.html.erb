@@ -1,0 +1,40 @@
+<div class="pagetitle">
+  <h1>Activity Report for <%= link_to @campaign.name, @campaign %></h1>
+  <h4>Brand : <%= @campaign.brand.name %></h3>
+  <h4>Platform : <%= @campaign.platform %></h3>
+</div>
+
+<section class="section">
+  <div class="card">
+    <div class="card-body p-3">
+      <%= search_form_for(@q, url: campaign_activity_report_path) do |f| %>
+        <div  class="row g-3">
+          <div class="col-md-3">
+            <%= f.date_field :created_at_gteq, label: 'Start Date', class: "form-control" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.date_field :created_at_lteq, label: 'End Date', class: "form-control" %>
+          </div>
+          <div class="col-md-3">
+            <% SocialMediaAccount.sizes.each do |k,v| %>
+              <%= label_tag do %>
+                <%= check_box_tag('q[social_media_account_size_in][]', v, (true if @q.social_media_account_size_in.try(:include?, v))) %>
+                <%= k %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div  class="row mt-2">
+          <div class="col-md-3">
+            <%= f.submit 'Submit', class: '' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render 'activity_report_table' %>
+
+  <%= render 'publication_history_table' %>
+
+</section>

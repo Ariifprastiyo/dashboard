@@ -1,0 +1,43 @@
+<%= bootstrap_form_for(@campaign, 
+                      layout: :horizontal, 
+                      label_col: "col-sm-3",
+                       control_col: "col-sm-9", 
+                       html: { autocomplete: "off" },
+                       data: { controller: "price-format", action: "submit->price-format#submitForm" } ) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.collection_select :brand_id, @brands, :id, :name, include_blank: "Select a brand" %>
+  <%#= f.collection_select(:organization_id, Organization.all, :id, :name, include_blank: "Select an organization") if current_user.has_role?(:super_admin)%>
+  <%= f.select :platform, @platforms.map { |k,v| [k.humanize,k] }, include_blank: "Select platform" %>
+  <%= f.select :status, @statuses.map { |k,v| [k.humanize,k] }, include_blank: "Select status" %>
+  <%= f.datetime_field :start_at %>
+  <%= f.datetime_field :end_at %>
+  <%= f.datetime_field :invitation_expired_at %>
+  <%= f.text_field :budget_from_brand, data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :budget, label: 'Internal Budget', data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :kpi_number_of_social_media_accounts, placeholder: 'numbers only' %>
+  <%= f.text_field :kpi_reach, placeholder: 'numbers only' %>
+  <%= f.text_field :kpi_impression, placeholder: 'numbers only' %>
+  <%= f.text_field :kpi_engagement_rate, placeholder: 'in number or decimal only. Ex: 2,5 % => you should type 2.5', prepend: "%" %>
+  <%= f.text_field :kpi_cpv, data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :kpi_cpr, data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :kpi_cpe, data: { target: "price-format.input" }, prepend: "Rp" %>
+  <%= f.text_field :kpi_crb, placeholder: 'in number or decimal only. Ex: 10,5 % => you should type 10.5', prepend: "%" %>
+  <hr />
+  <h5>Show Rate Price</h5>
+  <div class="row">
+      <%= f.select :selected_show_rate_prices, 
+              options_for_select(ScopeOfWorkItem::PRICES.map { |k, v| [k.humanize, k] }, f.object.selected_show_rate_prices), {}, { multiple: true, data: {controller: "select2"}, class: 'select2' } %>
+  </div>
+  <hr />
+  <h5>Additional Info</h5>
+  <%= f.text_field :mediarumu_pic_name %>
+  <%= f.text_field :mediarumu_pic_phone %>
+  <%= f.text_area :notes_and_media_terms %>
+  <%= f.text_field :management_fees, placeholder: '.. %', prepend: "%" %>
+  <%= f.text_area :payment_terms %>
+  <%= f.text_field :client_sign_name %>
+  <%= f.text_field :keyword, class: "form-control", data: {role: "tagsinput"}, data: { controller: "tagify", tagify_csv_value: @campaign.keyword } %>
+  <%= f.text_field :hashtag, class: "form-control", data: {role: "tagsinput"}, data: { controller: "tagify", tagify_csv_value: @campaign.hashtag } %>
+  <%= f.text_field :comment_ai_prompt, class: "form-control" %>
+  <%= f.primary %>
+<% end %>

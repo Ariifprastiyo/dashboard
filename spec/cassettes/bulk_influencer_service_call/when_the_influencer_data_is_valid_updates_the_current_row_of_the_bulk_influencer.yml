@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.hikerapi.com/a2/user?username=test_ig
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Access-Key:
+      - P0SBEUnlcdFLlBfqxAU3XgFyt9VfFmEV
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Feb 2024 16:11:47 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - accept
+      X-Hiker-Info:
+      - '{"user_id":64506660788,"reqs":2}'
+      X-Hiker-Reqid:
+      - f2bca7d7-8b2a-482e-848d-8002809842b9
+      Expires:
+      - Sat, 03 Feb 2024 16:11:47 GMT
+      Cache-Control:
+      - max-age=0
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,x-access-key
+      Access-Control-Expose-Headers:
+      - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=eX0l59dHYopiEGcx%2FuotQuhsswvyUw5IUCGvM%2FsxrJbt8L5Sq4kwVCecS3i0fCZBu8IrcJR6bjgOLLEyGyIiGwnPDoM6KtURuX4qKvDkFGVLMB04rS5bujz8sCdl4uafBWDS"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 84fbf3a3dd5b6bf9-SIN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"graphql":{"user":{"id":"283073061","biography":"","full_name":"Wyatt
+        Gillespie","edge_followed_by":{"count":0},"edge_follow":{"count":0},"profile_pic_url":"https://instagram.fesb1-2.fna.fbcdn.net/v/t51.2885-19/44884218_345707102882519_2446069589734326272_n.jpg?_nc_ad=z-m&_nc_ht=instagram.fesb1-2.fna.fbcdn.net&_nc_cat=1&_nc_ohc=mFcoq7HG9roAX8Pxgfw&edm=AClPCLABAAAA&ccb=7-5&ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.2-ccb7-5&oh=00_AfCEoesEBRsfA8IDq6y3y2NzJNjMvgO3_VHCIEMEVInEhQ&oe=65C4390F&_nc_sid=eec150","profile_pic_url_hd":"https://instagram.fesb1-2.fna.fbcdn.net/v/t51.2885-19/44884218_345707102882519_2446069589734326272_n.jpg?_nc_ad=z-m&_nc_ht=instagram.fesb1-2.fna.fbcdn.net&_nc_cat=1&_nc_ohc=mFcoq7HG9roAX8Pxgfw&edm=AClPCLABAAAA&ccb=7-5&ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.2-ccb7-5&oh=00_AfCEoesEBRsfA8IDq6y3y2NzJNjMvgO3_VHCIEMEVInEhQ&oe=65C4390F&_nc_sid=eec150","edge_owner_to_timeline_media":{"count":0,"edges":[]}}}}'
+  recorded_at: Sat, 03 Feb 2024 16:11:47 GMT
+- request:
+    method: get
+    uri: https://api.hikerapi.com/v2/user/medias?page=&user_id=283073061
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Access-Key:
+      - P0SBEUnlcdFLlBfqxAU3XgFyt9VfFmEV
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Sat, 03 Feb 2024 16:11:48 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - accept
+      X-Hiker-Error:
+      - NotFoundError
+      X-Hiker-Reqid:
+      - 49f802c7-e9ae-4894-b7ba-e26853d64975
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=udBIsFPo2jooQyYVjLYO1PEFK2HjHC2GwDOgvyN8ztRxbzzc4luiPwbMg1fCHYpDJaUkBnvqeWLguo1WPiE7XVqSB%2FPyY9Ft8da6d%2BRBXJtVUGM6uncTbRfllmQWZhUxDQf%2B"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 84fbf3a6991a3fa1-SIN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"detail":"Entries not found","exc_type":"NotFoundError"}'
+  recorded_at: Sat, 03 Feb 2024 16:11:48 GMT
+recorded_with: VCR 6.1.0

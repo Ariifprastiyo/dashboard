@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="card">
+    <div class ="card-header d-flex justify-content-between">
+      <h5 class="card-title m-0 p-0">List of Influencers</h5>
+      <div>
+          <%= link_to "CRB Review", media_comments_path(@campaign), class: "btn btn-primary btn-sm" %>
+        <% if policy(:campaign).utility? %>
+          <%= link_to "Import Publications", campaign_import_social_media_publications_path(@campaign), class: "btn btn-primary btn-sm" %>
+          <%= link_to "Show Publications", campaigns_social_media_publications_path(@campaign), class: 'btn btn-primary btn-sm' %>
+          <%= link_to "Show Timeline", timeline_campaign_path(@campaign), class: "btn btn-primary btn-sm" %>
+          <%= link_to "Show Media Plan", media_plan_path(@selected_media_plan), class: "btn btn-primary btn-sm" %>
+          <%= link_to "Recalculate CRB", recalculate_the_last_publication_history_metrics_campaign_path, class: "btn btn-primary btn-sm", data: { turbo_method: :post }  %>
+          <%= link_to "Resync Posts", sync_social_media_publications_campaign_path, class: "btn btn-primary btn-sm", data: { turbo_method: :post, turbo_confirm: 'Are you sure?ags' }  %>
+        <% end %>
+      </div>
+    </div>
+    
+    <div class="card-body">
+      <%= render 'scope_of_works_table', media_plan: @selected_media_plan, show_options: false %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<tr>
+  <td><%= size %></td>
+  <td id=<%= "#{size.downcase}_budget" %>><%= number_to_currency data[:budget] %></td>
+  <td id=<%= "#{size.downcase}_number_of_kol" %>><%= number_with_delimiter data[:number_of_kol] %></td>
+  <td id=<%= "#{size.downcase}_reach" %>><%= number_with_delimiter data[:reach] %></td>
+  <td id=<%= "#{size.downcase}_cpr" %>><%= number_to_currency data[:cpr] %></td>
+  <td id=<%= "#{size.downcase}_engagement_rate" %>><%= number_to_percentage data[:engagement_rate], precision: 2 %></td>
+  <td id=<%= "#{size.downcase}_cpe" %>><%= number_to_currency data[:cpe] %></td>
+  <td id=<%= "#{size.downcase}_crb" %>><%= number_to_percentage data[:crb], precision: 2 %></td>
+  <td id=<%= "#{size.downcase}_crb_count" %>><%= data[:crb_count] %></td>
+</tr>

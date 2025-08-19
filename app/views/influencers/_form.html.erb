@@ -1,0 +1,15 @@
+<%= bootstrap_form_for(@influencer, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.select :gender, [["Male", 'male'], ["Female", 'female']], include_blank: "Select a gender" %>
+  <%= f.email_field :email %>
+  <%= f.text_field :phone_number %>
+  <%= f.text_field :pic %>
+  <%= f.text_field :pic_phone_number %>
+  <%= f.text_field :no_ktp %>
+  <%= f.select :have_npwp, has_npwp_options, label: 'Apakah sudah memiliki NPWP?', default: true %>
+  <%= f.text_field :no_npwp, help: 'Kosongkan jika tidak memiliki NPWP', required: false %>
+  <%= f.select :bank_code, BankService::LIST.map { |x| [x[1], x[0]]}, {}, data: {controller: "select2"}, class: 'select2' %>
+  <%= f.text_field :account_number %>
+  <%= f.text_area :address %>
+  <%= f.primary %>
+<% end %>

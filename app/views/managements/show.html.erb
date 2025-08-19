@@ -1,0 +1,49 @@
+<!-- Page Title -->
+<div class="pagetitle">
+<h1><%= @management.name %> <%= icon_link_to('pencil-square', edit_management_path(@management)) %></h1>
+</div>
+<!-- End Page Title -->
+
+<%= render 'shared/breadcrumbs' %>
+
+<section class="section">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <table class="table mt-2">
+          <% %w[id phone pic_name pic_email no_ktp no_npwp bank_code account_number address].each do |attr| %>
+          <tr>
+            <th class='col-4'><%= attr.capitalize %></th>
+            <td><%= @management.send(attr) %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <div class="card ">
+      <div class ="card-header mb-2">
+        <h5 class="card-title m-0 p-0">Search social media account</h5>
+      </div>
+      <div class="card-body">
+        <%= render 'search_form', url: management_path(@management) %>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class ="card-header d-flex justify-content-between">
+          <h5 class="card-title m-0 p-0">List of Social Media Accounts</h5>
+          <div>
+            <%= link_to 'Assign Social Media Accounts with Excel', new_management_bulk_social_media_accounts_path(@management), class: 'btn btn-primary btn-sm' %>
+            <%= link_to "Add Social Media Accounts", new_management_managements_account_path(@management), class: "btn btn-primary btn-sm" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <%= render 'social_media_accounts' %>
+      </div>
+    </div>
+  </div>
+</section>

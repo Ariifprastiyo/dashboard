@@ -1,0 +1,42 @@
+<div class="pagetitle">
+  <h1>Editing Social Media Publication : <strong>ID <%= @social_media_publication.id %></strong></h1>
+</div>
+
+<section class="section">
+
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Name your Media Plan</h5>
+        <%= turbo_frame_tag 'edit_social_media_publication' do %>
+          <%= render 'shared/error_messages', object: @social_media_publication %>
+          <%= bootstrap_form_for(@social_media_publication, url: scope_of_work_item_social_media_publication_path(@scope_of_work_item, @social_media_publication), layout: :horizontal, label_col: "col-sm-3", 
+                                    control_col: "col-sm-9", html: { autocomplete: "off" }) do |f| %>
+ 
+            <%= f.text_field :url, label: "POST ID / URL", required: true %>
+            <%= f.datetime_field :post_created_at %>
+            <%= f.text_field :caption %>
+            <%= f.file_field :proof %>
+            <%= f.number_field :comments_count %>
+            <%= f.number_field :likes_count %>
+            <%= f.number_field :share_count %>
+            <%= f.number_field :saves_count %>
+            <%= f.number_field :impressions %>
+            <%= f.number_field :reach %>
+            <%= f.text_field :engagement_rate %>
+            <%= f.text_field :additional_info %>
+            <%= f.primary "Update" %>
+
+            <%= link_to 'cancel', :back %>
+          <% end %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+

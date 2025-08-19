@@ -1,0 +1,26 @@
+<div class="card">
+  <div class ="card-header d-flex justify-content-between">
+    <h5 class="card-title m-0 p-0">List of Influencers</h5>
+    <div>
+      <%= link_to "New Influencer", new_influencer_path, class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Default Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">PIC Phone Number</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @influencers %>
+      </tbody>
+    </table>
+    <!-- End Default Table Example -->
+  </div>
+</div>

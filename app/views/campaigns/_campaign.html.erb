@@ -1,0 +1,11 @@
+<tr id="<%= dom_id campaign %>" class="align-middle">
+  <td class="align-middle"><%= campaign.id %></td>
+  <td class="align-middle"><%= link_to campaign.name, campaign %></td>
+  <td class="align-middle"><%= icon_for campaign.platform %></td>
+  <td class="align-middle"><%= campaign.brand.name %></td>
+  <td class="align-middle"><%= campaign.start_at.to_fs(:day_month_year_short) %> - <%= campaign.end_at.to_fs(:day_month_year_short) %></td>
+  <td class="align-middle"><%= campaign.status %></td>
+  <td class="align-middle" style="width: 10%"><%= show_progress campaign.reach_progress %></td>
+  <td class="align-middle" style="width: 10%"><%= show_progress campaign.impressions_progress %></td>
+  <td class="align-middle" style="width: 10%"><%= show_progress campaign.er_progress %></td>
+</tr>

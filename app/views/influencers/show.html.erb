@@ -1,0 +1,77 @@
+<!-- Page Title -->
+<div class="pagetitle">
+<h1><%= @influencer.name %> <%= icon_link_to('pencil-square', edit_influencer_path(@influencer)) %></h1>
+</div>
+<!-- End Page Title -->
+
+<section class="section">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <table class="table mt-1">
+          <tr>
+            <th>ID</th>
+            <td><%= @influencer.id %></td>
+          </tr>
+          <tr>
+            <th>PIC</th>
+            <td><%= @influencer.pic %></td>
+          </tr>
+          <tr>
+            <th>PIC Phone</th>
+            <td><%= @influencer.pic_phone_number %></td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td><%= @influencer.gender %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= "#{@influencer.name}'s sosmed accounts"%></h5>
+
+        <table class="table">
+          <thead class="table-primary">
+            <th></th>
+            <th>Username</th>
+            <th>Platform</th>
+            <th>Follower</th>
+            <th>Size</th>
+            <th>Est. Views</th>
+            <th>Est. Engagement Rate</th>
+            <th>Est. ERB</th>
+            <th>Est. Reach</th>
+            <th>Action</th>
+          </thead>
+          <tbody>
+          <% @influencer.social_media_accounts.kept.each do |account| %>
+            <tr>
+              <td class="align-middle"><%= image_tag url_for(account.profile_picture.variant(:thumb)), class: 'rounded-circle' %></td>
+              <td class="align-middle"><%= link_to_social_media_account(account.username, account.platform) %>
+              <td class="align-middle text-center"><%= tag :i, class: "bi bi-#{account.platform}" %></td>
+              <td class="align-middle"><%= number_with_delimiter account.followers %></td>
+              <td class="align-middle"><%= account.size %></td>
+              <td class="align-middle"><%= number_with_delimiter account.estimated_impression.to_i %></td>
+              <td class="align-middle"><%= number_to_percentage account.estimated_engagement_rate, precision: 2 %></td>
+              <td class="align-middle"><%= number_to_percentage account.estimated_engagement_rate_branding_post, precision: 2 %></td>
+              <td class="align-middle"><%= number_with_delimiter account.estimated_reach.to_i %></td>
+              <td class="align-middle">
+                <%= icon_link_to('pencil-square', edit_influencer_social_media_account_path(@influencer, account)) %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+
+    <div class="col-lg-12 text-center">
+      <%= link_to "Add Social Media Account", new_influencer_social_media_account_path(@influencer), class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
+</section>

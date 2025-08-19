@@ -1,0 +1,20 @@
+<div class="pagetitle">
+  <h1>New Media Plan for <strong><%= @campaign.name %></strong></h1>
+</div>
+
+<section class="section">
+  <%= render 'kpi_cards' %>
+
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Name your Media Plan</h5>
+
+        <%= render 'shared/error_messages', object: @media_plan %>
+
+        <%= render "form", brand: @media_plan %>
+
+      </div>
+    </div>
+  </div>
+</section>
