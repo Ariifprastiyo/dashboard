@@ -6,14 +6,15 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
-# Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
-amazon:
+# tigris
+tigris:
   service: S3
-  access_key_id: <%= ENV.fetch('S3_ACCESS_KEY', nil) || ENV.fetch('AWS_ACCESS_KEY_ID', 'xxx') %>
-  secret_access_key: <%= ENV.fetch('S3_SECRET_KEY', nil) || ENV.fetch('AWS_SECRET_ACCESS_KEY', 'xxx') %>
-  region: <%= ENV.fetch('AWS_REGION', 'auto')  %>
-  bucket: <%= ENV.fetch('S3_BUCKET', nil) || ENV.fetch('BUCKET_NAME', 'medias') %>
-  endpoint: <%= ENV.fetch('S3_ENDPOINT', nil) || ENV.fetch('AWS_ENDPOINT', 'https://aws.com') %>
+  access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] || "dummy" %>
+  secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] || "dummy" %>
+  region: <%= ENV.fetch("AWS_REGION", "us-east-1") %>
+  bucket: <%= ENV["BUCKET_NAME"] || "dummy-bucket" %>
+  endpoint: <%= ENV["S3_ENDPOINT"] || "https://fly.storage.tigris.dev" %>
+  force_path_style: true
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
