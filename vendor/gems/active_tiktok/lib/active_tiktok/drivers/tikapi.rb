@@ -11,8 +11,8 @@ module ActiveTiktok::Drivers
     def initialize(api_key: 'xxx', account_key: 'xxx')
       @headers = {
         'Content-Type': 'application/json;',
-        'X-API-KEY': api_key,
-        'X-Account-Key': ENV['TIKAPI_ACCOUNT_KEY'] || account_key
+        'X-API-KEY': 'x8F36slXhRQfeCp8SWpKdQ1kbyfdVTOw4VeVPgXT38nhDWlL',
+        'X-Account-Key':1
       }
     end
 

@@ -56,7 +56,7 @@ class BulkInfluencerService < ApplicationService
           influencer.destroy
         rescue ActiveInstagram::Drivers::ServerError => e
           Sentry.capture_message("Instagram server error for username: #{instagram_social_media.username}")
-          create_error_message(title: "Instgram Error #{instagram_social_media.username}", message: e.message)
+          create_error_message(title: "Instagram Error #{instagram_social_media.username}", message: e.message)
           instagram_social_media.destroy
           influencer.destroy
         end
