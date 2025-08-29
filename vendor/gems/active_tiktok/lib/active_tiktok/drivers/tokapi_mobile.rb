@@ -19,14 +19,32 @@ module ActiveTiktok::Drivers
       puts "using tokapi mobile driver"
       url = "/v1/post/#{id}"
 
-      response = self.class.get(url, headers: @headers)
+      begin
+        response = self.class.get(url, headers: @headers)
+        handle_response_errors(response)
+        json = JSON.parse(response.body)
+        media_from_json(json)
+      rescue => e
+        puts "Tokapi error: #{e.message}, fallback manual mode"
 
-      handle_response_errors(response)
-
-      json = JSON.parse(response.body)
-
-      media_from_json(json)
+        ::ActiveTiktok::Models::Media.new(
+          id: id,
+          post_identifier: id,
+          caption: "Manual input (fallback)",  
+          post_created_at: Time.now.to_i,
+          likes_count: 0,
+          comments_count: 0,
+          shares_count: 0,
+          impressions: 0,
+          reach: 0,
+          engagement_rate: 0,
+          cover: nil,
+          payload: {},
+          username: nil
+        )
+      end
     end
+
 
     def comments_by_media_id(media_id, cursor = 0)
       url = "/v1/post/#{media_id}/comments?offset=#{cursor}"
