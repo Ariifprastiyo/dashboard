@@ -12,52 +12,34 @@ module ActiveTiktok::Drivers
       @headers = {
         'X-Rapidapi-Key': '6148367cedmsh1381bc326b0f51ap1a7e7djsn92f7f0369693',
         'X-Rapidapi-Host': 'tokapi-mobile-version.p.rapidapi.com',
-      }
+      } 
     end
-
+    
     def media_by_id(id)
       puts "using tokapi mobile driver"
       url = "/v1/post/#{id}"
-
-      begin
-        response = self.class.get(url, headers: @headers)
-        handle_response_errors(response)
-        json = JSON.parse(response.body)
-        media_from_json(json)
-      rescue => e
-        puts "Tokapi error: #{e.message}, fallback manual mode"
-
-        ::ActiveTiktok::Models::Media.new(
-          id: id,
-          post_identifier: id,
-          caption: "Manual input (fallback)",  
-          post_created_at: Time.now.to_i,
-          likes_count: 0,
-          comments_count: 0,
-          shares_count: 0,
-          impressions: 0,
-          reach: 0,
-          engagement_rate: 0,
-          cover: nil,
-          payload: {},
-          username: nil
-        )
-      end
+ 
+      response = self.class.get(url, headers: @headers)
+ 
+      handle_response_errors(response)
+ 
+      json = JSON.parse(response.body)
+ 
+      media_from_json(json)
     end
-
-
+ 
     def comments_by_media_id(media_id, cursor = 0)
       url = "/v1/post/#{media_id}/comments?offset=#{cursor}"
       response = fetch_comments_response(url)
       handle_comments_response(response)
       json = JSON.parse(response.body)
-
+ 
       if json["comments"].nil? || json["comments"].empty?
         return empty_comments_collection(media_id)
       end
-
+ 
       comments = parse_comments(json)
-
+ 
       ActiveTiktok::Models::CommentsCollection.new(
         comments: comments,
         media_id: media_id,
@@ -65,7 +47,7 @@ module ActiveTiktok::Drivers
         cursor: json["cursor"]
       )
     end
-
+ 
     # it should add @ to the username if it's not present
     def user_by_username(username)
       username = "@#{username}" if username[0] != "@"
@@ -73,21 +55,21 @@ module ActiveTiktok::Drivers
       json = perform_api_request(url)
       user_from_json(json)
     end
-
+ 
     def medias_by_user_id(user_id)
       url = "/v1/post/user/#{user_id}/posts"
       json = perform_api_request(url)
       medias_collection_from_json(json, user_id)
     end
-
-
+ 
+ 
     private
       def perform_api_request(url)
         response = self.class.get(url, headers: @headers)
         handle_response_errors(response)
         JSON.parse(response.body)
       end
-
+ 
       def handle_response_errors(response)
         # user handling
         return response if response.code == 200 && response.body.include?('user')
@@ -100,13 +82,12 @@ module ActiveTiktok::Drivers
         raise ::ActiveTiktok::Drivers::MediaNotFoundError unless response.body.include?('aweme_detail')
         raise ::ActiveTiktok::Drivers::LimitError if response.code == 429
       end
-
+ 
       def media_from_json(json)
         media = json["aweme_detail"]
         stats = media["statistics"]
         engagement_rate = ((stats["digg_count"] + stats["comment_count"] + stats["share_count"]) / stats["play_count"].to_f) * 100
         cover = media["video"]["cover"]["url_list"].first.to_s.freeze
-        
         ::ActiveTiktok::Models::Media.new(
           id: media["aweme_id"],
           post_identifier: media["aweme_id"],
@@ -123,7 +104,7 @@ module ActiveTiktok::Drivers
           username: media["author"]["unique_id"]
         )
       end
-
+ 
       def user_from_json(json)
         user = json["user"]
         ::ActiveTiktok::Models::User.new(
@@ -138,13 +119,13 @@ module ActiveTiktok::Drivers
           followed_by_count: user["follower_count"]
         )
       end
-
+ 
       def medias_collection_from_json(json, user_id)
         medias = json["aweme_list"].map do |media|
           stats = media["statistics"]
           engagement_rate = ((stats["digg_count"] + stats["comment_count"] + stats["share_count"]) / stats["play_count"].to_f) * 100
           cover = media["video"]["cover"]["url_list"].first.to_s.freeze
-
+ 
           ActiveTiktok::Models::Media.new(
             id: media["aweme_id"],
             post_identifier: media["aweme_id"],
@@ -160,7 +141,7 @@ module ActiveTiktok::Drivers
             payload: media
           )
         end
-
+ 
         ActiveTiktok::Models::MediasCollection.new(
           medias: medias,
           user_id: user_id,
@@ -168,15 +149,15 @@ module ActiveTiktok::Drivers
           cursor: json["max_cursor"]
         )
       end
-
+ 
       def handle_comments_response(response)
         raise ::ActiveTiktok::Drivers::UnauthorizedError if response.code == 403
       end
-
+ 
       def fetch_comments_response(url)
         self.class.get(url, headers: @headers)
       end
-
+ 
       def empty_comments_collection(media_id)
         ActiveTiktok::Models::CommentsCollection.new(
           media_id: media_id,
@@ -184,7 +165,7 @@ module ActiveTiktok::Drivers
           comments: [],
           cursor: 0)
       end
-
+ 
       def parse_comments(json)
         json["comments"].map do |comment|
           ::ActiveTiktok::Models::Comment.new(
