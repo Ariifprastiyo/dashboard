@@ -10,8 +10,8 @@ module ActiveTiktok::Drivers
 
     def initialize(api_key:)
       @headers = {
-        'X-Rapidapi-Key': '6148367cedmsh1381bc326b0f51ap1a7e7djsn92f7f0369693',
-        'X-Rapidapi-Host': 'tokapi-mobile-version.p.rapidapi.com',
+        'X-Rapidapi-Key': '034507c04emsh250c6810f539863p17b8d6jsn0f338a444636',
+        'X-Rapidapi-Host': 'https://tokapi-mobile-version.p.rapidapi.com',
       } 
     end
     
