@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 ## How to run this project
@@ -127,3 +128,6 @@ For other organizations, they can have `admin` role and other roles like `bd`, `
 
 All customer users need to be assigned to an organization. Otherwise they can't go anywhere.
 Only `super_admin` can have no organization.
+=======
+# Ruby_On_Rails
+>>>>>>> d0ca22547f270eac5b8c3fba72d0febd8154cb13
