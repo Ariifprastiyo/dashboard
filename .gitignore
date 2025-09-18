@@ -45,3 +45,7 @@ dump.rdb
 
 .zed
 .env.prod
+.env
+config/secrets.yml
+*.key
+*.pem
